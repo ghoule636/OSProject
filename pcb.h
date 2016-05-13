@@ -23,6 +23,10 @@ typedef enum state_type {
   new, ready, running, interrupted, waiting, halted
 } State;
 
+typedef int bool;
+#define true 1
+#define false 0
+
 typedef struct pcb {
   unsigned long pid;
   State state;
@@ -36,6 +40,8 @@ typedef struct pcb {
   int term_count; // counter to keep track of how many times the process has passed MAX_PC
   int IO_trap1[4]; //four numbers representing the PC counter where the process will execute -
   int IO_trap2[4]; //an I/O service trap. Each # assigned random, no duplicates
+
+  bool boosting; // flag for temporary boost in priority for a quantum. 
 
 } PCB;
 
@@ -65,6 +71,9 @@ int PCB_get_term_count(PCB_p);
 int PCB_get_trap1(PCB_p, int);
 //void PCB_set_trap2(int);
 int PCB_get_trap2(PCB_p, int);
+
+bool isBoosting(PCB_p); 
+void setBoosting(PCB_p, bool);
 
 #include "pcb.c"
 #endif
