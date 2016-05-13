@@ -143,9 +143,9 @@ int PCB_get_trap2(PCB_p pcb, int index) {
 	return (pcb->IO_trap2)[index];
 }
 
-int isBoosting(PCB_p pcb) {
+bool isBoosting(PCB_p pcb) {
 	return pcb->boosting;
 }
-void setBoosting(PCB_p pcb, int boost) {
+void setBoosting(PCB_p pcb, bool boost) {
 	pcb->boosting = boost;
 }
