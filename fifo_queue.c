@@ -1,9 +1,9 @@
 /*
-* Group 3 OS Project
-* Spring 2016
-* Authors: Antonio Alvillar, Bethany Eastman, Gabriel Houle & Edgardo Gutierrez Jr.
-* GitHub: https://github.com/ghoule636/OSProject
-*/
+ * Group 3 OS Project
+ * Spring 2016
+ * Authors: Antonio Alvillar, Bethany Eastman, Gabriel Houle & Edgardo Gutierrez Jr.
+ * GitHub: https://github.com/ghoule636/OSProject
+ */
 
 FIFOq_p FIFOq_construct() {
     FIFOq_p fq = (FIFOq_p) malloc(sizeof(FIFOq));
