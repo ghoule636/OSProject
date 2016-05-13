@@ -34,6 +34,7 @@ int PCB_init(PCB_p pcb) {
 		pcb->IO_trap1[i] = rand() % pcb->MAX_PC;
 		pcb->IO_trap2[i] = rand() % pcb->MAX_PC;
 	}
+	pcb->boosting = false; // initial setting of the boost flag. 
     return SUCCESS;
 }
 
@@ -140,4 +141,11 @@ int PCB_get_trap1(PCB_p pcb, int index) {
 
 int PCB_get_trap2(PCB_p pcb, int index) {
 	return (pcb->IO_trap2)[index];
+}
+
+int isBoosting(PCB_p pcb) {
+	return pcb->boosting;
+}
+void setBoosting(PCB_p pcb, int boost) {
+	pcb->boosting = boost;
 }
