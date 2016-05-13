@@ -42,6 +42,8 @@ typedef struct pcb {
   int IO_trap2[4]; //an I/O service trap. Each # assigned random, no duplicates
 
   bool boosting; // flag for temporary boost in priority for a quantum. 
+  //char * lastRunTime;
+  //int mutexCalls[?];
 
 } PCB;
 
@@ -74,6 +76,8 @@ int PCB_get_trap2(PCB_p, int);
 
 bool isBoosting(PCB_p); 
 void setBoosting(PCB_p, bool);
+
+//void createConsumerPair();
 
 #include "pcb.c"
 #endif

@@ -5,8 +5,11 @@
  * GitHub: https://github.com/ghoule636/OSProject
  */
 
+ //unsigned short MAX_PRIORITIES = 4;
+
 typedef struct PriorityQ {
   FIFO priority[16];
+  // FIFO priority[MAX_PRIORITIES];
 } PriorityQ;
 
 typedef struct PriorityQ *PQ_p;
