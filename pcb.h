@@ -72,8 +72,8 @@ int PCB_get_trap1(PCB_p, int);
 //void PCB_set_trap2(int);
 int PCB_get_trap2(PCB_p, int);
 
-int isBoosting(PCB_p); 
-void setBoosting(PCB_p, int);
+bool isBoosting(PCB_p); 
+void setBoosting(PCB_p, bool);
 
 #include "pcb.c"
 #endif
