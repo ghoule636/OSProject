@@ -24,3 +24,7 @@ void starvationPrevention() {
 		//}
 	//}
 }
+
+int main() {
+	return 0;
+}
