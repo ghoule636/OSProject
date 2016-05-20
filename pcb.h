@@ -7,6 +7,9 @@
 
 #ifndef PCB_H
 #define PCB_H
+//#include <string.h>
+//#include <stdio.h>
+//#include <stdlib.h>
 
 /* Default values */
 #define DEFAULT_PID 0

@@ -5,6 +5,8 @@
  * GitHub: https://github.com/ghoule636/OSProject
  */
 
+//#include "fifo_queue.h" 
+
 FIFOq_p FIFOq_construct() {
     FIFOq_p fq = (FIFOq_p) malloc(sizeof(FIFOq));
 
