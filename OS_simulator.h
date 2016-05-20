@@ -9,10 +9,10 @@
 #include <stdlib.h>
 #include <string.h>
 #include <pthread.h>
-// #include "pcb.h"
-// #include "fifo_queue.h"
-// #include "PriorityQ.h"
-// #include "my_pthread.h"
+#include "pcb.h"
+#include "fifo_queue.h"
+#include "PriorityQ.h"
+#include "my_pthread.h"
 
 PQ_p readyQ;
 

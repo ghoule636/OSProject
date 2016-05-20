@@ -5,11 +5,11 @@
  * GitHub: https://github.com/ghoule636/OSProject
  */
 
-#ifndef FIFO_QUEUE_H
-#include "pcb.h" 
-#include <stdlib.h>
-#include <string.h>
-#define FIFO_QUEUE_H
+//#ifndef FIFO_QUEUE_H
+//#include "pcb.h" 
+//#include <stdlib.h>
+//#include <string.h>
+//#define FIFO_QUEUE_H
 
 typedef struct node Node;
 typedef Node * Node_p;
@@ -37,4 +37,5 @@ PCB_p FIFOq_dequeue(FIFOq_p);
 int FIFOq_toString_size(FIFOq_p);
 char* FIFOq_toString(FIFOq_p, char*, int);
 
-#endif
+#include "fifo_queue.c"
+//#endif

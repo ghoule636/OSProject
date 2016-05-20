@@ -7,9 +7,9 @@
 
 #ifndef PCB_H
 #define PCB_H
-#include <string.h>
-#include <stdio.h>
-#include <stdlib.h>
+//#include <string.h>
+//#include <stdio.h>
+//#include <stdlib.h>
 
 /* Default values */
 #define DEFAULT_PID 0
@@ -82,5 +82,5 @@ void setBoosting(PCB_p, bool);
 
 //void createConsumerPair();
 
-// #include "pcb.c"
+#include "pcb.c"
 #endif
