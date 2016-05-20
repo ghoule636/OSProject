@@ -5,11 +5,12 @@
  * GitHub: https://github.com/ghoule636/OSProject
  */
 
- //unsigned short MAX_PRIORITIES = 4;
+#include "fifo_queue.h"
+
+unsigned short MAX_PRIORITIES = 4;
 
 typedef struct PriorityQ {
-  FIFO priority[16];
-  // FIFO priority[MAX_PRIORITIES];
+  FIFOq_p priority[4];
 } PriorityQ;
 
 typedef struct PriorityQ *PQ_p;
@@ -22,5 +23,4 @@ void PQ_toString(PQ_p, char*);
 
 #ifndef PQ
 #define PQ
-#include "PriorityQ.c"
 #endif
