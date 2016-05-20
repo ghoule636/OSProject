@@ -5,7 +5,9 @@
  * GitHub: https://github.com/ghoule636/OSProject
  */
 
-int[] pCount[4]; // keep track of the #'s in the LVL's
+#include "OS_simulator.h"
+
+int pCount[4]; // keep track of the #'s in the LVL's
 
 
 void createProcesses() {
