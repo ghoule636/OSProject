@@ -38,7 +38,8 @@ typedef my_cond *my_cond_p;
 
 //Prototypes
 void my_mutex_init(my_mutex_p);
-int my_mutex_lock(my_mutex_p);
+int my_mutex_lock(my_mutex_p, PCB_p);
+int my_mutex_trylock(my_mutex_p, PCB_p);
 int my_mutex_unlock(my_mutex_p);
 
 void my_cond_init(my_cond_p);
