@@ -43,7 +43,7 @@ int my_mutex_trylock(my_mutex_p, PCB_p);
 int my_mutex_unlock(my_mutex_p);
 
 void my_cond_init(my_cond_p);
-int my_cond_wait(my_cond_p, my_mutex_p);
+int my_cond_wait(my_cond_p, my_mutex_p, PCB_p);
 int my_cond_signal(my_cond_p);
 
 #include "my_pthread.c"

@@ -39,11 +39,32 @@ int my_mutex_unlock(my_mutex_p the_mutex) {
 }
 
 void my_cond_init(my_cond_p the_cond) {
-
+	the_cond->head = NULL;
 }
-int my_cond_wait(my_cond_p the_cond, my_mutex_p the_mutex) {
 
+int my_cond_wait(my_cond_p the_cond, my_mutex_p the_mutex, PCB_p the_pcb) {
+	cond_list cl = malloc(sizeof(my_cond_node));
+	cl->owner = the_pcb;
+	cl->lock = the_mutex;
+	cl->next = NULL;
+	if (the_cond->head == NULL) {
+		the_cond->head = cl;
+	} else {
+		cond_list curr = the_cond->head;
+		while (curr->next != NULL) {
+			curr = curr->next;
+		}
+		curr->next = cl;
+	}
+	return 0;
 }
+
 int my_cond_signal(my_cond_p the_cond) {
-
+	if (the_cond->head != NULL) {
+		cond_list cl = the_cond->head;
+		my_mutex_lock(cl->lock, cl->owner);
+		the_cond->head = cl->next;
+		free(cl);
+	}
+	return 0;
 }
