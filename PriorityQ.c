@@ -48,6 +48,17 @@ PCB_p PQ_dequeue(PQ_p theQ) {
   return result;
 }
 
+int PQ_is_empty(PQ_p theQ) {
+    int result = 1;
+    int i;
+    for (i = 0; i < MAX_PRIORITIES; i++) {
+        if (!FIFOq_is_empty(theQ->priority[i])) {
+            result = 0;
+        }
+    }
+    return result;
+}
+
 void PQ_toString(PQ_p theQ, char *theStr) {
   if (theStr) {
 
@@ -58,7 +69,8 @@ void PQ_toString(PQ_p theQ, char *theStr) {
     for (i = 0; i < MAX_PRIORITIES; i++) {
       FIFOq_p temp = theQ->priority[i];
       if (temp->front) {
-        FIFOq_toString(temp, testStr, 0); // TODO: why is there a third parameter
+        int queue_string_size = FIFOq_toString_size(temp); 
+        FIFOq_toString(temp, testStr, queue_string_size);
         sprintf(appendStr, "Q%d: %s\n", i, testStr);
         strcat(theStr, appendStr);
       }

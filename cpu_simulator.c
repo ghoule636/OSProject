@@ -27,7 +27,7 @@ int main(void) {
 	
     pthread_create(&timer_thread, NULL, timerIR, NULL);
 
-    for (i = 0; i < 4000; i++) {
+    for (i = 0; i < 4000; i++) { // MAIN CPU LOOP
         //fprintf(output, "%d ", i);
         printf("%d ", i);
 		CPU_loop();             

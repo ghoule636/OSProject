@@ -17,6 +17,7 @@ PQ_p PQ_construct(void);
 void PQ_destruct(PQ_p);
 void PQ_enqueue(PQ_p, PCB_p);
 PCB_p PQ_dequeue(PQ_p);
+int PQ_is_empty(PQ_p);
 void PQ_toString(PQ_p, char*);
 
 #ifndef PQ
