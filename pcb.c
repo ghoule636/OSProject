@@ -148,6 +148,11 @@ unsigned short PCB_get_priority(PCB_p p, enum PCB_ERROR *error) {
 		*error = PCB_NULL_POINTER;
 		return 0;
 	}
+	if (PCB_is_boosted(p) == true) {
+		if (p->priority > 1) {
+			return (p->priority) - 1; // Boost the priority
+		}
+	}
 	return p->priority;
 }
 
@@ -218,7 +223,7 @@ void PCB_print(PCB_p p, enum PCB_ERROR *error) {
 			PCB_get_term_count(p, error));
 }
 
-void PCB_set_boosting(PCB_P p, bool b, enum PCB_ERROR *error) {
+void PCB_set_boosted(PCB_P p, bool b, enum PCB_ERROR *error) {
 	if (p == NULL) {
 		*error = PCB_NULL_POINTER;
 		return;
@@ -226,7 +231,7 @@ void PCB_set_boosting(PCB_P p, bool b, enum PCB_ERROR *error) {
 	p->priority_boost = b;
 }
 
-bool PCB_is_boosting(PCB_P p], enum PCB_ERROR *error) {
+bool PCB_is_boosted(PCB_P p], enum PCB_ERROR *error) {
 	if (p == NULL) {
 		*error = PCB_NULL_POINTER;
 		return;
