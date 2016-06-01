@@ -275,8 +275,8 @@ void create_sync_pcbs() {
     	PCB_p consumer = PCB_construct(&error);
     	PCB_set_max_pc(producer, 6, &error);
     	PCB_set_max_pc(consumer, 6, &error);
-        int priority
-        PCB_set_priority(producer, rand() + 1 % 3, &error);
+        short priority = rand() + 1 % 3;
+        PCB_set_priority(producer, priority, &error);
     	Paired_User_p pu = malloc(sizeof(struct Paired_User));
     	pu->flag = 0;
     	pu->mutex = Mutex_construct();
@@ -285,8 +285,9 @@ void create_sync_pcbs() {
     	pu->data = 0;
     	producer->producer = pu;
     	consumer->consumer = pu;
-    	producer->pid = i;
-    	consumer->pid = i + 1;
+        int temp_pid = rand() % 100000;
+    	producer->pid = temp_pid;
+    	consumer->pid = temp_pid + 1;
         //if (DEADLOCK_POSSIBLE) {
             producer->lock_traps[0] = 0;
             producer->wait_traps[0] = 1;
