@@ -1,153 +1,219 @@
-/*
- * Group 3 OS Project
- * Spring 2016
- * Authors: Antonio Alvillar, Bethany Eastman, Gabriel Houle & Edgardo Gutierrez Jr.
- * GitHub: https://github.com/ghoule636/OSProject
- */
+#include "PCB.h"
+#include "PCB_Errors.h"
+#include "Mutex.h"
+#include "Cond.h"
+#include <stdlib.h>
+#include <stdio.h>
+#include <time.h>
 
-//#include "pcb.h" 
-
-// Function Prototypes
-char* getStateName(State state);
-
-PCB_p PCB_construct (void) {
-  return malloc(sizeof(PCB));
-}
-
-void PCB_destruct(PCB_p pcb) {
-  if (pcb != NULL) free(pcb);
-}
-
-int PCB_init(PCB_p pcb) {
-    if (pcb == NULL) {
-        return NULL_OBJECT;
-    }
-    pcb->pid = DEFAULT_PID;
-    pcb->state = (State) DEFAULT_STATE;
-    pcb->priority = DEFAULT_PRIORITY;
-    pcb->pc = DEFAULT_PC;
-	//creation; //computer clock time when a process is created.
-	//termination; //computer clock time when process terminates and goes into termination list
-	pcb->TERMINATE = 1; //process will terminate after this (1) many times it passes the MAX_PC
-	pcb->term_count = 2; // counter to keep track of how many times the process has passed MAX_PC
-    pcb->MAX_PC = 2345;
-	int i;
-	for (i = 0; i < 4; i++) {
-		pcb->IO_trap1[i] = rand() % pcb->MAX_PC;
-		pcb->IO_trap2[i] = rand() % pcb->MAX_PC;
+PCB_p PCB_construct(enum PCB_ERROR *error) {
+	PCB_p p = malloc(sizeof(struct PCB));
+	if (p == NULL) {
+		*error = PCB_MEM_ALLOC_FAIL;
+		return NULL;
+	} 
+	PCB_set_pid(p, 0, error);
+	PCB_set_state(p, PCB_STATE_NEW, error);
+	PCB_set_priority(p, PCB_PRIORITY_MAX, error);
+	PCB_set_pc(p, 0, error);
+	PCB_set_max_pc(p, 5000000, error);
+	PCB_set_terminate(p, 0, error);
+	PCB_set_term_count(p, 0, error);
+	PCB_set_creation(p, time(NULL), error);
+	PCB_set_termination(p, 0, error);
+	for (int i = 0; i < PCB_TRAP_LENGTH; i++) {
+		p->io_1_traps[i] = 6000000;
+		p->io_2_traps[i] = 6000000;
+		p->lock_traps[i] = 6000000;
+		p->unlock_traps[i] = 6000000;
+		p->signal_traps[i] = 6000000;
+		p->wait_traps[i] = 6000000;
 	}
-	pcb->boosting = false; // initial setting of the boost flag. 
-    return SUCCESS;
+
+	p->producer = NULL;
+	p->consumer = NULL;
+
+
+	return p;
 }
 
-int PCB_set_pid(PCB_p pcb, unsigned long pid) {
-  if (pcb == NULL) {
-    return NULL_OBJECT;
-  }
-  pcb->pid = pid;
-  return SUCCESS;
+void PCB_destruct(PCB_p p, enum PCB_ERROR *error) {
+	free(p);
 }
 
-unsigned long PCB_get_pid(PCB_p pcb) {
-  //error checking in controller
-  return pcb->pid;
+void PCB_init(PCB_p p, enum PCB_ERROR *error) {
 }
 
-int PCB_set_state(PCB_p pcb, State state) {
-  if (pcb == NULL) {
-    return NULL_OBJECT;
-  }
-  pcb->state = state;
-  return SUCCESS;
+void PCB_set_pid(PCB_p p, unsigned long pid, enum PCB_ERROR *error) {
+	if (p == NULL) {
+		*error = PCB_NULL_POINTER;
+		return;
+	}
+	p->pid = pid;
 }
 
-State PCB_get_state(PCB_p pcb) {
-  return pcb->state;
+void PCB_set_state(PCB_p p, enum PCB_STATE_TYPE state, enum PCB_ERROR *error) {
+	if (p == NULL) {
+		*error = PCB_NULL_POINTER;
+		return;
+	}
+	if (state < 0 || state >= PCB_STATE_LAST_ERROR) {
+		*error = PCB_INVALID_ARG;
+		return;
+	}
+	p->state = state;
 }
 
-int PCB_set_priority(PCB_p pcb, unsigned short priority) {
-  if (pcb == NULL) {
-    return NULL_OBJECT;
-  }
-  pcb->priority = priority;
-  return SUCCESS;
+void PCB_set_priority(PCB_p p, unsigned short priority, enum PCB_ERROR *error) {
+	if (p == NULL) {
+		*error = PCB_NULL_POINTER;
+		return;
+	}
+	if (priority > PCB_PRIORITY_MAX) {
+		*error = PCB_INVALID_ARG;
+		return;
+	}
+	p->priority = priority;
 }
 
-unsigned short PCB_get_priority(PCB_p pcb) {
-  return pcb->priority;
+void PCB_set_pc(PCB_p p, unsigned long pc, enum PCB_ERROR *error) {
+	if (p == NULL) {
+		*error = PCB_NULL_POINTER;
+		return;
+	}
+	p->pc = pc;
 }
 
-int PCB_set_pc(PCB_p pcb, unsigned long pc) {
-    if(pcb == NULL) {
-        return NULL_OBJECT;
-    }
-    pcb->pc = pc;
-    return SUCCESS;
+void PCB_set_sw(PCB_p p, unsigned int i, enum PCB_ERROR *error) {
+	if (p == NULL) {
+		*error = PCB_NULL_POINTER;
+		return;
+	}
+	p->sw = i;
+}
+void PCB_set_max_pc(PCB_p p, unsigned long i, enum PCB_ERROR *error) {
+	if (p == NULL) {
+		*error = PCB_NULL_POINTER;
+		return;
+	}
+	p->max_pc = i;
+}
+void PCB_set_creation(PCB_p p, unsigned long i, enum PCB_ERROR *error) {
+	if (p == NULL) {
+		*error = PCB_NULL_POINTER;
+		return;
+	}
+	p->creation = i;
+}
+void PCB_set_termination(PCB_p p, unsigned long i, enum PCB_ERROR *error) {
+	if (p == NULL) {
+		*error = PCB_NULL_POINTER;
+		return;
+	}
+	p->termination = i;
+}
+void PCB_set_terminate(PCB_p p, unsigned int i, enum PCB_ERROR *error) {
+	if (p == NULL) {
+		*error = PCB_NULL_POINTER;
+		return;
+	}
+	p->terminate = i;
+}
+void PCB_set_term_count(PCB_p p, unsigned int i, enum PCB_ERROR *error) {
+	if (p == NULL) {
+		*error = PCB_NULL_POINTER;
+		return;
+	}
+	p->term_count = i;
 }
 
-unsigned long PCB_get_pc(PCB_p pcb) {
-    return pcb->pc;
+unsigned long PCB_get_pid(PCB_p p, enum PCB_ERROR *error) {
+	if (p == NULL) {
+		*error = PCB_NULL_POINTER;
+		return 0;
+	}
+	return p->pid;
+}  
+
+enum PCB_STATE_TYPE PCB_get_state(PCB_p p, enum PCB_ERROR *error) {
+	if (p == NULL) {
+		*error = PCB_NULL_POINTER;
+		return PCB_STATE_ERROR;
+	}
+	return p->state;
 }
 
-char* getStateName(State state) {
-    switch(state) {
-        case new:
-            return "new";
-        case ready:
-            return "ready";
-        case running:
-            return "running";
-        case interrupted:
-            return "interrupted";
-        case waiting:
-            return "waiting";
-        case halted:
-            return "halted";
-    }
+unsigned short PCB_get_priority(PCB_p p, enum PCB_ERROR *error) {
+	if (p == NULL) {
+		*error = PCB_NULL_POINTER;
+		return 0;
+	}
+	return p->priority;
 }
 
-char * PCB_toString(PCB_p pcb, char * string) {
-  sprintf(string, "PID: 0x%0lX, State: %s, Priority: 0x%0X, PC: 0x%04lX",//, Creation Time: %s",
-      pcb->pid, getStateName(pcb->state), pcb->priority, pcb->pc);//, pcb->creation);
-  return string;
+unsigned long PCB_get_pc(PCB_p p, enum PCB_ERROR *error) {
+	if (p == NULL) {
+		*error = PCB_NULL_POINTER;
+		return 0;
+	}
+	return p->pc;
+} 
+
+unsigned int PCB_get_sw(PCB_p p, enum PCB_ERROR *error) {
+	if (p == NULL) {
+		*error = PCB_NULL_POINTER;
+		return 0;
+	}
+	return p->sw;
+}
+unsigned long PCB_get_max_pc(PCB_p p, enum PCB_ERROR *error) {
+	if (p == NULL) {
+		*error = PCB_NULL_POINTER;
+		return 0;
+	}	
+	return p->max_pc;
 }
 
-// new fields getters and setters
-int PCB_get_MAX_PC(PCB_p pcb) {
-	return pcb->MAX_PC;
+unsigned long PCB_get_creation(PCB_p p, enum PCB_ERROR *error) {
+	if (p == NULL) {
+		*error = PCB_NULL_POINTER;
+		return 0;
+	}	
+	return p->creation;
 }
 
-void PCB_set_creation(PCB_p pcb, char* currentTime) {
-	pcb->creation = currentTime;
+unsigned long PCB_get_termination(PCB_p p, enum PCB_ERROR *error) {
+	if (p == NULL) {
+		*error = PCB_NULL_POINTER;
+		return 0;
+	}	
+	return p->termination;
 }
 
-void PCB_set_termination(PCB_p pcb, char* currentTime) {
-	pcb->termination = currentTime;
+unsigned int PCB_get_terminate(PCB_p p, enum PCB_ERROR *error) {
+	if (p == NULL) {
+		*error = PCB_NULL_POINTER;
+		return 0;
+	}
+	return p->terminate;
 }
 
-int PCB_get_TERMINATE(PCB_p pcb) {
-	return pcb->TERMINATE;
+unsigned int PCB_get_term_count(PCB_p p, enum PCB_ERROR *error) {
+	if (p == NULL) {
+		*error = PCB_NULL_POINTER;
+		return 0;
+	}
+	return p->term_count;
 }
 
-void PCB_set_term_count(PCB_p pcb, int termCount) {
-	pcb->term_count = termCount;
-}
-
-int PCB_get_term_count(PCB_p pcb) {
-	return pcb->term_count;
-}
-
-int PCB_get_trap1(PCB_p pcb, int index) {
-	return (pcb->IO_trap1)[index];
-}
-
-int PCB_get_trap2(PCB_p pcb, int index) {
-	return (pcb->IO_trap2)[index];
-}
-
-bool isBoosting(PCB_p pcb) {
-	return pcb->boosting;
-}
-void setBoosting(PCB_p pcb, bool boost) {
-	pcb->boosting = boost;
+void PCB_print(PCB_p p, enum PCB_ERROR *error) {
+	if (p == NULL) {
+		*error = PCB_NULL_POINTER;
+		return;
+	}
+	printf("PID: 0x%lX, Priority: 0x%X, State: %u, PC: 0x%lX, MaxPC: 0x%lx, Terminate: %u, TermCount: %u\n", 
+			PCB_get_pid(p, error), PCB_get_priority(p, error),
+			PCB_get_state(p, error), PCB_get_pc(p, error),
+			PCB_get_max_pc(p, error), PCB_get_terminate(p, error),
+			PCB_get_term_count(p, error));
 }
