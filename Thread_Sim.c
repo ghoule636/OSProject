@@ -263,11 +263,11 @@ void step() {
 	}
 }
 
-void create_mutual_pcbs() {
+void create_mutual_pcbs(int priority) {
 
 }
 
-void create_sync_pcbs() {
+void create_sync_pcbs(int priority) {
     //PCB_p producer = PCB_construct(&error);
     //PCB_p consumer = PCB_construct(&error);
     //PCB_set_max_pc(producer, 6, &error);
@@ -320,6 +320,7 @@ void create_pcbs() {
             if (readyQueue->queues[i]->size < 2) {
                 int creation_count = 2 - readyQueue->queues[i]->size;
                 for (j = 0; j < creation_count; j++) {
+                    //add 10% percent chance to create here.
                     create_intense_pcb(0);
                 }
             }
@@ -419,8 +420,6 @@ int main() {
 			}
 			pthread_mutex_unlock(&mutex_io_b);
 		} 
-
-
 
 		if (currentPCB->mutual_user) {
 			if (currentPCB->mutual_user->mutex1->owner == currentPCB && 
