@@ -30,7 +30,7 @@ void PCB_Priority_Queue_enqueue(PCB_Priority_Queue_p pq, PCB_p pcb, enum PCB_ERR
 	}
 	PCB_Queue_p queue = pq->queues[PCB_get_priority(pcb, error)];
 	PCB_Queue_enqueue(queue, pcb, error);
-    queue->size++;
+    pq->size++;
 }
 
 PCB_p PCB_Priority_Queue_dequeue(PCB_Priority_Queue_p pq, enum PCB_ERROR *error) {
@@ -70,4 +70,5 @@ void PCB_Priority_Queue_print(PCB_Priority_Queue_p pq, enum PCB_ERROR *error) {
 		}
 		printf("-*\n");
 	}
+	printf("%u", pq->size);
 }
