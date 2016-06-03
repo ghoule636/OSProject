@@ -6,8 +6,8 @@ CFLAGS=-Wall -std=c99
 all: Thread_Sim
 
 
-Thread_Sim: Thread_Sim.o PCB.o PCB_Queue.o Mutex.o Cond.o
-	gcc Thread_Sim.o PCB.o PCB_Queue.o Mutex.o Cond.o -o Thread_Sim
+Thread_Sim: Thread_Sim.o PCB.o PCB_Queue.o Mutex.o Cond.o PCB_Priority_Queue.o
+	gcc Thread_Sim.o PCB.o PCB_Queue.o PCB_Priority_Queue.o Mutex.o Cond.o -o Thread_Sim
 
 
 
@@ -20,6 +20,8 @@ Mutex.o: Mutex.c
 Cond.o: Cond.c
 	gcc $(CFLAGS) -c Cond.c
 PCB_Queue.o: PCB_Queue.c
-	gcc $(CFLAGS) -c PCB_Queue.c 
+	gcc $(CFLAGS) -c PCB_Queue.c
+PCB_Priority_Queue.o: PCB_Priority_Queue.c
+	gcc $(CFLAGS) -c PCB_Priority_Queue.c 
 PCB.o: PCB.c
 	gcc $(CFLAGS) -c PCB.c

@@ -5,7 +5,7 @@
 // #include "Mutex.h"
 // #include "Cond.h"
 
-#define PCB_PRIORITY_MAX 15
+#define PCB_PRIORITY_MAX 3
 #define PCB_TRAP_LENGTH 4
 
 enum PCB_STATE_TYPE {

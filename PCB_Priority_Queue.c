@@ -19,6 +19,7 @@ PCB_Priority_Queue_p PCB_Priority_Queue_construct(enum PCB_ERROR *error) {
 			return NULL;
 		}
 	}
+    pq->size = 0;
 	return pq;
 }
 
@@ -29,6 +30,7 @@ void PCB_Priority_Queue_enqueue(PCB_Priority_Queue_p pq, PCB_p pcb, enum PCB_ERR
 	}
 	PCB_Queue_p queue = pq->queues[PCB_get_priority(pcb, error)];
 	PCB_Queue_enqueue(queue, pcb, error);
+    queue->size++;
 }
 
 PCB_p PCB_Priority_Queue_dequeue(PCB_Priority_Queue_p pq, enum PCB_ERROR *error) {
@@ -44,7 +46,16 @@ PCB_p PCB_Priority_Queue_dequeue(PCB_Priority_Queue_p pq, enum PCB_ERROR *error)
 		}
 		i++;
 	}
+    pq->size--;
 	return PCB_Queue_dequeue(pq->queues[i], error);
+}
+
+int PCB_Priority_Queue_is_empty(PCB_Priority_Queue_p pq, enum PCB_ERROR *error) {
+    if (pq == NULL) {
+        *error = PCB_NULL_POINTER;
+        return -1;
+    }
+    return pq->size == 0;
 }
 
 void PCB_Priority_Queue_print(PCB_Priority_Queue_p pq, enum PCB_ERROR *error) {
