@@ -1,11 +1,6 @@
 /*
  * Thread_Sim.c
- * Group: Hunter Bennett, Geoffrey Tanay, Christine Vu, Daniel Bayless
- * Date: May 8, 2016
- *
- *
- * Simulates the running of a processor with two I/O devices.
- * Utilizes threads to simulate the interrupt timing.
+ * Group: Hunter Bennett, Gabriel Houle, Antonio Alvillar, Bethany Eastman, Edgardo Gutierrez Jr.
  */
 
 #include <pthread.h>
@@ -27,7 +22,7 @@
 
 #define IDL_PID 0xFFFFFFFF
 
-#define DEADLOCK_POSSIBLE 1
+#define DEADLOCK_POSSIBLE 0
 
 void create_mutual_pcbs(int priority);
 void create_sync_pcbs(int priority);
@@ -229,18 +224,18 @@ void step() {
 }
 
 void create_mutual_pcbs(int priority) {
-	PCB_p u1 = PCB_construct(&error);
+    PCB_p u1 = PCB_construct(&error);
     PCB_p u2 = PCB_construct(&error);
     Mutex_p m1 = Mutex_construct();
-	Mutex_p m2 = Mutex_construct();
-	Mutual_User_p mu = malloc(sizeof(struct Mutual_User));
-	mu->mutex1 = m1;
-	mu->mutex2 = m2;
-	mu->resource1 = 0;
-	mu->resource2 = 0;
-	mu->dead = malloc(sizeof(int));
+    Mutex_p m2 = Mutex_construct();
+    Mutual_User_p mu = malloc(sizeof(struct Mutual_User));
+    mu->mutex1 = m1;
+    mu->mutex2 = m2;
+    mu->resource1 = 0;
+    mu->resource2 = 0;
+    mu->dead = malloc(sizeof(int));
     *(mu->dead) = 0;
-	PCB_set_priority(u1, priority, &error);
+    PCB_set_priority(u1, priority, &error);
     PCB_set_priority(u2, priority, &error);
     PCB_set_max_pc(u1, 6, &error);
     PCB_set_max_pc(u2, 6, &error);
@@ -248,32 +243,32 @@ void create_mutual_pcbs(int priority) {
     u1->pid = temp_pid;
     u2->pid = temp_pid + 1;
     u1->lock_traps[0] = 0;
-	u1->lock2_traps[0] = 1;
-	u1->unlock_traps[0] = 3;
-	u1->unlock2_traps[0] = 4;
-	u2->lock_traps[0] = 0;
-	u2->lock2_traps[0] = 1;
-	u2->unlock_traps[0] = 3;
-	u2->unlock2_traps[0] = 4;
-	u1->mutual_user = mu;
-    if (DEADLOCK_POSSIBLE) { 
-    	Mutual_User_p mu2 = malloc(sizeof(struct Mutual_User));
-		mu2->mutex1 = m2;
-		mu2->mutex2 = m1;
-		mu2->resource1 = 0;
-		mu2->resource2 = 0;
-		mu2->dead = mu->dead;
-		u2->mutual_user = mu2;
+    u1->lock2_traps[0] = 1;
+    u1->unlock_traps[0] = 3;
+    u1->unlock2_traps[0] = 4;
+    u2->lock_traps[0] = 0;
+    u2->lock2_traps[0] = 1;
+    u2->unlock_traps[0] = 3;
+    u2->unlock2_traps[0] = 4;
+    u1->mutual_user = mu;
+    if (DEADLOCK_POSSIBLE) {
+        Mutual_User_p mu2 = malloc(sizeof(struct Mutual_User));
+        mu2->mutex1 = m2;
+        mu2->mutex2 = m1;
+        mu2->resource1 = 0;
+        mu2->resource2 = 0;
+        mu2->dead = mu->dead;
+        u2->mutual_user = mu2;
     } else {
-    	u2->mutual_user = mu;
+        u2->mutual_user = mu;
     }
 
     PCB_Queue_enqueue(createdQueue, u1, &error);
     printf("Created:\t");
-	PCB_print(u1, &error);
+    PCB_print(u1, &error);
     PCB_Queue_enqueue(createdQueue, u2, &error);
     printf("Created:\t");
-	PCB_print(u2, &error);
+    PCB_print(u2, &error);
 }
 
 void create_sync_pcbs(int priority) {
@@ -306,14 +301,29 @@ void create_sync_pcbs(int priority) {
     consumer->signal_traps[0] = 3;
     PCB_Queue_enqueue(createdQueue, producer, &error);
     printf("Created:\t");
-	PCB_print(producer, &error);
+    PCB_print(producer, &error);
     PCB_Queue_enqueue(createdQueue, consumer, &error);
     printf("Created:\t");
-	PCB_print(consumer, &error);
+    PCB_print(consumer, &error);
 }
 
 void create_io_pcb(int priority) {
+    PCB_p io_process = PCB_construct(&error);
+    PCB_set_priority(io_process, priority, &error);
+    
+    int temp_pid = rand() % 100000;
+    io_process->pid = temp_pid;
 
+    int temp_max = rand() % 100000;
+    PCB_set_max_pc(io_process, temp_max, &error);
+
+    for (int i = 0; i < PCB_TRAP_LENGTH; i++) {
+        io_process->io_1_traps[i] = rand() % io_process->max_pc;
+        io_process->io_2_traps[i] = rand() % io_process->max_pc;
+    }
+    PCB_Priority_Queue_enqueue(readyQueue, io_process, &error);
+    printf("Created:/t");
+    PCB_print(io_process, &error);
 }
 
 void create_intense_pcb(int priority) {
@@ -321,34 +331,75 @@ void create_intense_pcb(int priority) {
     PCB_set_priority(intense, priority, &error);
     int temp_pid = rand() % 100000;
     intense->pid = temp_pid;
+    int temp_max = rand() % 100000;
+    PCB_set_max_pc(intense, temp_max, &error);
     PCB_Priority_Queue_enqueue(readyQueue, intense, &error);
     printf("Created:\t");
-	PCB_print(intense, &error);
+    PCB_print(intense, &error);
 }
 
 void create_pcbs() {
-    //checks quantity levels of pcbs
-    int i, j;
+    int i, j, k, rand_pcb;
+    int mutual_count = 0;
     for (i = 0; i < PCB_PRIORITY_MAX; i++) {
         if (!i) { // check priority 0
             if (readyQueue->queues[i]->size < 2) {
                 int creation_count = 2 - readyQueue->queues[i]->size;
                 for (j = 0; j < creation_count; j++) {
-                    //add 10% percent chance to create here.
-                    create_intense_pcb(0);
+                    if (rand() % 10 == 1) {
+                        create_intense_pcb(0);
+                    }
                 }
             }
         } else if (i == 1) { // priority 1
             if (readyQueue->queues[i]->size < 32) {
+                for (k = 0; k < readyQueue->queues[i]->size; k++) { // checks quantity levels of pcbs
+                    struct node* n = readyQueue->queues[i]->first_node_ptr;
+                    while (n != NULL) {
+                        if (n->value->producer != NULL || n->value->consumer != NULL || n->value->mutual_user != NULL) {
+                            mutual_count++;
+                        }
+                        n = n->next_node;
+                    }
+                }
+                for (j = 0; j < 10 - mutual_count; j += 2) {
+                    rand_pcb = rand() % 10;
+                    if (rand_pcb < 5) {
+                        create_sync_pcbs(1);
+                    } else {
+                        create_mutual_pcbs(1);
+                    }
+                }
                 int creation_count = 32 - readyQueue->queues[i]->size;
                 for (j = 0; j < creation_count; j++) {
-                    //create random pcbs here although we will need ten at least of the mutual users...
+                    rand_pcb = rand() % 10;
+                    if (rand_pcb < 5) {
+                        create_intense_pcb(1);
+                    } else if (rand_pcb >= 5) {
+                        create_io_pcb(1);
+                    }
                 }
+
             }
         } else if (i == 2) { // priority 2
+            if (readyQueue->queues[i]->size < 4) {
+                rand_pcb = rand() % 10;
+                if (rand_pcb < 5) {
+                    create_io_pcb(2);
+                } else {
+                    create_intense_pcb(2);
+                }
+            }
 
         } else if (i == 3) { // priority 3
-
+            if (readyQueue->queues[i]->size < 2) {
+                rand_pcb = rand() % 10;
+                if (rand_pcb < 5) {
+                    create_io_pcb(3);
+                } else {
+                    create_intense_pcb(3);
+                }
+            }
         }
     }
 }
