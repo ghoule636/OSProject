@@ -1,11 +1,6 @@
 /*
  * Thread_Sim.c
- * Group: Hunter Bennett, Geoffrey Tanay, Christine Vu, Daniel Bayless
- * Date: May 8, 2016
- *
- *
- * Simulates the running of a processor with two I/O devices.
- * Utilizes threads to simulate the interrupt timing.
+ * Group: Hunter Bennett, Gabriel Houle, Antonio Alvillar, Bethany Eastman, Edgardo Gutierrez Jr.
  */
 
 #include <pthread.h>
@@ -351,7 +346,19 @@ void create_sync_pcbs(int priority) {
 }
 
 void create_io_pcb(int priority) {
+    PCB_p io_process = PCB_construct(&error);
+    PCB_set_priority(io_process, priority, &error);
+    
+    int temp_pid = rand() % 100000;
+    io_process->pid = temp_pid;
 
+    int temp_max = rand() % 100000;
+    PCB_set_max_pc(io_process, temp_max, &error);
+
+    for (int i = 0; i < PCB_TRAP_LENGTH; i++) {
+        io_process->io_1_traps[i] = rand() % io_process->max_pc;
+        io_process->io_2_traps[i] = rand() % io_process->max_pc;
+    }
 }
 
 void create_intense_pcb(int priority) {
@@ -359,32 +366,73 @@ void create_intense_pcb(int priority) {
     PCB_set_priority(intense, priority, &error);
     int temp_pid = rand() % 100000;
     intense->pid = temp_pid;
+    int temp_max = rand() % 100000;
+    PCB_set_max_pc(intense, temp_max, &error);
     PCB_Priority_Queue_enqueue(readyQueue, intense, &error);
 }
 
 void create_pcbs() {
-    //checks quantity levels of pcbs
-    int i, j;
+    int i, j, k, rand_pcb;
+    int mutual_count = 0;
     for (i = 0; i < PCB_PRIORITY_MAX; i++) {
         if (!i) { // check priority 0
             if (readyQueue->queues[i]->size < 2) {
                 int creation_count = 2 - readyQueue->queues[i]->size;
                 for (j = 0; j < creation_count; j++) {
-                    //add 10% percent chance to create here.
-                    create_intense_pcb(0);
+                    if (rand() % 10 == 1) {
+                        create_intense_pcb(0);
+                    }
                 }
             }
         } else if (i == 1) { // priority 1
             if (readyQueue->queues[i]->size < 32) {
+                for (k = 0; k < readyQueue->queues[i]->size; k++) { // checks quantity levels of pcbs
+                    struct node* n = readyQueue->queues[i]->first_node_ptr;
+                    while (n != NULL) {
+                        if (n->value->producer != NULL || n->value->consumer != NULL || n->value->mutual_user != NULL) {
+                            mutual_count++;
+                        }
+                        n = n->next_node;
+                    }
+                }
+                for (j = 0; j < 10 - mutual_count; j += 2) {
+                    rand_pcb = rand() % 10;
+                    if (rand_pcb < 5) {
+                        create_sync_pcbs(1);
+                    } else {
+                        create_mutual_pcbs(1);
+                    }
+                }
                 int creation_count = 32 - readyQueue->queues[i]->size;
                 for (j = 0; j < creation_count; j++) {
-                    //create random pcbs here although we will need ten at least of the mutual users...
+                    rand_pcb = rand() % 10;
+                    if (rand_pcb < 5) {
+                        create_intense_pcb(1);
+                    } else if (rand_pcb >= 5) {
+                        create_io_pcb(1);
+                    }
                 }
+
             }
         } else if (i == 2) { // priority 2
+            if (readyQueue->queues[i]->size < 4) {
+                rand_pcb = rand() % 10;
+                if (rand_pcb < 5) {
+                    create_io_pcb(2);
+                } else {
+                    create_intense_pcb(2);
+                }
+            }
 
         } else if (i == 3) { // priority 3
-
+            if (readyQueue->queues[i]->size < 2) {
+                rand_pcb = rand() % 10;
+                if (rand_pcb < 5) {
+                    create_io_pcb(3);
+                } else {
+                    create_intense_pcb(3);
+                }
+            }
         }
     }
 }
