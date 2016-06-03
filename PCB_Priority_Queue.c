@@ -70,5 +70,4 @@ void PCB_Priority_Queue_print(PCB_Priority_Queue_p pq, enum PCB_ERROR *error) {
 		}
 		printf("-*\n");
 	}
-	printf("%u", pq->size);
 }
