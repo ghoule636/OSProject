@@ -21,7 +21,7 @@
 #include "PCB_Errors.h"
 
 // times must be under 1 billion
-#define SLEEP_TIME 90000000
+#define SLEEP_TIME 90000000 // nanoseconds
 #define IO_TIME_MIN SLEEP_TIME * 3
 #define IO_TIME_MAX SLEEP_TIME * 5
 
@@ -30,8 +30,8 @@
 #define DEADLOCK_POSSIBLE 0
 
 enum INTERRUPT_TYPE {
-	INTERRUPT_TYPE_TIMER = 1, 
-	INTERRUPT_TYPE_IO_A, 
+	INTERRUPT_TYPE_TIMER = 1,
+	INTERRUPT_TYPE_IO_A,
 	INTERRUPT_TYPE_IO_B
 };
 
@@ -57,7 +57,7 @@ enum PCB_ERROR error = PCB_SUCCESS;
 
 void* timer(void *arguments) {
 	struct timespec sleep_time;
-	timer_args_p args = (timer_args_p) arguments; 
+	timer_args_p args = (timer_args_p) arguments;
 	pthread_mutex_lock(args->mutex);
 	for(;;) {
 		int sleep_length = args->sleep_length_min + rand() % (args->sleep_length_max - args->sleep_length_min + 1);
@@ -98,6 +98,13 @@ void deadlock_detector() {
 void scheduler(enum INTERRUPT_TYPE interruptType) {
 	deadlock_detector();
 
+	// Removal of boost if needed.
+	if (PCB_is_boosting(currentPCB, &error) == true) {
+		PCB_set_boosting(currentPCB, false, &error);
+	}
+	set_last_executed(currentPCB, &error);
+
+
 	while (!PCB_Queue_is_empty(terminatedQueue, &error)) {
 		PCB_p p = PCB_Queue_dequeue(terminatedQueue, &error);
 		printf("Deallocated:\t");
@@ -111,6 +118,18 @@ void scheduler(enum INTERRUPT_TYPE interruptType) {
 		PCB_print(p, &error);
 		PCB_Priority_Queue_enqueue(readyQueue, p, &error);
 	}
+
+	// Boosting starved processes
+	for (int i = 0; i < readyQueue->size; i++) {
+		PCB_p temp = PCB_Priority_Queue_dequeue(readyQueue, &error);
+		if (temp->priority > 1) {
+			if (duration_met(temp, 1, &error) == true && PCB_is_boosting(temp, &error) == false) {
+				PCB_set_boosting(temp, true, &error)
+			}
+		}
+		PCB_Priority_Queue_enqueue(readyQueue, temp, &error);
+	}
+
 	if (interruptType == INTERRUPT_TYPE_TIMER) {
 		PCB_set_state(currentPCB, PCB_STATE_READY, &error);
 		if (PCB_get_pid(currentPCB, &error) != IDL_PID) {
@@ -179,7 +198,7 @@ void tsr(enum INTERRUPT_TYPE interruptType) {
 		PCB_print(currentPCB, &error);
 		printf("Waiting Queue B:");
 		PCB_Queue_print(waitingQueueB, &error);
-	} 
+	}
 	dispatcher();
 }
 
@@ -394,36 +413,36 @@ int main() {
 	pthread_mutex_t mutex_timer, mutex_io_a, mutex_io_b;
 	pthread_cond_t cond_timer, cond_io_a, cond_io_b;
 	timer_args_p system_timer_args, io_timer_a_args, io_timer_b_args;
-	
+
 	pthread_mutex_init(&mutex_timer, NULL);
 	pthread_mutex_init(&mutex_io_a, NULL);
 	pthread_mutex_init(&mutex_io_b, NULL);
-	
+
 	pthread_cond_init(&cond_timer, NULL);
 	pthread_cond_init(&cond_io_a, NULL);
 	pthread_cond_init(&cond_io_b, NULL);
-	
+
 	system_timer_args = malloc(sizeof(timer_arguments));
 	io_timer_a_args = malloc(sizeof(timer_arguments));
 	io_timer_b_args = malloc(sizeof(timer_arguments));
-	
+
 	system_timer_args->mutex = &mutex_timer;
 	system_timer_args->condition = &cond_timer;
 	system_timer_args->sleep_length_min = SLEEP_TIME;
 	system_timer_args->sleep_length_max = SLEEP_TIME;
-	
+
 	io_timer_a_args->mutex = &mutex_io_a;
 	io_timer_a_args->condition = &cond_io_a;
 	io_timer_a_args->sleep_length_min = IO_TIME_MIN;
 	io_timer_a_args->sleep_length_max = IO_TIME_MAX;
-	
+
 	io_timer_b_args->mutex = &mutex_io_b;
 	io_timer_b_args->condition = &cond_io_b;
 	io_timer_b_args->sleep_length_min = IO_TIME_MIN;
 	io_timer_b_args->sleep_length_max = IO_TIME_MAX;
-	
+
 	srand(time(NULL));
-	
+
 	pthread_create(&system_timer, NULL, &timer, (void*) system_timer_args);
 	pthread_create(&io_timer_a, NULL, &timer, (void*) io_timer_a_args);
 	pthread_create(&io_timer_b, NULL, &timer, (void*) io_timer_b_args);
@@ -445,13 +464,13 @@ int main() {
 		// 	Cond_print(currentPCB->consumer->condc);
 		// }
 
-		
+
 		if(system_timer_args->flag == 0 && !pthread_mutex_trylock(&mutex_timer)) {
 			system_timer_args->flag = 1;
 			isrTimer();
-			pthread_cond_signal(&cond_timer);	
+			pthread_cond_signal(&cond_timer);
 			pthread_mutex_unlock(&mutex_timer);
-		} 
+		}
 		if(io_timer_a_args->flag == 0 && !PCB_Queue_is_empty(waitingQueueA, &error) && !pthread_mutex_trylock(&mutex_io_a)) {
 			isrIO(INTERRUPT_TYPE_IO_A);
 			if (!PCB_Queue_is_empty(waitingQueueA, &error)) {
@@ -459,7 +478,7 @@ int main() {
 				pthread_cond_signal(&cond_io_a);
 			}
 			pthread_mutex_unlock(&mutex_io_a);
-		} 
+		}
 		if(io_timer_b_args->flag == 0 && !PCB_Queue_is_empty(waitingQueueB, &error) && !pthread_mutex_trylock(&mutex_io_b)) {
 			isrIO(INTERRUPT_TYPE_IO_B);
 			if (!PCB_Queue_is_empty(waitingQueueB, &error)) {
@@ -467,17 +486,17 @@ int main() {
 				pthread_cond_signal(&cond_io_b);
 			}
 			pthread_mutex_unlock(&mutex_io_b);
-		} 
+		}
 
 
 
 		if (currentPCB->mutual_user) {
-			if (currentPCB->mutual_user->mutex1->owner == currentPCB && 
+			if (currentPCB->mutual_user->mutex1->owner == currentPCB &&
 					currentPCB->mutual_user->mutex2->owner == currentPCB) {
 				printf("Mutual %lu uses both resources\n", currentPCB->pid);
-			} 
+			}
 		}
-		
+
 
 
 		for (int i = 0; i < PCB_TRAP_LENGTH; i++) {
@@ -487,14 +506,14 @@ int main() {
 					io_timer_a_args->flag = 1;
 					pthread_cond_signal(&cond_io_a);
 					pthread_mutex_unlock(&mutex_io_a);
-				} 
+				}
 			} else if (sysStack == currentPCB->io_2_traps[i]) {
 				tsr(INTERRUPT_TYPE_IO_B);
 				if(io_timer_b_args->flag == 0 && !pthread_mutex_trylock(&mutex_io_b)) {
 					io_timer_b_args->flag = 1;
 					pthread_cond_signal(&cond_io_b);
 					pthread_mutex_unlock(&mutex_io_b);
-				} 
+				}
 			} else if (sysStack == currentPCB->lock_traps[i]) {
 				if (currentPCB->producer && !Mutex_contains(currentPCB->producer->mutex, currentPCB)) {
 					printf("Producer %lu locks\n", currentPCB->pid);
@@ -507,7 +526,7 @@ int main() {
 					Mutex_lock(currentPCB->mutual_user->mutex1, currentPCB);
 				}
 			} else if (sysStack == currentPCB->lock2_traps[i]) {
-				if (currentPCB->mutual_user && !Mutex_contains(currentPCB->mutual_user->mutex2, currentPCB) 
+				if (currentPCB->mutual_user && !Mutex_contains(currentPCB->mutual_user->mutex2, currentPCB)
 							&& currentPCB->mutual_user->mutex1->owner == currentPCB) {
 					printf("Mutual %lu locks 2\n", currentPCB->pid);
 					Mutex_lock(currentPCB->mutual_user->mutex2, currentPCB);
@@ -541,15 +560,15 @@ int main() {
 				if (currentPCB->producer && currentPCB->producer->mutex->owner != currentPCB
 							&& !Cond_contains(currentPCB->producer->condp, currentPCB)) {
 					printf("Producer %lu waits\n", currentPCB->pid);
-					Cond_wait(currentPCB->producer->condp, 
+					Cond_wait(currentPCB->producer->condp,
 							currentPCB->producer->mutex, currentPCB);
 				} else if (currentPCB->consumer && currentPCB->consumer->mutex->owner != currentPCB
 							&& !Cond_contains(currentPCB->consumer->condc, currentPCB)) {
 					printf("Consumer %lu waits\n", currentPCB->pid);
-					Cond_wait(currentPCB->consumer->condc, 
+					Cond_wait(currentPCB->consumer->condc,
 							currentPCB->consumer->mutex, currentPCB);
 				}
-			} 
+			}
 		}
 
 		if (currentPCB->producer) {
@@ -558,17 +577,17 @@ int main() {
 					currentPCB->producer->data++;
 					printf("Producer %lu produces %u\n", currentPCB->pid, currentPCB->producer->data);
 					currentPCB->producer->flag = 1;
-				} 
+				}
 				step();
-			} 
+			}
 		} else if (currentPCB->consumer) {
 			if (currentPCB->consumer->mutex->owner == currentPCB || (!Cond_contains(currentPCB->consumer->condc, currentPCB) && currentPCB->consumer->flag == 1)) {
 				if (currentPCB->consumer->mutex->owner == currentPCB && currentPCB->consumer->flag == 1) {
 					printf("Consumer %lu consumes %u\n", currentPCB->pid, currentPCB->consumer->data);
 					currentPCB->consumer->flag = 0;
-				} 
+				}
 				step();
-			} 
+			}
 		} else {
 			step();
 		}

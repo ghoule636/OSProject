@@ -149,6 +149,9 @@ unsigned short PCB_get_priority(PCB_p p, enum PCB_ERROR *error) {
 		*error = PCB_NULL_POINTER;
 		return 0;
 	}
+	if (p->priority_boost == true) {
+		return (p->priority - 1);
+	}
 	return p->priority;
 }
 
@@ -233,4 +236,20 @@ bool PCB_is_boosting(PCB_p p, enum PCB_ERROR *error) {
 		return 0;
 	}
 	return p->priority_boost;
+}
+
+void set_last_executed(PCB_p p, enum PCB_ERROR *error) {
+	if (p == NULL) {
+		*error = PCB_NULL_POINTER;
+	} else {
+		p->last_executed = time(NULL);
+	}
+}
+
+bool duration_met(PCB_p p, int seconds, enum PCB_ERROR *error) {
+	if (p == NULL) {
+		*error = PCB_NULL_POINTER;
+		return 0;
+	}
+	return time(NULL) - p->last_executed >= seconds;
 }
