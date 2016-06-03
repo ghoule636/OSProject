@@ -85,7 +85,22 @@ void dispatcher() {
 	sysStack = PCB_get_pc(currentPCB, &error);
 }
 
+void deadlock_detector() {
+	if (currentPCB->mutual_user) {
+		Mutex_p m1 = currentPCB->mutual_user->mutex1;
+		Mutex_p m2 = currentPCB->mutual_user->mutex2;
+		if ((m1->owner == currentPCB && m2->owner != NULL && m2->owner != currentPCB &&
+				Mutex_contains(m2, currentPCB) && Mutex_contains(m1, m2->owner)) ||
+				(m2->owner == currentPCB && m1->owner != NULL && m1->owner != currentPCB &&
+				Mutex_contains(m1, currentPCB) && Mutex_contains(m2, m1->owner))) {
+			printf("deadlock detected\n");
+		}
+	}
+}
+
 void scheduler(enum INTERRUPT_TYPE interruptType) {
+	deadlock_detector();
+
 	while (!PCB_Queue_is_empty(terminatedQueue, &error)) {
 		PCB_p p = PCB_Queue_dequeue(terminatedQueue, &error);
 		printf("Deallocated:\t");
@@ -198,32 +213,32 @@ void initialize_globals() {
 	// }
 
 
-	for (int i = 0; i < 2; i += 2) {
-		PCB_p producer = PCB_construct(&error);
-		PCB_p consumer = PCB_construct(&error);
-		PCB_set_max_pc(producer, 6, &error);
-		PCB_set_max_pc(consumer, 6, &error);
-		Paired_User_p pu = malloc(sizeof(struct Paired_User));
-		pu->flag = 0;
-		pu->mutex = Mutex_construct();
-		pu->condc = Cond_construct();
-		pu->condp = Cond_construct();
-		pu->data = 0;
-		producer->producer = pu;
-		consumer->consumer = pu;
-		producer->pid = i;
-		consumer->pid = i + 1;
-		producer->lock_traps[0] = 0;
-		producer->wait_traps[0] = 1;
-		producer->unlock_traps[0] = 4;
-		producer->signal_traps[0] = 3;
-		consumer->lock_traps[0] = 0;
-		consumer->wait_traps[0] = 1;
-		consumer->unlock_traps[0] = 4;
-		consumer->signal_traps[0] = 3;
-		PCB_Queue_enqueue(createdQueue, producer, &error);
-		PCB_Queue_enqueue(createdQueue, consumer, &error);
-	}
+	// for (int i = 0; i < 2; i += 2) {
+	// 	PCB_p producer = PCB_construct(&error);
+	// 	PCB_p consumer = PCB_construct(&error);
+	// 	PCB_set_max_pc(producer, 6, &error);
+	// 	PCB_set_max_pc(consumer, 6, &error);
+	// 	Paired_User_p pu = malloc(sizeof(struct Paired_User));
+	// 	pu->flag = 0;
+	// 	pu->mutex = Mutex_construct();
+	// 	pu->condc = Cond_construct();
+	// 	pu->condp = Cond_construct();
+	// 	pu->data = 0;
+	// 	producer->producer = pu;
+	// 	consumer->consumer = pu;
+	// 	producer->pid = i;
+	// 	consumer->pid = i + 1;
+	// 	producer->lock_traps[0] = 0;
+	// 	producer->wait_traps[0] = 1;
+	// 	producer->unlock_traps[0] = 4;
+	// 	producer->signal_traps[0] = 3;
+	// 	consumer->lock_traps[0] = 0;
+	// 	consumer->wait_traps[0] = 1;
+	// 	consumer->unlock_traps[0] = 4;
+	// 	consumer->signal_traps[0] = 3;
+	// 	PCB_Queue_enqueue(createdQueue, producer, &error);
+	// 	PCB_Queue_enqueue(createdQueue, consumer, &error);
+	// }
 
 
 
@@ -250,6 +265,42 @@ void initialize_globals() {
 	// u2->unlock2_traps[0] = 4;
 	// PCB_Queue_enqueue(createdQueue, u1, &error);
 	// PCB_Queue_enqueue(createdQueue, u2, &error);
+
+	Mutex_p m1 = Mutex_construct();
+	Mutex_p m2 = Mutex_construct();
+
+	Mutual_User_p mu1 = malloc(sizeof(struct Mutual_User));
+	mu1->mutex1 = m1;
+	mu1->mutex2 = m2;
+	mu1->resource1 = 0;
+	mu1->resource2 = 0;
+
+	Mutual_User_p mu2 = malloc(sizeof(struct Mutual_User));
+	mu2->mutex1 = m2;
+	mu2->mutex2 = m1;
+	mu2->resource1 = 0;
+	mu2->resource2 = 0;
+
+	PCB_p u1 = PCB_construct(&error);
+	PCB_p u2 = PCB_construct(&error);
+	PCB_set_max_pc(u1, 6, &error);
+	PCB_set_max_pc(u2, 6, &error);
+
+	u1->mutual_user = mu1;
+	u2->mutual_user = mu2;
+
+	u1->pid = 0;
+	u2->pid = 1;
+	u1->lock_traps[0] = 0;
+	u1->lock2_traps[0] = 1;
+	u1->unlock_traps[0] = 3;
+	u1->unlock2_traps[0] = 4;
+	u2->lock_traps[0] = 0;
+	u2->lock2_traps[0] = 1;
+	u2->unlock_traps[0] = 3;
+	u2->unlock2_traps[0] = 4;
+	PCB_Queue_enqueue(createdQueue, u1, &error);
+	PCB_Queue_enqueue(createdQueue, u2, &error);
 }
 
 void step() {
