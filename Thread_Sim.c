@@ -263,60 +263,82 @@ void step() {
 	}
 }
 
-
-
-void create_pcbs() {
-    //checks quantity levels of pcbs
-    //int i;
-    //for (i = 0; i < )
-
-
-}
-
 void create_mutual_pcbs() {
 
 }
 
 void create_sync_pcbs() {
-    PCB_p producer = PCB_construct(&error);
-    PCB_p consumer = PCB_construct(&error);
-    PCB_set_max_pc(producer, 6, &error);
-    PCB_set_max_pc(consumer, 6, &error);
-    short priority = rand() + 1 % 3;
-    PCB_set_priority(producer, priority, &error);
-    Paired_User_p pu = malloc(sizeof(struct Paired_User));
-    pu->flag = 0;
-    pu->mutex = Mutex_construct();
-    pu->condc = Cond_construct();
-    pu->condp = Cond_construct();
-    pu->data = 0;
-    producer->producer = pu;
-    consumer->consumer = pu;
+    //PCB_p producer = PCB_construct(&error);
+    //PCB_p consumer = PCB_construct(&error);
+    //PCB_set_max_pc(producer, 6, &error);
+    //PCB_set_max_pc(consumer, 6, &error);
+    //short priority = rand() + 1 % 3;
+    //PCB_set_priority(producer, priority, &error);
+    //Paired_User_p pu = malloc(sizeof(struct Paired_User));
+    //pu->flag = 0;
+    //pu->mutex = Mutex_construct();
+    //pu->condc = Cond_construct();
+    //pu->condp = Cond_construct();
+    //pu->data = 0;
+    //producer->producer = pu;
+    //consumer->consumer = pu;
+    //int temp_pid = rand() % 100000;
+    //producer->pid = temp_pid;
+    //consumer->pid = temp_pid + 1;
+    ////if (DEADLOCK_POSSIBLE) {
+    //    producer->lock_traps[0] = 0;
+    //    producer->wait_traps[0] = 1;
+    //    producer->unlock_traps[0] = 4;
+    //    producer->signal_traps[0] = 3;
+    //    consumer->lock_traps[0] = 0;
+    //    consumer->wait_traps[0] = 1;
+    //    consumer->unlock_traps[0] = 4;
+    //    consumer->signal_traps[0] = 3;
+    ////}
+
+    //PCB_Queue_enqueue(createdQueue, producer, &error);
+    //PCB_Queue_enqueue(createdQueue, consumer, &error);
+}
+
+void create_io_pcb(int priority) {
+
+}
+
+void create_intense_pcb(int priority) {
+    PCB_p intense = PCB_construct(&error);
+    PCB_set_priority(intense, priority, &error);
     int temp_pid = rand() % 100000;
-    producer->pid = temp_pid;
-    consumer->pid = temp_pid + 1;
-    //if (DEADLOCK_POSSIBLE) {
-        producer->lock_traps[0] = 0;
-        producer->wait_traps[0] = 1;
-        producer->unlock_traps[0] = 4;
-        producer->signal_traps[0] = 3;
-        consumer->lock_traps[0] = 0;
-        consumer->wait_traps[0] = 1;
-        consumer->unlock_traps[0] = 4;
-        consumer->signal_traps[0] = 3;
-    //}
-
-    PCB_Queue_enqueue(createdQueue, producer, &error);
-    PCB_Queue_enqueue(createdQueue, consumer, &error);
+    intense->pid = temp_pid;
+    PCB_Priority_Queue_enqueue(readyQueue, intense, &error);
 }
 
-void create_io_pcb() {
+void create_pcbs() {
+    //checks quantity levels of pcbs
+    int i, j;
+    for (i = 0; i < PCB_PRIORITY_MAX; i++) {
+        if (!i) { // check priority 0
+            if (readyQueue->queues[i]->size < 2) {
+                int creation_count = 2 - readyQueue->queues[i]->size;
+                for (j = 0; j < creation_count; j++) {
+                    create_intense_pcb(0);
+                }
+            }
+        } else if (i == 1) { // priority 1
+            if (readyQueue->queues[i]->size < 32) {
+                int creation_count = 32 - readyQueue->queues[i]->size;
+                for (j = 0; j < creation_count; j++) {
+                    //create random pcbs here although we will need ten at least of the mutual users...
+                }
+            }
+        } else if (i == 2) { // priority 2
 
+        } else if (i == 3) { // priority 3
+
+        }
+    }
 }
 
-void create_intense_pcb() {
 
-}
 
 int main() {
 	pthread_t system_timer, io_timer_a, io_timer_b;
