@@ -17,6 +17,7 @@
 #include "Mutex.h"
 #include "Cond.h"
 #include "PCB_Queue.h"
+#include "PCB_Priority_Queue.h"
 #include "PCB_Errors.h"
 
 // times must be under 1 billion
@@ -45,7 +46,7 @@ typedef struct {
 typedef timer_arguments* timer_args_p;
 
 PCB_Queue_p createdQueue;
-PCB_Queue_p readyQueue;
+PCB_Priority_Queue_p readyQueue;
 PCB_Queue_p terminatedQueue;
 PCB_Queue_p waitingQueueA;
 PCB_Queue_p waitingQueueB;
@@ -69,15 +70,15 @@ void* timer(void *arguments) {
 }
 
 void dispatcher() {
-	if (!PCB_Queue_is_empty(readyQueue, &error)) {
-		currentPCB = PCB_Queue_dequeue(readyQueue, &error);
+	if (!PCB_Priority_Queue_is_empty(readyQueue, &error)) {
+		currentPCB = PCB_Priority_Queue_dequeue(readyQueue, &error);
 	} else {
 		currentPCB = idl;
 	}
 	printf("Switching to:\t");
 	PCB_print(currentPCB, &error);
 	printf("Ready Queue:\t");
-	PCB_Queue_print(readyQueue, &error);
+	PCB_Priority_Queue_print(readyQueue, &error);
 	PCB_set_state(currentPCB, PCB_STATE_RUNNING, &error);
 	sysStack = PCB_get_pc(currentPCB, &error);
 }
@@ -94,14 +95,14 @@ void scheduler(enum INTERRUPT_TYPE interruptType) {
 		PCB_set_state(p, PCB_STATE_READY, &error);
 		printf("Scheduled:\t");
 		PCB_print(p, &error);
-		PCB_Queue_enqueue(readyQueue, p, &error);
+		PCB_Priority_Queue_enqueue(readyQueue, p, &error);
 	}
 	if (interruptType == INTERRUPT_TYPE_TIMER) {
 		PCB_set_state(currentPCB, PCB_STATE_READY, &error);
 		if (PCB_get_pid(currentPCB, &error) != IDL_PID) {
 			printf("Returned:\t");
 			PCB_print(currentPCB, &error);
-			PCB_Queue_enqueue(readyQueue, currentPCB, &error);
+            PCB_Priority_Queue_enqueue(readyQueue, currentPCB, &error);
 		}
 		dispatcher();
 	} else if (interruptType == INTERRUPT_TYPE_IO_A) {
@@ -111,7 +112,7 @@ void scheduler(enum INTERRUPT_TYPE interruptType) {
 		printf("Waiting Queue A:");
 		PCB_Queue_print(waitingQueueA, &error);
 		PCB_set_state(p, PCB_STATE_READY, &error);
-		PCB_Queue_enqueue(readyQueue, p, &error);
+        PCB_Priority_Queue_enqueue(readyQueue, p, &error);
 	} else if (interruptType == INTERRUPT_TYPE_IO_B) {
 		PCB_p p = PCB_Queue_dequeue(waitingQueueB, &error);
 		printf("Moved from IO B:");
@@ -119,7 +120,7 @@ void scheduler(enum INTERRUPT_TYPE interruptType) {
 		printf("Waiting Queue B:");
 		PCB_Queue_print(waitingQueueA, &error);
 		PCB_set_state(p, PCB_STATE_READY, &error);
-		PCB_Queue_enqueue(readyQueue, p, &error);
+        PCB_Priority_Queue_enqueue(readyQueue, p, &error);
 	}
 }
 
@@ -183,7 +184,7 @@ void initialize_globals() {
 	createdQueue = PCB_Queue_construct(&error);
 	waitingQueueA = PCB_Queue_construct(&error);
 	waitingQueueB = PCB_Queue_construct(&error);
-	readyQueue = PCB_Queue_construct(&error);
+	readyQueue = PCB_Priority_Queue_construct(&error);
 	terminatedQueue = PCB_Queue_construct(&error);
 
 	// for (int j = 0; j < 16; j++) {
@@ -262,7 +263,13 @@ void step() {
 	}
 }
 
+
+
 void create_pcbs() {
+    //checks quantity levels of pcbs
+    //int i;
+    //for (i = 0; i < )
+
 
 }
 
@@ -271,36 +278,36 @@ void create_mutual_pcbs() {
 }
 
 void create_sync_pcbs() {
-    	PCB_p producer = PCB_construct(&error);
-    	PCB_p consumer = PCB_construct(&error);
-    	PCB_set_max_pc(producer, 6, &error);
-    	PCB_set_max_pc(consumer, 6, &error);
-        short priority = rand() + 1 % 3;
-        PCB_set_priority(producer, priority, &error);
-    	Paired_User_p pu = malloc(sizeof(struct Paired_User));
-    	pu->flag = 0;
-    	pu->mutex = Mutex_construct();
-    	pu->condc = Cond_construct();
-    	pu->condp = Cond_construct();
-    	pu->data = 0;
-    	producer->producer = pu;
-    	consumer->consumer = pu;
-        int temp_pid = rand() % 100000;
-    	producer->pid = temp_pid;
-    	consumer->pid = temp_pid + 1;
-        //if (DEADLOCK_POSSIBLE) {
-            producer->lock_traps[0] = 0;
-            producer->wait_traps[0] = 1;
-            producer->unlock_traps[0] = 4;
-            producer->signal_traps[0] = 3;
-            consumer->lock_traps[0] = 0;
-            consumer->wait_traps[0] = 1;
-            consumer->unlock_traps[0] = 4;
-            consumer->signal_traps[0] = 3;
-        //}
+    PCB_p producer = PCB_construct(&error);
+    PCB_p consumer = PCB_construct(&error);
+    PCB_set_max_pc(producer, 6, &error);
+    PCB_set_max_pc(consumer, 6, &error);
+    short priority = rand() + 1 % 3;
+    PCB_set_priority(producer, priority, &error);
+    Paired_User_p pu = malloc(sizeof(struct Paired_User));
+    pu->flag = 0;
+    pu->mutex = Mutex_construct();
+    pu->condc = Cond_construct();
+    pu->condp = Cond_construct();
+    pu->data = 0;
+    producer->producer = pu;
+    consumer->consumer = pu;
+    int temp_pid = rand() % 100000;
+    producer->pid = temp_pid;
+    consumer->pid = temp_pid + 1;
+    //if (DEADLOCK_POSSIBLE) {
+        producer->lock_traps[0] = 0;
+        producer->wait_traps[0] = 1;
+        producer->unlock_traps[0] = 4;
+        producer->signal_traps[0] = 3;
+        consumer->lock_traps[0] = 0;
+        consumer->wait_traps[0] = 1;
+        consumer->unlock_traps[0] = 4;
+        consumer->signal_traps[0] = 3;
+    //}
 
-    	PCB_Queue_enqueue(createdQueue, producer, &error);
-    	PCB_Queue_enqueue(createdQueue, consumer, &error);
+    PCB_Queue_enqueue(createdQueue, producer, &error);
+    PCB_Queue_enqueue(createdQueue, consumer, &error);
 }
 
 void create_io_pcb() {
