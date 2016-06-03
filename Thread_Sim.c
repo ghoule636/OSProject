@@ -122,7 +122,7 @@ void scheduler(enum INTERRUPT_TYPE interruptType) {
 		PCB_p temp = PCB_Priority_Queue_dequeue(readyQueue, &error);
 		if (temp->priority > 1) {
 			if (duration_met(temp, 1, &error) == true && PCB_is_boosting(temp, &error) == false) {
-				PCB_set_boosting(temp, true, &error)
+				PCB_set_boosting(temp, true, &error);
 			}
 		}
 		PCB_Priority_Queue_enqueue(readyQueue, temp, &error);
@@ -329,7 +329,7 @@ void create_sync_pcbs(int priority) {
 void create_io_pcb(int priority) {
     PCB_p io_process = PCB_construct(&error);
     PCB_set_priority(io_process, priority, &error);
-    
+
     int temp_pid = rand() % 100000;
     io_process->pid = temp_pid;
 

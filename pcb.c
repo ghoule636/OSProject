@@ -58,7 +58,7 @@ void PCB_set_state(PCB_p p, enum PCB_STATE_TYPE state, enum PCB_ERROR *error) {
 		*error = PCB_NULL_POINTER;
 		return;
 	}
-	if (state < 0 || state >= PCB_STATE_LAST_ERROR) {
+	if (/*state < 0 || */state >= PCB_STATE_LAST_ERROR) {
 		*error = PCB_INVALID_ARG;
 		return;
 	}
