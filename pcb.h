@@ -1,5 +1,6 @@
 #pragma once
 
+#include <stdbool.h>
 #include "PCB_Errors.h"
 // #include "Mutex.h"
 // #include "Cond.h"
@@ -53,6 +54,8 @@ struct PCB {
 	unsigned long io_1_traps[PCB_TRAP_LENGTH];
 	unsigned long io_2_traps[PCB_TRAP_LENGTH];
 
+	bool priority_boost;
+
 	Paired_User_p producer;
 	Paired_User_p consumer;
 	Mutual_User_p mutual_user;
@@ -81,6 +84,7 @@ void PCB_set_creation(PCB_p, unsigned long, enum PCB_ERROR*);
 void PCB_set_termination(PCB_p, unsigned long, enum PCB_ERROR*);
 void PCB_set_terminate(PCB_p, unsigned int, enum PCB_ERROR*);
 void PCB_set_term_count(PCB_p, unsigned int, enum PCB_ERROR*);
+void PCB_set_boosting(PCB_p, bool, enum PCB_ERROR*);
 
 unsigned long PCB_get_pid(PCB_p, enum PCB_ERROR*);  // returns pid of the process
 unsigned short PCB_get_priority(PCB_p, enum PCB_ERROR*);
@@ -92,6 +96,7 @@ unsigned long PCB_get_creation(PCB_p, enum PCB_ERROR*);
 unsigned long PCB_get_termination(PCB_p, enum PCB_ERROR*);
 unsigned int PCB_get_terminate(PCB_p, enum PCB_ERROR*);
 unsigned int PCB_get_term_count(PCB_p, enum PCB_ERROR*);
+bool PCB_is_boosting(PCB_p, enum PCB_ERROR*);
 
 void PCB_print(PCB_p, enum PCB_ERROR*);  // a string representing the contents of the pcb
 
