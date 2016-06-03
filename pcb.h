@@ -27,6 +27,7 @@ struct Paired_User {
 	struct Cond *condc;
 	struct Cond *condp;
 	int data;
+	int *dead;
 };
 
 typedef struct Paired_User* Paired_User_p;
@@ -36,6 +37,7 @@ struct Mutual_User {
 	struct Mutex *mutex2;
 	int resource1;
 	int resource2;
+	int *dead;
 };
 
 typedef struct Mutual_User *Mutual_User_p;
