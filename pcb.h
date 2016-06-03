@@ -1,86 +1,104 @@
-/*
- * Group 3 OS Project
- * Spring 2016
- * Authors: Antonio Alvillar, Bethany Eastman, Gabriel Houle & Edgardo Gutierrez Jr.
- * GitHub: https://github.com/ghoule636/OSProject
- */
+#pragma once
 
-#ifndef PCB_H
-#define PCB_H
-//#include <string.h>
-//#include <stdio.h>
-//#include <stdlib.h>
+#include <stdbool.h>
+#include "PCB_Errors.h"
+// #include "Mutex.h"
+// #include "Cond.h"
 
-/* Default values */
-#define DEFAULT_PID 0
-#define DEFAULT_STATE 0
-#define DEFAULT_PC 0
-#define DEFAULT_PRIORITY 0
+#define PCB_PRIORITY_MAX 3
+#define PCB_TRAP_LENGTH 4
 
-/* Error Handling Values */
-#define SUCCESS 0
-#define NULL_OBJECT -1
+enum PCB_STATE_TYPE {
+	PCB_STATE_NEW = 0, 
+	PCB_STATE_READY, 
+	PCB_STATE_RUNNING, 
+	PCB_STATE_INTERRUPTED, 
+	PCB_STATE_WAITING, 
+	PCB_STATE_HALTED,
 
-/* typedefs for State, PCB, and PCB_p */
-typedef enum state_type {
-  new, ready, running, interrupted, waiting, halted
-} State;
+	PCB_STATE_LAST_ERROR, // invalid type, used for bounds checking
 
-typedef int bool;
-#define true 1
-#define false 0
+	PCB_STATE_ERROR // Used as return value if null pointer is passed to getter.
+};
 
-typedef struct pcb {
-  unsigned long pid;
-  State state;
-  unsigned short priority;
-  unsigned long pc;
+struct Paired_User {
+	int flag;
+	struct Mutex *mutex;
+	struct Cond *condc;
+	struct Cond *condp;
+	int data;
+	int *dead;
+};
 
-  int MAX_PC; // after PC reaches this, reset to zero
-  char * creation; //computer clock time when a process is created. 
-  char * termination; //computer clock time when process terminates and goes into termination list
-  int TERMINATE; //process will terminate after this (1) many times it passes the MAX_PC
-  int term_count; // counter to keep track of how many times the process has passed MAX_PC
-  int IO_trap1[4]; //four numbers representing the PC counter where the process will execute -
-  int IO_trap2[4]; //an I/O service trap. Each # assigned random, no duplicates
+typedef struct Paired_User* Paired_User_p;
 
-  bool boosting; // flag for temporary boost in priority for a quantum. 
-  //char * lastRunTime;
-  //int mutexCalls[?];
+struct Mutual_User {
+	struct Mutex *mutex1;
+	struct Mutex *mutex2;
+	int resource1;
+	int resource2;
+	int *dead;
+};
 
-} PCB;
+typedef struct Mutual_User *Mutual_User_p;
 
-typedef PCB * PCB_p;
+struct PCB {
+    unsigned long pid;        // process ID #, a unique number
+	unsigned short priority;  // priorities 0=highest, 15=lowest
+	enum PCB_STATE_TYPE state;    // process state (running, waiting, etc.)
+	unsigned long pc;         // holds the current pc value when preempted
+	unsigned int sw;
+	unsigned long max_pc;
+	unsigned long creation;
+	unsigned long termination;
+	unsigned int terminate;
+	unsigned int term_count;
+	unsigned long io_1_traps[PCB_TRAP_LENGTH];
+	unsigned long io_2_traps[PCB_TRAP_LENGTH];
 
-/* Function Prototypes */
-PCB_p PCB_construct(void);
-void PCB_destruct(PCB_p pcb);
-int PCB_init(PCB_p pcb);
-int PCB_set_pid(PCB_p pcb, unsigned long pid);
-unsigned long PCB_get_pid(PCB_p pcb);
-int PCB_set_state(PCB_p pcb, State state);
-State PCB_get_state(PCB_p pcb);
-int PCB_set_priority(PCB_p pcb, unsigned short priority);
-unsigned short PCB_get_priority(PCB_p pcb);
-int PCB_set_pc(PCB_p pcb, unsigned long pc);
-unsigned long PCB_get_pc(PCB_p pcb);
-char * PCB_toString(PCB_p pcb, char * string);
-// new fields (getters/setters)
-int PCB_get_MAX_PC();
-void PCB_set_creation(PCB_p, char*);
-void PCB_set_termination(PCB_p, char*);
-int PCB_get_TERMINATE();
-void PCB_set_term_count(PCB_p, int);
-int PCB_get_term_count(PCB_p);
-//void PCB_set_trap1(int);
-int PCB_get_trap1(PCB_p, int);
-//void PCB_set_trap2(int);
-int PCB_get_trap2(PCB_p, int);
+	bool priority_boost;
 
-bool isBoosting(PCB_p); 
-void setBoosting(PCB_p, bool);
+	Paired_User_p producer;
+	Paired_User_p consumer;
+	Mutual_User_p mutual_user;
 
-//void createConsumerPair();
+	unsigned long lock_traps[PCB_TRAP_LENGTH];
+	unsigned long lock2_traps[PCB_TRAP_LENGTH];
+	unsigned long unlock_traps[PCB_TRAP_LENGTH];
+	unsigned long unlock2_traps[PCB_TRAP_LENGTH];
+	unsigned long signal_traps[PCB_TRAP_LENGTH];
+	unsigned long wait_traps[PCB_TRAP_LENGTH];
+};
 
-#include "pcb.c"
-#endif
+typedef struct PCB * PCB_p;
+
+PCB_p PCB_construct(enum PCB_ERROR*); // returns a pcb pointer to heap allocation
+void PCB_destruct(PCB_p, enum PCB_ERROR*);  // deallocates pcb from the heap
+void PCB_init(PCB_p, enum PCB_ERROR*);       // sets default values for member data
+
+void PCB_set_pid(PCB_p, unsigned long, enum PCB_ERROR*);///////
+void PCB_set_priority(PCB_p, unsigned short, enum PCB_ERROR*);
+void PCB_set_state(PCB_p, enum PCB_STATE_TYPE, enum PCB_ERROR*);
+void PCB_set_pc(PCB_p, unsigned long, enum PCB_ERROR*);
+void PCB_set_sw(PCB_p, unsigned int, enum PCB_ERROR*);
+void PCB_set_max_pc(PCB_p, unsigned long, enum PCB_ERROR*);
+void PCB_set_creation(PCB_p, unsigned long, enum PCB_ERROR*);
+void PCB_set_termination(PCB_p, unsigned long, enum PCB_ERROR*);
+void PCB_set_terminate(PCB_p, unsigned int, enum PCB_ERROR*);
+void PCB_set_term_count(PCB_p, unsigned int, enum PCB_ERROR*);
+void PCB_set_boosting(PCB_p, bool, enum PCB_ERROR*);
+
+unsigned long PCB_get_pid(PCB_p, enum PCB_ERROR*);  // returns pid of the process
+unsigned short PCB_get_priority(PCB_p, enum PCB_ERROR*);
+enum PCB_STATE_TYPE PCB_get_state(PCB_p, enum PCB_ERROR*);
+unsigned long PCB_get_pc(PCB_p, enum PCB_ERROR*);
+unsigned int PCB_get_sw(PCB_p, enum PCB_ERROR*);
+unsigned long PCB_get_max_pc(PCB_p, enum PCB_ERROR*);
+unsigned long PCB_get_creation(PCB_p, enum PCB_ERROR*);
+unsigned long PCB_get_termination(PCB_p, enum PCB_ERROR*);
+unsigned int PCB_get_terminate(PCB_p, enum PCB_ERROR*);
+unsigned int PCB_get_term_count(PCB_p, enum PCB_ERROR*);
+bool PCB_is_boosting(PCB_p, enum PCB_ERROR*);
+
+void PCB_print(PCB_p, enum PCB_ERROR*);  // a string representing the contents of the pcb
+
