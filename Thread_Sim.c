@@ -74,7 +74,7 @@ void dispatcher() {
     }
     printf("Switching to:\t");
     PCB_print(currentPCB, &error);
-    printf("Ready Queue:\t");
+    printf("Ready Queue:\t\n");
     PCB_Priority_Queue_print(readyQueue, &error);
     PCB_set_state(currentPCB, PCB_STATE_RUNNING, &error);
     sysStack = PCB_get_pc(currentPCB, &error);
@@ -239,8 +239,10 @@ void initialize_globals() {
     //     printf("Created:\t");
     //     PCB_print(p, &error);
     // }
+    // create_mutual_pcbs(3);
+    // create_mutual_pcbs(3);
     create_mutual_pcbs(3);
-//     create_sync_pcbs(3);
+    create_sync_pcbs(3);
 }
 
 void step() {
@@ -262,6 +264,7 @@ void create_mutual_pcbs(int priority) {
     Mutex_p m1 = Mutex_construct();
     Mutex_p m2 = Mutex_construct();
     Mutual_User_p mu = malloc(sizeof(struct Mutual_User));
+    mu->id = rand() % 10000;
     mu->mutex1 = m1;
     mu->mutex2 = m2;
     mu->resource1 = 0;
@@ -286,6 +289,7 @@ void create_mutual_pcbs(int priority) {
     u1->mutual_user = mu;
     if (DEADLOCK_POSSIBLE) {
         Mutual_User_p mu2 = malloc(sizeof(struct Mutual_User));
+        mu2->id = mu->id;
         mu2->mutex1 = m2;
         mu2->mutex2 = m1;
         mu2->resource1 = 0;
@@ -312,6 +316,7 @@ void create_sync_pcbs(int priority) {
     PCB_set_priority(producer, priority, &error);
     PCB_set_priority(consumer, priority, &error);
     Paired_User_p pu = malloc(sizeof(struct Paired_User));
+    pu->id = rand() % 10000;
     pu->flag = 0;
     pu->mutex = Mutex_construct();
     pu->condc = Cond_construct();
@@ -527,7 +532,7 @@ int main() {
         if (currentPCB->mutual_user) {
             if (currentPCB->mutual_user->mutex1->owner == currentPCB && 
                     currentPCB->mutual_user->mutex2->owner == currentPCB) {
-                printf("Mutual %lu uses both resources\n", currentPCB->pid);
+                printf("Mutual 0x%lX of pair %u uses both resources\n", currentPCB->pid, currentPCB->mutual_user->id);
             } 
         }
         
@@ -550,57 +555,55 @@ int main() {
                 } 
             } else if (sysStack == currentPCB->lock_traps[i]) {
                 if (currentPCB->producer && !Mutex_contains(currentPCB->producer->mutex, currentPCB)) {
-                    printf("Producer %lu locks\n", currentPCB->pid);
+                    printf("Producer 0x%lX of pair %u locks\n", currentPCB->pid, currentPCB->producer->id);
                     Mutex_lock(currentPCB->producer->mutex, currentPCB);
                 } else if (currentPCB->consumer && !Mutex_contains(currentPCB->consumer->mutex, currentPCB)) {
-                    printf("Consumer %lu locks\n", currentPCB->pid);
+                    printf("Consumer 0x%lX of pair %u locks\n", currentPCB->pid, currentPCB->consumer->id);
                     Mutex_lock(currentPCB->consumer->mutex, currentPCB);
                 } else if (currentPCB->mutual_user && !Mutex_contains(currentPCB->mutual_user->mutex1, currentPCB)) {
-                    printf("Mutual %lu locks 1\n", currentPCB->pid);
+                    printf("Mutual 0x%lX of pair %u locks 1\n", currentPCB->pid, currentPCB->mutual_user->id);
                     Mutex_lock(currentPCB->mutual_user->mutex1, currentPCB);
                 }
             } else if (sysStack == currentPCB->lock2_traps[i]) {
                 if (currentPCB->mutual_user && !Mutex_contains(currentPCB->mutual_user->mutex2, currentPCB) 
                             && currentPCB->mutual_user->mutex1->owner == currentPCB) {
-                    printf("Mutual %lu locks 2\n", currentPCB->pid);
+                    printf("Mutual 0x%lX of pair %u locks 2\n", currentPCB->pid, currentPCB->mutual_user->id);
                     Mutex_lock(currentPCB->mutual_user->mutex2, currentPCB);
                 }
             } else if (sysStack == currentPCB->unlock_traps[i]) {
                 if (currentPCB->producer && currentPCB->producer->mutex->owner == currentPCB) {
-                    printf("Producer %lu unlocks\n", currentPCB->pid);
+                    printf("Producer 0x%lX of pair %u unlocks\n", currentPCB->pid, currentPCB->producer->id);
                     Mutex_unlock(currentPCB->producer->mutex, currentPCB);
                 } else if (currentPCB->consumer && currentPCB->consumer->mutex->owner == currentPCB) {
-                    printf("Consumer %lu unlocks\n", currentPCB->pid);
+                    printf("Consumer 0x%lX of pair %u unlocks\n", currentPCB->pid, currentPCB->consumer->id);
                     Mutex_unlock(currentPCB->consumer->mutex, currentPCB);
                 } else if (currentPCB->mutual_user && currentPCB->mutual_user->mutex1->owner == currentPCB
                         /*&& currentPCB->mutual_user->mutex2->owner == currentPCB*/) {
-                    printf("Mutual %lu unlocks 1\n", currentPCB->pid);
+                    printf("Mutual 0x%lX of pair %u unlocks 1\n", currentPCB->pid, currentPCB->mutual_user->id);
                     Mutex_unlock(currentPCB->mutual_user->mutex1, currentPCB);
                 }
             } else if (sysStack == currentPCB->unlock2_traps[i]) {
                 if (currentPCB->mutual_user && currentPCB->mutual_user->mutex2->owner == currentPCB) {
-                    printf("Mutual %lu unlocks 2\n", currentPCB->pid);
+                    printf("Mutual 0x%lX of pair %u unlocks 2\n", currentPCB->pid, currentPCB->mutual_user->id);
                     Mutex_unlock(currentPCB->mutual_user->mutex2, currentPCB);
                 }
             } else if (sysStack == currentPCB->signal_traps[i]) {
                 if (currentPCB->producer && currentPCB->producer->mutex->owner == currentPCB) {
-                    printf("Producer %lu signal\n", currentPCB->pid);
+                    printf("Producer 0x%lX of pair %u signals\n", currentPCB->pid, currentPCB->producer->id);
                     Cond_signal(currentPCB->producer->condc);
                 } else if (currentPCB->consumer && currentPCB->consumer->mutex->owner == currentPCB) {
-                    printf("Consumer %lu signal\n", currentPCB->pid);
+                    printf("Consumer 0x%lX of pair %u signals\n", currentPCB->pid, currentPCB->consumer->id);
                     Cond_signal(currentPCB->consumer->condp);
                 }
             } else if (sysStack == currentPCB->wait_traps[i]) {
                 if (currentPCB->producer && currentPCB->producer->mutex->owner != currentPCB
                             && !Cond_contains(currentPCB->producer->condp, currentPCB)) {
-                    printf("Producer %lu waits\n", currentPCB->pid);
-                    Cond_wait(currentPCB->producer->condp, 
-                            currentPCB->producer->mutex, currentPCB);
+                    printf("Producer 0x%lX of pair %u waits\n", currentPCB->pid, currentPCB->producer->id);
+                    Cond_wait(currentPCB->producer->condp, currentPCB->producer->mutex, currentPCB);
                 } else if (currentPCB->consumer && currentPCB->consumer->mutex->owner != currentPCB
                             && !Cond_contains(currentPCB->consumer->condc, currentPCB)) {
-                    printf("Consumer %lu waits\n", currentPCB->pid);
-                    Cond_wait(currentPCB->consumer->condc, 
-                            currentPCB->consumer->mutex, currentPCB);
+                    printf("Consumer 0x%lX of pair %u waits\n", currentPCB->pid, currentPCB->consumer->id);
+                    Cond_wait(currentPCB->consumer->condc, currentPCB->consumer->mutex, currentPCB);
                 }
             } 
         }
@@ -609,7 +612,7 @@ int main() {
             if (currentPCB->producer->mutex->owner == currentPCB || (!Cond_contains(currentPCB->producer->condp, currentPCB) && currentPCB->producer->flag == 0)) {
                 if (currentPCB->producer->mutex->owner == currentPCB && currentPCB->producer->flag == 0) {
                     currentPCB->producer->data++;
-                    printf("Producer %lu produces %u\n", currentPCB->pid, currentPCB->producer->data);
+                    printf("Producer 0x%lX of pair %u produces %u\n", currentPCB->pid, currentPCB->producer->id, currentPCB->producer->data);
                     currentPCB->producer->flag = 1;
                 } 
                 step();
@@ -617,7 +620,7 @@ int main() {
         } else if (currentPCB->consumer) {
             if (currentPCB->consumer->mutex->owner == currentPCB || (!Cond_contains(currentPCB->consumer->condc, currentPCB) && currentPCB->consumer->flag == 1)) {
                 if (currentPCB->consumer->mutex->owner == currentPCB && currentPCB->consumer->flag == 1) {
-                    printf("Consumer %lu consumes %u\n", currentPCB->pid, currentPCB->consumer->data);
+                    printf("Consumer 0x%lX of pair %u consumes %u\n", currentPCB->pid, currentPCB->consumer->id, currentPCB->consumer->data);
                     currentPCB->consumer->flag = 0;
                 } 
                 step();
