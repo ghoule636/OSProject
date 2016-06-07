@@ -22,6 +22,7 @@ enum PCB_STATE_TYPE {
 };
 
 struct Paired_User {
+	int id;
 	int flag;
 	struct Mutex *mutex;
 	struct Cond *condc;
@@ -33,6 +34,7 @@ struct Paired_User {
 typedef struct Paired_User* Paired_User_p;
 
 struct Mutual_User {
+	int id;
 	struct Mutex *mutex1;
 	struct Mutex *mutex2;
 	int resource1;

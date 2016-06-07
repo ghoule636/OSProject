@@ -149,6 +149,39 @@ void isrIO(enum INTERRUPT_TYPE interruptType) {
 }
 
 void terminate() {
+    if (currentPCB->producer) {
+        if (*(currentPCB->producer->dead)) {
+            free(currentPCB->producer->dead);
+            free(currentPCB->producer->mutex);
+            free(currentPCB->producer->condc);
+            free(currentPCB->producer->condp);
+            free(currentPCB->producer);
+            currentPCB->producer = NULL;
+        } else {
+            *(currentPCB->producer->dead) = 1;
+        }
+    } else if (currentPCB->consumer) {
+        if (*(currentPCB->consumer->dead)) {
+            free(currentPCB->consumer->dead);
+            free(currentPCB->consumer->mutex);
+            free(currentPCB->consumer->condc);
+            free(currentPCB->consumer->condp);
+            free(currentPCB->consumer);
+            currentPCB->consumer = NULL;
+        } else {
+            *(currentPCB->consumer->dead) = 1;
+        }
+    } else if (currentPCB->mutual_user) {
+        if (*(currentPCB->mutual_user->dead)) {
+            free(currentPCB->mutual_user->dead);
+            free(currentPCB->mutual_user->mutex1);
+            free(currentPCB->mutual_user->mutex2);
+            free(currentPCB->mutual_user);
+            currentPCB->mutual_user = NULL;
+        } else {
+            *(currentPCB->mutual_user->dead) = 1;
+        }
+    }
 	printf("Switching from:\t");
 	PCB_print(currentPCB, &error);
 	PCB_set_pc(currentPCB, sysStack, &error);
@@ -451,7 +484,12 @@ int main() {
 			return 1;
 		}
 
-
+        if ((currentPCB->producer && *(currentPCB->producer->dead)) ||
+                (currentPCB->consumer && *(currentPCB->consumer->dead)) ||
+                (currentPCB->mutual_user && *(currentPCB->mutual_user->dead))) {
+            terminate();
+        }
+        
 		// if (currentPCB->producer) {
 		// 	Mutex_print(currentPCB->producer->mutex);
 		// 	Cond_print(currentPCB->producer->condp);
