@@ -489,7 +489,7 @@ int main() {
                 (currentPCB->mutual_user && *(currentPCB->mutual_user->dead))) {
             terminate();
         }
-        
+
         // if (currentPCB->producer) {
         //     Mutex_print(currentPCB->producer->mutex);
         //     Cond_print(currentPCB->producer->condp);
@@ -573,7 +573,7 @@ int main() {
                     printf("Consumer %lu unlocks\n", currentPCB->pid);
                     Mutex_unlock(currentPCB->consumer->mutex, currentPCB);
                 } else if (currentPCB->mutual_user && currentPCB->mutual_user->mutex1->owner == currentPCB
-                        && currentPCB->mutual_user->mutex2->owner == currentPCB) {
+                        /*&& currentPCB->mutual_user->mutex2->owner == currentPCB*/) {
                     printf("Mutual %lu unlocks 1\n", currentPCB->pid);
                     Mutex_unlock(currentPCB->mutual_user->mutex1, currentPCB);
                 }
@@ -622,9 +622,15 @@ int main() {
                 } 
                 step();
             } 
+        } else if (currentPCB->mutual_user) {
+            if ((currentPCB->mutual_user->mutex1->owner != currentPCB && Mutex_contains(currentPCB->mutual_user->mutex1, currentPCB)) ||
+                    (currentPCB->mutual_user->mutex2->owner != currentPCB && Mutex_contains(currentPCB->mutual_user->mutex2, currentPCB)) ) {
+
+            } else {
+                step();
+            }
         } else {
             step();
         }
     }
 }
-//producer-consumer only unlock if flag
