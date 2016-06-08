@@ -22,6 +22,7 @@ enum PCB_STATE_TYPE {
 };
 
 struct Paired_User {
+	int id;
 	int flag;
 	struct Mutex *mutex;
 	struct Cond *condc;
@@ -33,6 +34,7 @@ struct Paired_User {
 typedef struct Paired_User* Paired_User_p;
 
 struct Mutual_User {
+	int id;
 	struct Mutex *mutex1;
 	struct Mutex *mutex2;
 	int resource1;
@@ -55,6 +57,7 @@ struct PCB {
 	unsigned int term_count;
 	unsigned long io_1_traps[PCB_TRAP_LENGTH];
 	unsigned long io_2_traps[PCB_TRAP_LENGTH];
+	unsigned long last_executed;
 
 	bool priority_boost;
 
@@ -87,6 +90,7 @@ void PCB_set_termination(PCB_p, unsigned long, enum PCB_ERROR*);
 void PCB_set_terminate(PCB_p, unsigned int, enum PCB_ERROR*);
 void PCB_set_term_count(PCB_p, unsigned int, enum PCB_ERROR*);
 void PCB_set_boosting(PCB_p, bool, enum PCB_ERROR*);
+void set_last_executed(PCB_p p, enum PCB_ERROR *error);
 
 unsigned long PCB_get_pid(PCB_p, enum PCB_ERROR*);  // returns pid of the process
 unsigned short PCB_get_priority(PCB_p, enum PCB_ERROR*);
@@ -99,6 +103,7 @@ unsigned long PCB_get_termination(PCB_p, enum PCB_ERROR*);
 unsigned int PCB_get_terminate(PCB_p, enum PCB_ERROR*);
 unsigned int PCB_get_term_count(PCB_p, enum PCB_ERROR*);
 bool PCB_is_boosting(PCB_p, enum PCB_ERROR*);
+bool duration_met(PCB_p p, int seconds, enum PCB_ERROR *error);
 
 void PCB_print(PCB_p, enum PCB_ERROR*);  // a string representing the contents of the pcb
 

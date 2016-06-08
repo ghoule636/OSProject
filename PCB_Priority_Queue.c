@@ -65,9 +65,9 @@ void PCB_Priority_Queue_print(PCB_Priority_Queue_p pq, enum PCB_ERROR *error) {
 		printf("Q%u: Count=%u: ", i, q->size);
 		struct node *n = q->first_node_ptr;
 		while (n != NULL) {
-			printf("->%lu", n->value->pid);
+			printf("%lX->", n->value->pid);
 			n = n->next_node;
 		}
-		printf("-*\n");
+		printf("*\n");
 	}
 }
