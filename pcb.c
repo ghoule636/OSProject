@@ -234,3 +234,19 @@ bool PCB_is_boosting(PCB_p p, enum PCB_ERROR *error) {
 	}
 	return p->priority_boost;
 }
+
+void set_last_executed(PCB_p p, enum PCB_ERROR *error) {
+	if (p == NULL) {
+		*error = PCB_NULL_POINTER;
+	} else {
+		p->last_executed = time(NULL);
+	}
+}
+
+bool duration_met(PCB_p p, int seconds, enum PCB_ERROR *error) {
+	if (p == NULL) {
+		*error = PCB_NULL_POINTER;
+		return 0;
+	}
+	return time(NULL) - p->last_executed >= seconds;
+}

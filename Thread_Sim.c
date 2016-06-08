@@ -99,6 +99,12 @@ void scheduler(enum INTERRUPT_TYPE interruptType) {
     deadlock_detector();
     create_pcbs();
 
+    // Removal of boost if needed.
+    if (PCB_is_boosting(currentPCB, &error) == true) {
+        PCB_set_boosting(currentPCB, false, &error);
+    }
+    set_last_executed(currentPCB, &error);
+
     while (!PCB_Queue_is_empty(terminatedQueue, &error)) {
         PCB_p p = PCB_Queue_dequeue(terminatedQueue, &error);
         printf("Deallocated:\t");
@@ -112,6 +118,18 @@ void scheduler(enum INTERRUPT_TYPE interruptType) {
         PCB_print(p, &error);
         PCB_Priority_Queue_enqueue(readyQueue, p, &error);
     }
+
+    // Boosting starved processes
+    for (int i = 0; i < readyQueue->size; i++) {
+        PCB_p temp = PCB_Priority_Queue_dequeue(readyQueue, &error);
+        if (temp->priority > 1) {
+            if (duration_met(temp, 1, &error) == true && PCB_is_boosting(temp, &error) == false) {
+                PCB_set_boosting(temp, true, &error);
+            }
+        }
+        PCB_Priority_Queue_enqueue(readyQueue, temp, &error);
+    }
+
     if (interruptType == INTERRUPT_TYPE_TIMER) {
         PCB_set_state(currentPCB, PCB_STATE_READY, &error);
         if (PCB_get_pid(currentPCB, &error) != IDL_PID) {
