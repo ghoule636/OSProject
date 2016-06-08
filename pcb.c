@@ -20,6 +20,7 @@ PCB_p PCB_construct(enum PCB_ERROR *error) {
 	PCB_set_terminate(p, 0, error);
 	PCB_set_term_count(p, 0, error);
 	PCB_set_creation(p, time(NULL), error);
+	set_last_executed(p, error);
 	PCB_set_termination(p, 0, error);
 	for (int i = 0; i < PCB_TRAP_LENGTH; i++) {
 		p->io_1_traps[i] = 6000000;
@@ -33,7 +34,6 @@ PCB_p PCB_construct(enum PCB_ERROR *error) {
 	p->producer = NULL;
 	p->consumer = NULL;
 	p->mutual_user = NULL;
-
 
 	return p;
 }
@@ -149,7 +149,7 @@ unsigned short PCB_get_priority(PCB_p p, enum PCB_ERROR *error) {
 		*error = PCB_NULL_POINTER;
 		return 0;
 	}
-	return p->priority;
+	return p->priority - p->priority_boost;
 }
 
 unsigned long PCB_get_pc(PCB_p p, enum PCB_ERROR *error) {

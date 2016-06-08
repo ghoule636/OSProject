@@ -100,8 +100,10 @@ void scheduler(enum INTERRUPT_TYPE interruptType) {
     create_pcbs();
 
     // Removal of boost if needed.
-    if (PCB_is_boosting(currentPCB, &error) == true) {
+    if (PCB_is_boosting(currentPCB, &error)) {
         PCB_set_boosting(currentPCB, false, &error);
+        printf("Boost off:\t");
+        PCB_print(currentPCB, &error);
     }
     set_last_executed(currentPCB, &error);
 
@@ -120,15 +122,19 @@ void scheduler(enum INTERRUPT_TYPE interruptType) {
     }
 
     // Boosting starved processes
-    for (int i = 0; i < readyQueue->size; i++) {
-        PCB_p temp = PCB_Priority_Queue_dequeue(readyQueue, &error);
-        if (temp->priority > 1) {
-            if (duration_met(temp, 1, &error) == true && PCB_is_boosting(temp, &error) == false) {
+    for (int i = 1; i <= PCB_PRIORITY_MAX; i++) {
+        for (int j = 0; j < readyQueue->queues[i]->size; j++) {
+            PCB_p temp = PCB_Queue_dequeue(readyQueue->queues[i], &error);
+            readyQueue->size--;
+            if (duration_met(temp, 3, &error) && !PCB_is_boosting(temp, &error)) {
                 PCB_set_boosting(temp, true, &error);
+                printf("Boost on:\t");
+                PCB_print(temp, &error);
             }
+            PCB_Priority_Queue_enqueue(readyQueue, temp, &error);
         }
-        PCB_Priority_Queue_enqueue(readyQueue, temp, &error);
     }
+    
 
     if (interruptType == INTERRUPT_TYPE_TIMER) {
         PCB_set_state(currentPCB, PCB_STATE_READY, &error);
