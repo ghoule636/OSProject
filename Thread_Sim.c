@@ -26,6 +26,8 @@
 
 void create_mutual_pcbs(int priority);
 void create_sync_pcbs(int priority);
+void create_io_pcb(int priority);
+void create_pcbs();
 
 enum INTERRUPT_TYPE {
     INTERRUPT_TYPE_TIMER = 1, 
@@ -88,13 +90,14 @@ void deadlock_detector() {
                 Mutex_contains(m2, currentPCB) && Mutex_contains(m1, m2->owner)) ||
                 (m2->owner == currentPCB && m1->owner != NULL && m1->owner != currentPCB &&
                 Mutex_contains(m1, currentPCB) && Mutex_contains(m2, m1->owner))) {
-            printf("deadlock detected\n");
+            printf("Deadlock detected on Mutual pair %u, PID: 0x%lX & 0x%lX\n", currentPCB->mutual_user->id, m1->owner->pid, m2->owner->pid);
         }
     }
 }
 
 void scheduler(enum INTERRUPT_TYPE interruptType) {
     deadlock_detector();
+    create_pcbs();
 
     while (!PCB_Queue_is_empty(terminatedQueue, &error)) {
         PCB_p p = PCB_Queue_dequeue(terminatedQueue, &error);
@@ -231,18 +234,6 @@ void initialize_globals() {
     waitingQueueB = PCB_Queue_construct(&error);
     readyQueue = PCB_Priority_Queue_construct(&error);
     terminatedQueue = PCB_Queue_construct(&error);
-
-    // for (int j = 0; j < 16; j++) {
-    //     PCB_p p = PCB_construct(&error);
-    //     PCB_set_pid(p, j, &error);
-    //     PCB_Queue_enqueue(createdQueue, p, &error);
-    //     printf("Created:\t");
-    //     PCB_print(p, &error);
-    // }
-    // create_mutual_pcbs(3);
-    // create_mutual_pcbs(3);
-    create_mutual_pcbs(3);
-    create_sync_pcbs(3);
 }
 
 void step() {
@@ -261,6 +252,8 @@ void step() {
 void create_mutual_pcbs(int priority) {
     PCB_p u1 = PCB_construct(&error);
     PCB_p u2 = PCB_construct(&error);
+    u1->terminate = 2000;
+    u2->terminate = 2000;
     Mutex_p m1 = Mutex_construct();
     Mutex_p m2 = Mutex_construct();
     Mutual_User_p mu = malloc(sizeof(struct Mutual_User));
@@ -311,6 +304,8 @@ void create_mutual_pcbs(int priority) {
 void create_sync_pcbs(int priority) {
     PCB_p producer = PCB_construct(&error);
     PCB_p consumer = PCB_construct(&error);
+    producer->terminate = 10;
+    consumer->terminate = 10;
     PCB_set_max_pc(producer, 6, &error);
     PCB_set_max_pc(consumer, 6, &error);
     PCB_set_priority(producer, priority, &error);
@@ -352,7 +347,7 @@ void create_io_pcb(int priority) {
     int temp_pid = rand() % 100000;
     io_process->pid = temp_pid;
 
-    int temp_max = rand() % 100000;
+    int temp_max = rand() % 10000000;
     PCB_set_max_pc(io_process, temp_max, &error);
 
     for (int i = 0; i < PCB_TRAP_LENGTH; i++) {
@@ -360,7 +355,7 @@ void create_io_pcb(int priority) {
         io_process->io_2_traps[i] = rand() % io_process->max_pc;
     }
     PCB_Priority_Queue_enqueue(readyQueue, io_process, &error);
-    printf("Created:/t");
+    printf("Created:\t");
     PCB_print(io_process, &error);
 }
 
@@ -370,6 +365,7 @@ void create_intense_pcb(int priority) {
     int temp_pid = rand() % 100000;
     intense->pid = temp_pid;
     int temp_max = rand() % 100000;
+    intense->terminate = 20;
     PCB_set_max_pc(intense, temp_max, &error);
     PCB_Priority_Queue_enqueue(readyQueue, intense, &error);
     printf("Created:\t");
@@ -379,7 +375,7 @@ void create_intense_pcb(int priority) {
 void create_pcbs() {
     int i, j, k, rand_pcb;
     int mutual_count = 0;
-    for (i = 0; i < PCB_PRIORITY_MAX; i++) {
+    for (i = 0; i <= PCB_PRIORITY_MAX; i++) {
         if (!i) { // check priority 0
             if (readyQueue->queues[i]->size < 2) {
                 int creation_count = 2 - readyQueue->queues[i]->size;
