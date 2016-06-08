@@ -16,7 +16,7 @@
 #include "PCB_Errors.h"
 
 // times must be under 1 billion
-#define SLEEP_TIME 90000000
+#define SLEEP_TIME 9000000
 #define IO_TIME_MIN SLEEP_TIME * 3
 #define IO_TIME_MAX SLEEP_TIME * 5
 
@@ -76,7 +76,7 @@ void dispatcher() {
     }
     printf("Switching to:\t");
     PCB_print(currentPCB, &error);
-    printf("Ready Queue:\t\n");
+    printf("Ready Queue: Size: %u\n", readyQueue->size);
     PCB_Priority_Queue_print(readyQueue, &error);
     PCB_set_state(currentPCB, PCB_STATE_RUNNING, &error);
     sysStack = PCB_get_pc(currentPCB, &error);
@@ -276,8 +276,8 @@ void step() {
 void create_mutual_pcbs(int priority) {
     PCB_p u1 = PCB_construct(&error);
     PCB_p u2 = PCB_construct(&error);
-    u1->terminate = 2000;
-    u2->terminate = 2000;
+    u1->terminate = 40;
+    u2->terminate = 40;
     Mutex_p m1 = Mutex_construct();
     Mutex_p m2 = Mutex_construct();
     Mutual_User_p mu = malloc(sizeof(struct Mutual_User));
@@ -290,8 +290,8 @@ void create_mutual_pcbs(int priority) {
     *(mu->dead) = 0;
     PCB_set_priority(u1, priority, &error);
     PCB_set_priority(u2, priority, &error);
-    PCB_set_max_pc(u1, 6, &error);
-    PCB_set_max_pc(u2, 6, &error);
+    PCB_set_max_pc(u1, 10, &error);
+    PCB_set_max_pc(u2, 10, &error);
     int temp_pid = rand() % 100000;
     u1->pid = temp_pid;
     u2->pid = temp_pid + 1;
@@ -370,8 +370,8 @@ void create_io_pcb(int priority) {
     
     int temp_pid = rand() % 100000;
     io_process->pid = temp_pid;
-
-    int temp_max = rand() % 10000000;
+    io_process->terminate = 30;
+    int temp_max = rand() % 1000;
     PCB_set_max_pc(io_process, temp_max, &error);
 
     for (int i = 0; i < PCB_TRAP_LENGTH; i++) {
@@ -386,10 +386,10 @@ void create_io_pcb(int priority) {
 void create_intense_pcb(int priority) {
     PCB_p intense = PCB_construct(&error);
     PCB_set_priority(intense, priority, &error);
-    int temp_pid = rand() % 100000;
+    int temp_pid = rand() % 1000;
     intense->pid = temp_pid;
-    int temp_max = rand() % 100000;
-    intense->terminate = 20;
+    int temp_max = rand() % 1000;
+    intense->terminate = 15;
     PCB_set_max_pc(intense, temp_max, &error);
     PCB_Priority_Queue_enqueue(readyQueue, intense, &error);
     printf("Created:\t");
@@ -420,23 +420,28 @@ void create_pcbs() {
                         n = n->next_node;
                     }
                 }
-                for (j = 0; j < 10 - mutual_count; j += 2) {
-                    rand_pcb = rand() % 10;
-                    if (rand_pcb < 5) {
-                        create_sync_pcbs(1);
-                    } else {
-                        create_mutual_pcbs(1);
-                    }
-                }
-                int creation_count = 32 - readyQueue->queues[i]->size;
-                for (j = 0; j < creation_count; j++) {
-                    rand_pcb = rand() % 10;
-                    if (rand_pcb < 5) {
-                        create_intense_pcb(1);
-                    } else if (rand_pcb >= 5) {
+                for (j = 0; j < 16 - mutual_count; j += 2) {
+                    if (rand() % 10 == 1) {
                         create_io_pcb(1);
+                    } else {
+                        rand_pcb = rand() % 10;
+                        if (rand_pcb < 5) {
+                            create_sync_pcbs(1);
+                        } else {
+                            create_mutual_pcbs(1);
+                        }
                     }
+                    
                 }
+                // int creation_count = 32 - readyQueue->queues[i]->size;
+                // for (j = 0; j < creation_count; j++) {
+                //     rand_pcb = rand() % 10;
+                //     if (rand_pcb < 5) {
+                //         create_intense_pcb(1);
+                //     } else if (rand_pcb >= 5) {
+                //         create_io_pcb(1);
+                //     }
+                // }
 
             }
         } else if (i == 2) { // priority 2
