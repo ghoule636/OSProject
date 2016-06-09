@@ -19,10 +19,11 @@
 #define SLEEP_TIME 9000000
 #define IO_TIME_MIN SLEEP_TIME * 3
 #define IO_TIME_MAX SLEEP_TIME * 5
+#define MAX_LOOPS 10000000
 
 #define IDL_PID 0xFFFFFFFF
 
-#define DEADLOCK_POSSIBLE 0
+#define DEADLOCK_POSSIBLE 1
 
 void create_mutual_pcbs(int priority);
 void create_sync_pcbs(int priority);
@@ -52,6 +53,8 @@ PCB_Queue_p waitingQueueA;
 PCB_Queue_p waitingQueueB;
 PCB_p currentPCB;
 PCB_p idl;
+int terminated_count;
+int deadlock_detected;
 unsigned long sysStack;
 enum PCB_ERROR error = PCB_SUCCESS;
 
@@ -91,6 +94,7 @@ void deadlock_detector() {
                 (m2->owner == currentPCB && m1->owner != NULL && m1->owner != currentPCB &&
                 Mutex_contains(m1, currentPCB) && Mutex_contains(m2, m1->owner))) {
             printf("Deadlock detected on Mutual pair %u, PID: 0x%lX & 0x%lX\n", currentPCB->mutual_user->id, m1->owner->pid, m2->owner->pid);
+            deadlock_detected = 1;
         }
     }
 }
@@ -110,6 +114,7 @@ void scheduler(enum INTERRUPT_TYPE interruptType) {
     while (!PCB_Queue_is_empty(terminatedQueue, &error)) {
         PCB_p p = PCB_Queue_dequeue(terminatedQueue, &error);
         printf("Deallocated:\t");
+        terminated_count++;
         PCB_print(p, &error);
         PCB_destruct(p, &error);
     }
@@ -468,6 +473,8 @@ void create_pcbs() {
 }
 
 int main() {
+    terminated_count = 0;
+    deadlock_detected = 0;
     pthread_t system_timer, io_timer_a, io_timer_b;
     pthread_mutex_t mutex_timer, mutex_io_a, mutex_io_b;
     pthread_cond_t cond_timer, cond_io_a, cond_io_b;
@@ -507,8 +514,9 @@ int main() {
     pthread_create(&io_timer_b, NULL, &timer, (void*) io_timer_b_args);
 
     initialize_globals();
-
-    while(1) {
+    int i = 0;
+    while(i < MAX_LOOPS) {
+        i++;
         if (error != PCB_SUCCESS) {
             printf("\nERROR: error != PCB_SUCCESS");
             return 1;
@@ -660,5 +668,14 @@ int main() {
         } else {
             step();
         }
+    }
+    printf("\nDone!\n");
+    printf("Number of processes in ready queue: %d\n", readyQueue->size);
+    //printf("Number of processes in the waiting queue: %d\n", waitingQueueA->size + waitingQueueB->size);
+    printf("Number of processes terminated: %d\n", terminated_count);
+    if (deadlock_detected) {
+        printf("Deadlock occured\n");
+    } else {
+        printf("Deadlock did not occur.\n");
     }
 }
