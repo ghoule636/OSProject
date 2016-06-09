@@ -1,0 +1,1952 @@
+
+Switching from: PID: 0xF9F2, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Deadlock detected on Mutual pair 2257, PID: 0xF9F2 & 0xF9F1
+Returned:       PID: 0xF9F2, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Switching to:   PID: 0x7757, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Ready Queue: Size: 44
+Q0: Count=0: *
+Q1: Count=7: F9F1->7758->4BF2->4BF3->122DA->122DB->F9F2->*
+Q2: Count=35: 32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->5C88->BEA7->B2E8->AA10->*
+Q3: Count=2: 18674->2CF->*
+Deadlock detected on Mutual pair 2886, PID: 0x7757 & 0x7758
+Created:        PID: 0x3CC, Priority: 0x0, State: 0, PC: 0x0, MaxPC: 0x1eb, Terminate: 15, TermCount: 0
+Moved from IO A:PID: 0xCEC, Priority: 0x1, State: 4, PC: 0xA1, MaxPC: 0xc8, Terminate: 30, TermCount: 0
+Waiting Queue A:Size = 1. 0xF342->
+
+Switching from: PID: 0x7757, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Deadlock detected on Mutual pair 2886, PID: 0x7757 & 0x7758
+Returned:       PID: 0x7757, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Switching to:   PID: 0x3CC, Priority: 0x0, State: 0, PC: 0x0, MaxPC: 0x1eb, Terminate: 15, TermCount: 0
+Ready Queue: Size: 46
+Q0: Count=0: *
+Q1: Count=9: F9F1->7758->4BF2->4BF3->122DA->122DB->F9F2->CEC->7757->*
+Q2: Count=35: 32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->5C88->BEA7->B2E8->AA10->*
+Q3: Count=2: 18674->2CF->*
+Switching from: PID: 0x3CC, Priority: 0x0, State: 2, PC: 0x0, MaxPC: 0x1eb, Terminate: 15, TermCount: 15
+Terminated:     PID: 0x3CC, Priority: 0x0, State: 5, PC: 0x0, MaxPC: 0x1eb, Terminate: 15, TermCount: 15
+Switching to:   PID: 0xF9F1, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Ready Queue: Size: 45
+Q0: Count=0: *
+Q1: Count=8: 7758->4BF2->4BF3->122DA->122DB->F9F2->CEC->7757->*
+Q2: Count=35: 32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->5C88->BEA7->B2E8->AA10->*
+Q3: Count=2: 18674->2CF->*
+
+Switching from: PID: 0xF9F1, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Deadlock detected on Mutual pair 2257, PID: 0xF9F1 & 0xF9F2
+Deallocated:    PID: 0x3CC, Priority: 0x0, State: 5, PC: 0x0, MaxPC: 0x1eb, Terminate: 15, TermCount: 15
+Returned:       PID: 0xF9F1, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Switching to:   PID: 0x7758, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Ready Queue: Size: 45
+Q0: Count=0: *
+Q1: Count=8: 4BF2->4BF3->122DA->122DB->F9F2->CEC->7757->F9F1->*
+Q2: Count=35: 32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->5C88->BEA7->B2E8->AA10->*
+Q3: Count=2: 18674->2CF->*
+Deadlock detected on Mutual pair 2886, PID: 0x7758 & 0x7757
+Created:        PID: 0x3E0, Priority: 0x0, State: 0, PC: 0x0, MaxPC: 0x389, Terminate: 15, TermCount: 0
+Moved from IO A:PID: 0xF342, Priority: 0x1, State: 4, PC: 0x3C, MaxPC: 0x131, Terminate: 30, TermCount: 0
+Waiting Queue A:Size = 0.
+
+Switching from: PID: 0x7758, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Deadlock detected on Mutual pair 2886, PID: 0x7758 & 0x7757
+Returned:       PID: 0x7758, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Switching to:   PID: 0x3E0, Priority: 0x0, State: 0, PC: 0x0, MaxPC: 0x389, Terminate: 15, TermCount: 0
+Ready Queue: Size: 47
+Q0: Count=0: *
+Q1: Count=10: 4BF2->4BF3->122DA->122DB->F9F2->CEC->7757->F9F1->F342->7758->*
+Q2: Count=35: 32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->5C88->BEA7->B2E8->AA10->*
+Q3: Count=2: 18674->2CF->*
+Switching from: PID: 0x3E0, Priority: 0x0, State: 2, PC: 0x0, MaxPC: 0x389, Terminate: 15, TermCount: 15
+Terminated:     PID: 0x3E0, Priority: 0x0, State: 5, PC: 0x0, MaxPC: 0x389, Terminate: 15, TermCount: 15
+Switching to:   PID: 0x4BF2, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 4
+Ready Queue: Size: 46
+Q0: Count=0: *
+Q1: Count=9: 4BF3->122DA->122DB->F9F2->CEC->7757->F9F1->F342->7758->*
+Q2: Count=35: 32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->5C88->BEA7->B2E8->AA10->*
+Q3: Count=2: 18674->2CF->*
+
+Switching from: PID: 0x4BF2, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 4
+Deadlock detected on Mutual pair 6828, PID: 0x4BF2 & 0x4BF3
+Created:        PID: 0x34F, Priority: 0x0, State: 0, PC: 0x0, MaxPC: 0x1a4, Terminate: 15, TermCount: 0
+Deallocated:    PID: 0x3E0, Priority: 0x0, State: 5, PC: 0x0, MaxPC: 0x389, Terminate: 15, TermCount: 15
+Returned:       PID: 0x4BF2, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 4
+Switching to:   PID: 0x34F, Priority: 0x0, State: 0, PC: 0x0, MaxPC: 0x1a4, Terminate: 15, TermCount: 0
+Ready Queue: Size: 47
+Q0: Count=0: *
+Q1: Count=10: 4BF3->122DA->122DB->F9F2->CEC->7757->F9F1->F342->7758->4BF2->*
+Q2: Count=35: 32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->5C88->BEA7->B2E8->AA10->*
+Q3: Count=2: 18674->2CF->*
+Switching from: PID: 0x34F, Priority: 0x0, State: 2, PC: 0x0, MaxPC: 0x1a4, Terminate: 15, TermCount: 15
+Terminated:     PID: 0x34F, Priority: 0x0, State: 5, PC: 0x0, MaxPC: 0x1a4, Terminate: 15, TermCount: 15
+Switching to:   PID: 0x4BF3, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Ready Queue: Size: 46
+Q0: Count=0: *
+Q1: Count=9: 122DA->122DB->F9F2->CEC->7757->F9F1->F342->7758->4BF2->*
+Q2: Count=35: 32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->5C88->BEA7->B2E8->AA10->*
+Q3: Count=2: 18674->2CF->*
+
+Switching from: PID: 0x4BF3, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Deadlock detected on Mutual pair 6828, PID: 0x4BF3 & 0x4BF2
+Deallocated:    PID: 0x34F, Priority: 0x0, State: 5, PC: 0x0, MaxPC: 0x1a4, Terminate: 15, TermCount: 15
+Returned:       PID: 0x4BF3, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Switching to:   PID: 0x122DA, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 2
+Ready Queue: Size: 46
+Q0: Count=0: *
+Q1: Count=9: 122DB->F9F2->CEC->7757->F9F1->F342->7758->4BF2->4BF3->*
+Q2: Count=35: 32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->5C88->BEA7->B2E8->AA10->*
+Q3: Count=2: 18674->2CF->*
+
+Switching from: PID: 0x122DA, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 2
+Deadlock detected on Mutual pair 4893, PID: 0x122DA & 0x122DB
+Created:        PID: 0x36E, Priority: 0x0, State: 0, PC: 0x0, MaxPC: 0x36e, Terminate: 15, TermCount: 0
+Returned:       PID: 0x122DA, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 2
+Switching to:   PID: 0x36E, Priority: 0x0, State: 0, PC: 0x0, MaxPC: 0x36e, Terminate: 15, TermCount: 0
+Ready Queue: Size: 47
+Q0: Count=0: *
+Q1: Count=10: 122DB->F9F2->CEC->7757->F9F1->F342->7758->4BF2->4BF3->122DA->*
+Q2: Count=35: 32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->5C88->BEA7->B2E8->AA10->*
+Q3: Count=2: 18674->2CF->*
+Switching from: PID: 0x36E, Priority: 0x0, State: 2, PC: 0x0, MaxPC: 0x36e, Terminate: 15, TermCount: 15
+Terminated:     PID: 0x36E, Priority: 0x0, State: 5, PC: 0x0, MaxPC: 0x36e, Terminate: 15, TermCount: 15
+Switching to:   PID: 0x122DB, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Ready Queue: Size: 46
+Q0: Count=0: *
+Q1: Count=9: F9F2->CEC->7757->F9F1->F342->7758->4BF2->4BF3->122DA->*
+Q2: Count=35: 32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->5C88->BEA7->B2E8->AA10->*
+Q3: Count=2: 18674->2CF->*
+
+Switching from: PID: 0x122DB, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Deadlock detected on Mutual pair 4893, PID: 0x122DB & 0x122DA
+Deallocated:    PID: 0x36E, Priority: 0x0, State: 5, PC: 0x0, MaxPC: 0x36e, Terminate: 15, TermCount: 15
+Returned:       PID: 0x122DB, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Switching to:   PID: 0xF9F2, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Ready Queue: Size: 46
+Q0: Count=0: *
+Q1: Count=9: CEC->7757->F9F1->F342->7758->4BF2->4BF3->122DA->122DB->*
+Q2: Count=35: 32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->5C88->BEA7->B2E8->AA10->*
+Q3: Count=2: 18674->2CF->*
+
+Switching from: PID: 0xF9F2, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Deadlock detected on Mutual pair 2257, PID: 0xF9F2 & 0xF9F1
+Created:        PID: 0x334, Priority: 0x0, State: 0, PC: 0x0, MaxPC: 0x27b, Terminate: 15, TermCount: 0
+Returned:       PID: 0xF9F2, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Switching to:   PID: 0x334, Priority: 0x0, State: 0, PC: 0x0, MaxPC: 0x27b, Terminate: 15, TermCount: 0
+Ready Queue: Size: 47
+Q0: Count=0: *
+Q1: Count=10: CEC->7757->F9F1->F342->7758->4BF2->4BF3->122DA->122DB->F9F2->*
+Q2: Count=35: 32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->5C88->BEA7->B2E8->AA10->*
+Q3: Count=2: 18674->2CF->*
+Switching from: PID: 0x334, Priority: 0x0, State: 2, PC: 0x0, MaxPC: 0x27b, Terminate: 15, TermCount: 15
+Terminated:     PID: 0x334, Priority: 0x0, State: 5, PC: 0x0, MaxPC: 0x27b, Terminate: 15, TermCount: 15
+Switching to:   PID: 0xCEC, Priority: 0x1, State: 1, PC: 0xA1, MaxPC: 0xc8, Terminate: 30, TermCount: 0
+Ready Queue: Size: 46
+Q0: Count=0: *
+Q1: Count=9: 7757->F9F1->F342->7758->4BF2->4BF3->122DA->122DB->F9F2->*
+Q2: Count=35: 32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->5C88->BEA7->B2E8->AA10->*
+Q3: Count=2: 18674->2CF->*
+Switching from: PID: 0xCEC, Priority: 0x1, State: 2, PC: 0xA1, MaxPC: 0xc8, Terminate: 30, TermCount: 0
+Moved to IO A:  PID: 0xCEC, Priority: 0x1, State: 4, PC: 0xA1, MaxPC: 0xc8, Terminate: 30, TermCount: 0
+Waiting Queue A:Size = 1. 0xCEC->
+Switching to:   PID: 0x7757, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Ready Queue: Size: 45
+Q0: Count=0: *
+Q1: Count=8: F9F1->F342->7758->4BF2->4BF3->122DA->122DB->F9F2->*
+Q2: Count=35: 32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->5C88->BEA7->B2E8->AA10->*
+Q3: Count=2: 18674->2CF->*
+
+Switching from: PID: 0x7757, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Deadlock detected on Mutual pair 2886, PID: 0x7757 & 0x7758
+Deallocated:    PID: 0x334, Priority: 0x0, State: 5, PC: 0x0, MaxPC: 0x27b, Terminate: 15, TermCount: 15
+Boost on:       PID: 0x5C88, Priority: 0x1, State: 1, PC: 0xE7, MaxPC: 0x2ce, Terminate: 30, TermCount: 0
+Boost on:       PID: 0x18674, Priority: 0x2, State: 0, PC: 0x0, MaxPC: 0x167, Terminate: 30, TermCount: 0
+Returned:       PID: 0x7757, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Switching to:   PID: 0xF9F1, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Ready Queue: Size: 45
+Q0: Count=0: *
+Q1: Count=9: F342->7758->4BF2->4BF3->122DA->122DB->F9F2->5C88->7757->*
+Q2: Count=35: AA10->32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->*
+Q3: Count=1: 2CF->*
+
+Switching from: PID: 0xF9F1, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Deadlock detected on Mutual pair 2257, PID: 0xF9F1 & 0xF9F2
+Created:        PID: 0x326, Priority: 0x3, State: 0, PC: 0x0, MaxPC: 0xbf, Terminate: 15, TermCount: 0
+Returned:       PID: 0xF9F1, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Switching to:   PID: 0xF342, Priority: 0x1, State: 1, PC: 0x3C, MaxPC: 0x131, Terminate: 30, TermCount: 0
+Ready Queue: Size: 46
+Q0: Count=0: *
+Q1: Count=9: 7758->4BF2->4BF3->122DA->122DB->F9F2->5C88->7757->F9F1->*
+Q2: Count=35: AA10->32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->*
+Q3: Count=2: 2CF->326->*
+Boost off:      PID: 0xF342, Priority: 0x2, State: 2, PC: 0x3C, MaxPC: 0x131, Terminate: 30, TermCount: 0
+Moved from IO A:PID: 0xCEC, Priority: 0x1, State: 4, PC: 0xA1, MaxPC: 0xc8, Terminate: 30, TermCount: 0
+Waiting Queue A:Size = 0.
+Switching from: PID: 0xF342, Priority: 0x2, State: 2, PC: 0x3C, MaxPC: 0x131, Terminate: 30, TermCount: 0
+Moved to IO A:  PID: 0xF342, Priority: 0x2, State: 4, PC: 0x3C, MaxPC: 0x131, Terminate: 30, TermCount: 0
+Waiting Queue A:Size = 1. 0xF342->
+Switching to:   PID: 0x7758, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Ready Queue: Size: 46
+Q0: Count=0: *
+Q1: Count=9: 4BF2->4BF3->122DA->122DB->F9F2->5C88->7757->F9F1->CEC->*
+Q2: Count=35: AA10->32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->*
+Q3: Count=2: 2CF->326->*
+
+Switching from: PID: 0x7758, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Deadlock detected on Mutual pair 2886, PID: 0x7758 & 0x7757
+Created:        PID: 0xA6, Priority: 0x0, State: 0, PC: 0x0, MaxPC: 0x2fc, Terminate: 15, TermCount: 0
+Returned:       PID: 0x7758, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Switching to:   PID: 0xA6, Priority: 0x0, State: 0, PC: 0x0, MaxPC: 0x2fc, Terminate: 15, TermCount: 0
+Ready Queue: Size: 47
+Q0: Count=0: *
+Q1: Count=10: 4BF2->4BF3->122DA->122DB->F9F2->5C88->7757->F9F1->CEC->7758->*
+Q2: Count=35: AA10->32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->*
+Q3: Count=2: 2CF->326->*
+Moved from IO A:PID: 0xF342, Priority: 0x2, State: 4, PC: 0x3C, MaxPC: 0x131, Terminate: 30, TermCount: 0
+Waiting Queue A:Size = 0.
+Switching from: PID: 0xA6, Priority: 0x0, State: 2, PC: 0x0, MaxPC: 0x2fc, Terminate: 15, TermCount: 15
+Terminated:     PID: 0xA6, Priority: 0x0, State: 5, PC: 0x0, MaxPC: 0x2fc, Terminate: 15, TermCount: 15
+Switching to:   PID: 0x4BF2, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 4
+Ready Queue: Size: 47
+Q0: Count=0: *
+Q1: Count=9: 4BF3->122DA->122DB->F9F2->5C88->7757->F9F1->CEC->7758->*
+Q2: Count=36: AA10->32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->F342->*
+Q3: Count=2: 2CF->326->*
+
+Switching from: PID: 0x4BF2, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 4
+Deadlock detected on Mutual pair 6828, PID: 0x4BF2 & 0x4BF3
+Deallocated:    PID: 0xA6, Priority: 0x0, State: 5, PC: 0x0, MaxPC: 0x2fc, Terminate: 15, TermCount: 15
+Returned:       PID: 0x4BF2, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 4
+Switching to:   PID: 0x4BF3, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Ready Queue: Size: 47
+Q0: Count=0: *
+Q1: Count=9: 122DA->122DB->F9F2->5C88->7757->F9F1->CEC->7758->4BF2->*
+Q2: Count=36: AA10->32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->F342->*
+Q3: Count=2: 2CF->326->*
+
+Switching from: PID: 0x4BF3, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Deadlock detected on Mutual pair 6828, PID: 0x4BF3 & 0x4BF2
+Returned:       PID: 0x4BF3, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Switching to:   PID: 0x122DA, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 2
+Ready Queue: Size: 47
+Q0: Count=0: *
+Q1: Count=9: 122DB->F9F2->5C88->7757->F9F1->CEC->7758->4BF2->4BF3->*
+Q2: Count=36: AA10->32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->F342->*
+Q3: Count=2: 2CF->326->*
+
+Switching from: PID: 0x122DA, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 2
+Deadlock detected on Mutual pair 4893, PID: 0x122DA & 0x122DB
+Returned:       PID: 0x122DA, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 2
+Switching to:   PID: 0x122DB, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Ready Queue: Size: 47
+Q0: Count=0: *
+Q1: Count=9: F9F2->5C88->7757->F9F1->CEC->7758->4BF2->4BF3->122DA->*
+Q2: Count=36: AA10->32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->F342->*
+Q3: Count=2: 2CF->326->*
+
+Switching from: PID: 0x122DB, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Deadlock detected on Mutual pair 4893, PID: 0x122DB & 0x122DA
+Created:        PID: 0x20A, Priority: 0x0, State: 0, PC: 0x0, MaxPC: 0x332, Terminate: 15, TermCount: 0
+Created:        PID: 0xBD, Priority: 0x0, State: 0, PC: 0x0, MaxPC: 0x2b3, Terminate: 15, TermCount: 0
+Returned:       PID: 0x122DB, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Switching to:   PID: 0x20A, Priority: 0x0, State: 0, PC: 0x0, MaxPC: 0x332, Terminate: 15, TermCount: 0
+Ready Queue: Size: 49
+Q0: Count=1: BD->*
+Q1: Count=10: F9F2->5C88->7757->F9F1->CEC->7758->4BF2->4BF3->122DA->122DB->*
+Q2: Count=36: AA10->32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->F342->*
+Q3: Count=2: 2CF->326->*
+Switching from: PID: 0x20A, Priority: 0x0, State: 2, PC: 0x0, MaxPC: 0x332, Terminate: 15, TermCount: 15
+Terminated:     PID: 0x20A, Priority: 0x0, State: 5, PC: 0x0, MaxPC: 0x332, Terminate: 15, TermCount: 15
+Switching to:   PID: 0xBD, Priority: 0x0, State: 0, PC: 0x0, MaxPC: 0x2b3, Terminate: 15, TermCount: 0
+Ready Queue: Size: 48
+Q0: Count=0: *
+Q1: Count=10: F9F2->5C88->7757->F9F1->CEC->7758->4BF2->4BF3->122DA->122DB->*
+Q2: Count=36: AA10->32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->F342->*
+Q3: Count=2: 2CF->326->*
+
+Switching from: PID: 0xBD, Priority: 0x0, State: 2, PC: 0x0, MaxPC: 0x2b3, Terminate: 15, TermCount: 6
+Deallocated:    PID: 0x20A, Priority: 0x0, State: 5, PC: 0x0, MaxPC: 0x332, Terminate: 15, TermCount: 15
+Returned:       PID: 0xBD, Priority: 0x0, State: 1, PC: 0x3A, MaxPC: 0x2b3, Terminate: 15, TermCount: 6
+Switching to:   PID: 0xBD, Priority: 0x0, State: 1, PC: 0x3A, MaxPC: 0x2b3, Terminate: 15, TermCount: 6
+Ready Queue: Size: 48
+Q0: Count=0: *
+Q1: Count=10: F9F2->5C88->7757->F9F1->CEC->7758->4BF2->4BF3->122DA->122DB->*
+Q2: Count=36: AA10->32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->F342->*
+Q3: Count=2: 2CF->326->*
+Switching from: PID: 0xBD, Priority: 0x0, State: 2, PC: 0x3A, MaxPC: 0x2b3, Terminate: 15, TermCount: 15
+Terminated:     PID: 0xBD, Priority: 0x0, State: 5, PC: 0x0, MaxPC: 0x2b3, Terminate: 15, TermCount: 15
+Switching to:   PID: 0xF9F2, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Ready Queue: Size: 47
+Q0: Count=0: *
+Q1: Count=9: 5C88->7757->F9F1->CEC->7758->4BF2->4BF3->122DA->122DB->*
+Q2: Count=36: AA10->32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->F342->*
+Q3: Count=2: 2CF->326->*
+
+Switching from: PID: 0xF9F2, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Deadlock detected on Mutual pair 2257, PID: 0xF9F2 & 0xF9F1
+Deallocated:    PID: 0xBD, Priority: 0x0, State: 5, PC: 0x0, MaxPC: 0x2b3, Terminate: 15, TermCount: 15
+Returned:       PID: 0xF9F2, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Switching to:   PID: 0x5C88, Priority: 0x1, State: 1, PC: 0xE7, MaxPC: 0x2ce, Terminate: 30, TermCount: 0
+Ready Queue: Size: 47
+Q0: Count=0: *
+Q1: Count=9: 7757->F9F1->CEC->7758->4BF2->4BF3->122DA->122DB->F9F2->*
+Q2: Count=36: AA10->32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->F342->*
+Q3: Count=2: 2CF->326->*
+Switching from: PID: 0x5C88, Priority: 0x1, State: 2, PC: 0xE7, MaxPC: 0x2ce, Terminate: 30, TermCount: 0
+Moved to IO A:  PID: 0x5C88, Priority: 0x1, State: 4, PC: 0xE7, MaxPC: 0x2ce, Terminate: 30, TermCount: 0
+Waiting Queue A:Size = 1. 0x5C88->
+Switching to:   PID: 0x7757, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Ready Queue: Size: 46
+Q0: Count=0: *
+Q1: Count=8: F9F1->CEC->7758->4BF2->4BF3->122DA->122DB->F9F2->*
+Q2: Count=36: AA10->32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->F342->*
+Q3: Count=2: 2CF->326->*
+
+Switching from: PID: 0x7757, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Deadlock detected on Mutual pair 2886, PID: 0x7757 & 0x7758
+Returned:       PID: 0x7757, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Switching to:   PID: 0xF9F1, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Ready Queue: Size: 46
+Q0: Count=0: *
+Q1: Count=8: CEC->7758->4BF2->4BF3->122DA->122DB->F9F2->7757->*
+Q2: Count=36: AA10->32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->F342->*
+Q3: Count=2: 2CF->326->*
+
+Switching from: PID: 0xF9F1, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Deadlock detected on Mutual pair 2257, PID: 0xF9F1 & 0xF9F2
+Returned:       PID: 0xF9F1, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Switching to:   PID: 0xCEC, Priority: 0x1, State: 1, PC: 0xA1, MaxPC: 0xc8, Terminate: 30, TermCount: 0
+Ready Queue: Size: 46
+Q0: Count=0: *
+Q1: Count=8: 7758->4BF2->4BF3->122DA->122DB->F9F2->7757->F9F1->*
+Q2: Count=36: AA10->32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->F342->*
+Q3: Count=2: 2CF->326->*
+Switching from: PID: 0xCEC, Priority: 0x1, State: 2, PC: 0xA1, MaxPC: 0xc8, Terminate: 30, TermCount: 0
+Moved to IO A:  PID: 0xCEC, Priority: 0x1, State: 4, PC: 0xA1, MaxPC: 0xc8, Terminate: 30, TermCount: 0
+Waiting Queue A:Size = 2. 0x5C88->0xCEC->
+Switching to:   PID: 0x7758, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Ready Queue: Size: 45
+Q0: Count=0: *
+Q1: Count=7: 4BF2->4BF3->122DA->122DB->F9F2->7757->F9F1->*
+Q2: Count=36: AA10->32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->F342->*
+Q3: Count=2: 2CF->326->*
+Deadlock detected on Mutual pair 2886, PID: 0x7758 & 0x7757
+Moved from IO A:PID: 0x5C88, Priority: 0x1, State: 4, PC: 0xE7, MaxPC: 0x2ce, Terminate: 30, TermCount: 0
+Waiting Queue A:Size = 1. 0xCEC->
+
+Switching from: PID: 0x7758, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Deadlock detected on Mutual pair 2886, PID: 0x7758 & 0x7757
+Returned:       PID: 0x7758, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Switching to:   PID: 0x4BF2, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 4
+Ready Queue: Size: 46
+Q0: Count=0: *
+Q1: Count=8: 4BF3->122DA->122DB->F9F2->7757->F9F1->5C88->7758->*
+Q2: Count=36: AA10->32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->F342->*
+Q3: Count=2: 2CF->326->*
+
+Switching from: PID: 0x4BF2, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 4
+Deadlock detected on Mutual pair 6828, PID: 0x4BF2 & 0x4BF3
+Returned:       PID: 0x4BF2, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 4
+Switching to:   PID: 0x4BF3, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Ready Queue: Size: 46
+Q0: Count=0: *
+Q1: Count=8: 122DA->122DB->F9F2->7757->F9F1->5C88->7758->4BF2->*
+Q2: Count=36: AA10->32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->F342->*
+Q3: Count=2: 2CF->326->*
+
+Switching from: PID: 0x4BF3, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Deadlock detected on Mutual pair 6828, PID: 0x4BF3 & 0x4BF2
+Returned:       PID: 0x4BF3, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Switching to:   PID: 0x122DA, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 2
+Ready Queue: Size: 46
+Q0: Count=0: *
+Q1: Count=8: 122DB->F9F2->7757->F9F1->5C88->7758->4BF2->4BF3->*
+Q2: Count=36: AA10->32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->F342->*
+Q3: Count=2: 2CF->326->*
+Deadlock detected on Mutual pair 4893, PID: 0x122DA & 0x122DB
+Moved from IO A:PID: 0xCEC, Priority: 0x1, State: 4, PC: 0xA1, MaxPC: 0xc8, Terminate: 30, TermCount: 0
+Waiting Queue A:Size = 0.
+
+Switching from: PID: 0x122DA, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 2
+Deadlock detected on Mutual pair 4893, PID: 0x122DA & 0x122DB
+Returned:       PID: 0x122DA, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 2
+Switching to:   PID: 0x122DB, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Ready Queue: Size: 47
+Q0: Count=0: *
+Q1: Count=9: F9F2->7757->F9F1->5C88->7758->4BF2->4BF3->CEC->122DA->*
+Q2: Count=36: AA10->32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->F342->*
+Q3: Count=2: 2CF->326->*
+
+Switching from: PID: 0x122DB, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Deadlock detected on Mutual pair 4893, PID: 0x122DB & 0x122DA
+Returned:       PID: 0x122DB, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Switching to:   PID: 0xF9F2, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Ready Queue: Size: 47
+Q0: Count=0: *
+Q1: Count=9: 7757->F9F1->5C88->7758->4BF2->4BF3->CEC->122DA->122DB->*
+Q2: Count=36: AA10->32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->F342->*
+Q3: Count=2: 2CF->326->*
+
+Switching from: PID: 0xF9F2, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Deadlock detected on Mutual pair 2257, PID: 0xF9F2 & 0xF9F1
+Created:        PID: 0x2C0, Priority: 0x0, State: 0, PC: 0x0, MaxPC: 0x34f, Terminate: 15, TermCount: 0
+Returned:       PID: 0xF9F2, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Switching to:   PID: 0x2C0, Priority: 0x0, State: 0, PC: 0x0, MaxPC: 0x34f, Terminate: 15, TermCount: 0
+Ready Queue: Size: 48
+Q0: Count=0: *
+Q1: Count=10: 7757->F9F1->5C88->7758->4BF2->4BF3->CEC->122DA->122DB->F9F2->*
+Q2: Count=36: AA10->32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->F342->*
+Q3: Count=2: 2CF->326->*
+Switching from: PID: 0x2C0, Priority: 0x0, State: 2, PC: 0x0, MaxPC: 0x34f, Terminate: 15, TermCount: 15
+Terminated:     PID: 0x2C0, Priority: 0x0, State: 5, PC: 0x0, MaxPC: 0x34f, Terminate: 15, TermCount: 15
+Switching to:   PID: 0x7757, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Ready Queue: Size: 47
+Q0: Count=0: *
+Q1: Count=9: F9F1->5C88->7758->4BF2->4BF3->CEC->122DA->122DB->F9F2->*
+Q2: Count=36: AA10->32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->F342->*
+Q3: Count=2: 2CF->326->*
+
+Switching from: PID: 0x7757, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Deadlock detected on Mutual pair 2886, PID: 0x7757 & 0x7758
+Created:        PID: 0x1A2, Priority: 0x0, State: 0, PC: 0x0, MaxPC: 0x32a, Terminate: 15, TermCount: 0
+Deallocated:    PID: 0x2C0, Priority: 0x0, State: 5, PC: 0x0, MaxPC: 0x34f, Terminate: 15, TermCount: 15
+Returned:       PID: 0x7757, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Switching to:   PID: 0x1A2, Priority: 0x0, State: 0, PC: 0x0, MaxPC: 0x32a, Terminate: 15, TermCount: 0
+Ready Queue: Size: 48
+Q0: Count=0: *
+Q1: Count=10: F9F1->5C88->7758->4BF2->4BF3->CEC->122DA->122DB->F9F2->7757->*
+Q2: Count=36: AA10->32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->F342->*
+Q3: Count=2: 2CF->326->*
+Switching from: PID: 0x1A2, Priority: 0x0, State: 2, PC: 0x0, MaxPC: 0x32a, Terminate: 15, TermCount: 15
+Terminated:     PID: 0x1A2, Priority: 0x0, State: 5, PC: 0x0, MaxPC: 0x32a, Terminate: 15, TermCount: 15
+Switching to:   PID: 0xF9F1, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Ready Queue: Size: 47
+Q0: Count=0: *
+Q1: Count=9: 5C88->7758->4BF2->4BF3->CEC->122DA->122DB->F9F2->7757->*
+Q2: Count=36: AA10->32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->F342->*
+Q3: Count=2: 2CF->326->*
+
+Switching from: PID: 0xF9F1, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Deadlock detected on Mutual pair 2257, PID: 0xF9F1 & 0xF9F2
+Deallocated:    PID: 0x1A2, Priority: 0x0, State: 5, PC: 0x0, MaxPC: 0x32a, Terminate: 15, TermCount: 15
+Returned:       PID: 0xF9F1, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Switching to:   PID: 0x5C88, Priority: 0x1, State: 1, PC: 0xE7, MaxPC: 0x2ce, Terminate: 30, TermCount: 0
+Ready Queue: Size: 47
+Q0: Count=0: *
+Q1: Count=9: 7758->4BF2->4BF3->CEC->122DA->122DB->F9F2->7757->F9F1->*
+Q2: Count=36: AA10->32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->F342->*
+Q3: Count=2: 2CF->326->*
+Switching from: PID: 0x5C88, Priority: 0x1, State: 2, PC: 0xE7, MaxPC: 0x2ce, Terminate: 30, TermCount: 0
+Moved to IO A:  PID: 0x5C88, Priority: 0x1, State: 4, PC: 0xE7, MaxPC: 0x2ce, Terminate: 30, TermCount: 0
+Waiting Queue A:Size = 1. 0x5C88->
+Switching to:   PID: 0x7758, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Ready Queue: Size: 46
+Q0: Count=0: *
+Q1: Count=8: 4BF2->4BF3->CEC->122DA->122DB->F9F2->7757->F9F1->*
+Q2: Count=36: AA10->32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->F342->*
+Q3: Count=2: 2CF->326->*
+
+Switching from: PID: 0x7758, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Deadlock detected on Mutual pair 2886, PID: 0x7758 & 0x7757
+Returned:       PID: 0x7758, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Switching to:   PID: 0x4BF2, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 4
+Ready Queue: Size: 46
+Q0: Count=0: *
+Q1: Count=8: 4BF3->CEC->122DA->122DB->F9F2->7757->F9F1->7758->*
+Q2: Count=36: AA10->32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->F342->*
+Q3: Count=2: 2CF->326->*
+
+Switching from: PID: 0x4BF2, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 4
+Deadlock detected on Mutual pair 6828, PID: 0x4BF2 & 0x4BF3
+Returned:       PID: 0x4BF2, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 4
+Switching to:   PID: 0x4BF3, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Ready Queue: Size: 46
+Q0: Count=0: *
+Q1: Count=8: CEC->122DA->122DB->F9F2->7757->F9F1->7758->4BF2->*
+Q2: Count=36: AA10->32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->F342->*
+Q3: Count=2: 2CF->326->*
+Deadlock detected on Mutual pair 6828, PID: 0x4BF3 & 0x4BF2
+Moved from IO A:PID: 0x5C88, Priority: 0x1, State: 4, PC: 0xE7, MaxPC: 0x2ce, Terminate: 30, TermCount: 0
+Waiting Queue A:Size = 0.
+
+Switching from: PID: 0x4BF3, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Deadlock detected on Mutual pair 6828, PID: 0x4BF3 & 0x4BF2
+Created:        PID: 0x366, Priority: 0x0, State: 0, PC: 0x0, MaxPC: 0x2e8, Terminate: 15, TermCount: 0
+Returned:       PID: 0x4BF3, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Switching to:   PID: 0x366, Priority: 0x0, State: 0, PC: 0x0, MaxPC: 0x2e8, Terminate: 15, TermCount: 0
+Ready Queue: Size: 48
+Q0: Count=0: *
+Q1: Count=10: CEC->122DA->122DB->F9F2->7757->F9F1->7758->4BF2->5C88->4BF3->*
+Q2: Count=36: AA10->32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->F342->*
+Q3: Count=2: 2CF->326->*
+Switching from: PID: 0x366, Priority: 0x0, State: 2, PC: 0x0, MaxPC: 0x2e8, Terminate: 15, TermCount: 15
+Terminated:     PID: 0x366, Priority: 0x0, State: 5, PC: 0x0, MaxPC: 0x2e8, Terminate: 15, TermCount: 15
+Switching to:   PID: 0xCEC, Priority: 0x1, State: 1, PC: 0xA1, MaxPC: 0xc8, Terminate: 30, TermCount: 0
+Ready Queue: Size: 47
+Q0: Count=0: *
+Q1: Count=9: 122DA->122DB->F9F2->7757->F9F1->7758->4BF2->5C88->4BF3->*
+Q2: Count=36: AA10->32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->F342->*
+Q3: Count=2: 2CF->326->*
+Switching from: PID: 0xCEC, Priority: 0x1, State: 2, PC: 0xA1, MaxPC: 0xc8, Terminate: 30, TermCount: 0
+Moved to IO A:  PID: 0xCEC, Priority: 0x1, State: 4, PC: 0xA1, MaxPC: 0xc8, Terminate: 30, TermCount: 0
+Waiting Queue A:Size = 1. 0xCEC->
+Switching to:   PID: 0x122DA, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 2
+Ready Queue: Size: 46
+Q0: Count=0: *
+Q1: Count=8: 122DB->F9F2->7757->F9F1->7758->4BF2->5C88->4BF3->*
+Q2: Count=36: AA10->32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->F342->*
+Q3: Count=2: 2CF->326->*
+
+Switching from: PID: 0x122DA, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 2
+Deadlock detected on Mutual pair 4893, PID: 0x122DA & 0x122DB
+Deallocated:    PID: 0x366, Priority: 0x0, State: 5, PC: 0x0, MaxPC: 0x2e8, Terminate: 15, TermCount: 15
+Returned:       PID: 0x122DA, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 2
+Switching to:   PID: 0x122DB, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Ready Queue: Size: 46
+Q0: Count=0: *
+Q1: Count=8: F9F2->7757->F9F1->7758->4BF2->5C88->4BF3->122DA->*
+Q2: Count=36: AA10->32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->F342->*
+Q3: Count=2: 2CF->326->*
+
+Switching from: PID: 0x122DB, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Deadlock detected on Mutual pair 4893, PID: 0x122DB & 0x122DA
+Created:        PID: 0x10B, Priority: 0x0, State: 0, PC: 0x0, MaxPC: 0x3a6, Terminate: 15, TermCount: 0
+Returned:       PID: 0x122DB, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Switching to:   PID: 0x10B, Priority: 0x0, State: 0, PC: 0x0, MaxPC: 0x3a6, Terminate: 15, TermCount: 0
+Ready Queue: Size: 47
+Q0: Count=0: *
+Q1: Count=9: F9F2->7757->F9F1->7758->4BF2->5C88->4BF3->122DA->122DB->*
+Q2: Count=36: AA10->32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->F342->*
+Q3: Count=2: 2CF->326->*
+Created:        PID: 0x249, Priority: 0x0, State: 0, PC: 0x0, MaxPC: 0x1a4, Terminate: 15, TermCount: 0
+Moved from IO A:PID: 0xCEC, Priority: 0x1, State: 4, PC: 0xA1, MaxPC: 0xc8, Terminate: 30, TermCount: 0
+Waiting Queue A:Size = 0.
+Switching from: PID: 0x10B, Priority: 0x0, State: 2, PC: 0x0, MaxPC: 0x3a6, Terminate: 15, TermCount: 15
+Terminated:     PID: 0x10B, Priority: 0x0, State: 5, PC: 0x0, MaxPC: 0x3a6, Terminate: 15, TermCount: 15
+Switching to:   PID: 0x249, Priority: 0x0, State: 0, PC: 0x0, MaxPC: 0x1a4, Terminate: 15, TermCount: 0
+Ready Queue: Size: 48
+Q0: Count=0: *
+Q1: Count=10: F9F2->7757->F9F1->7758->4BF2->5C88->4BF3->122DA->122DB->CEC->*
+Q2: Count=36: AA10->32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->F342->*
+Q3: Count=2: 2CF->326->*
+
+Switching from: PID: 0x249, Priority: 0x0, State: 2, PC: 0x0, MaxPC: 0x1a4, Terminate: 15, TermCount: 0
+Deallocated:    PID: 0x10B, Priority: 0x0, State: 5, PC: 0x0, MaxPC: 0x3a6, Terminate: 15, TermCount: 15
+Returned:       PID: 0x249, Priority: 0x0, State: 1, PC: 0x0, MaxPC: 0x1a4, Terminate: 15, TermCount: 0
+Switching to:   PID: 0x249, Priority: 0x0, State: 1, PC: 0x0, MaxPC: 0x1a4, Terminate: 15, TermCount: 0
+Ready Queue: Size: 48
+Q0: Count=0: *
+Q1: Count=10: F9F2->7757->F9F1->7758->4BF2->5C88->4BF3->122DA->122DB->CEC->*
+Q2: Count=36: AA10->32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->F342->*
+Q3: Count=2: 2CF->326->*
+Switching from: PID: 0x249, Priority: 0x0, State: 2, PC: 0x0, MaxPC: 0x1a4, Terminate: 15, TermCount: 15
+Terminated:     PID: 0x249, Priority: 0x0, State: 5, PC: 0x0, MaxPC: 0x1a4, Terminate: 15, TermCount: 15
+Switching to:   PID: 0xF9F2, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Ready Queue: Size: 47
+Q0: Count=0: *
+Q1: Count=9: 7757->F9F1->7758->4BF2->5C88->4BF3->122DA->122DB->CEC->*
+Q2: Count=36: AA10->32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->F342->*
+Q3: Count=2: 2CF->326->*
+
+Switching from: PID: 0xF9F2, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Deadlock detected on Mutual pair 2257, PID: 0xF9F2 & 0xF9F1
+Deallocated:    PID: 0x249, Priority: 0x0, State: 5, PC: 0x0, MaxPC: 0x1a4, Terminate: 15, TermCount: 15
+Returned:       PID: 0xF9F2, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Switching to:   PID: 0x7757, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Ready Queue: Size: 47
+Q0: Count=0: *
+Q1: Count=9: F9F1->7758->4BF2->5C88->4BF3->122DA->122DB->CEC->F9F2->*
+Q2: Count=36: AA10->32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->F342->*
+Q3: Count=2: 2CF->326->*
+
+Switching from: PID: 0x7757, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Deadlock detected on Mutual pair 2886, PID: 0x7757 & 0x7758
+Returned:       PID: 0x7757, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Switching to:   PID: 0xF9F1, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Ready Queue: Size: 47
+Q0: Count=0: *
+Q1: Count=9: 7758->4BF2->5C88->4BF3->122DA->122DB->CEC->F9F2->7757->*
+Q2: Count=36: AA10->32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->F342->*
+Q3: Count=2: 2CF->326->*
+
+Switching from: PID: 0xF9F1, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Deadlock detected on Mutual pair 2257, PID: 0xF9F1 & 0xF9F2
+Created:        PID: 0x83, Priority: 0x0, State: 0, PC: 0x0, MaxPC: 0xe5, Terminate: 15, TermCount: 0
+Returned:       PID: 0xF9F1, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Switching to:   PID: 0x83, Priority: 0x0, State: 0, PC: 0x0, MaxPC: 0xe5, Terminate: 15, TermCount: 0
+Ready Queue: Size: 48
+Q0: Count=0: *
+Q1: Count=10: 7758->4BF2->5C88->4BF3->122DA->122DB->CEC->F9F2->7757->F9F1->*
+Q2: Count=36: AA10->32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->F342->*
+Q3: Count=2: 2CF->326->*
+Switching from: PID: 0x83, Priority: 0x0, State: 2, PC: 0x0, MaxPC: 0xe5, Terminate: 15, TermCount: 15
+Terminated:     PID: 0x83, Priority: 0x0, State: 5, PC: 0x0, MaxPC: 0xe5, Terminate: 15, TermCount: 15
+Switching to:   PID: 0x7758, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Ready Queue: Size: 47
+Q0: Count=0: *
+Q1: Count=9: 4BF2->5C88->4BF3->122DA->122DB->CEC->F9F2->7757->F9F1->*
+Q2: Count=36: AA10->32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->F342->*
+Q3: Count=2: 2CF->326->*
+
+Switching from: PID: 0x7758, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Deadlock detected on Mutual pair 2886, PID: 0x7758 & 0x7757
+Deallocated:    PID: 0x83, Priority: 0x0, State: 5, PC: 0x0, MaxPC: 0xe5, Terminate: 15, TermCount: 15
+Returned:       PID: 0x7758, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Switching to:   PID: 0x4BF2, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 4
+Ready Queue: Size: 47
+Q0: Count=0: *
+Q1: Count=9: 5C88->4BF3->122DA->122DB->CEC->F9F2->7757->F9F1->7758->*
+Q2: Count=36: AA10->32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->F342->*
+Q3: Count=2: 2CF->326->*
+
+Switching from: PID: 0x4BF2, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 4
+Deadlock detected on Mutual pair 6828, PID: 0x4BF2 & 0x4BF3
+Returned:       PID: 0x4BF2, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 4
+Switching to:   PID: 0x5C88, Priority: 0x1, State: 1, PC: 0xE7, MaxPC: 0x2ce, Terminate: 30, TermCount: 0
+Ready Queue: Size: 47
+Q0: Count=0: *
+Q1: Count=9: 4BF3->122DA->122DB->CEC->F9F2->7757->F9F1->7758->4BF2->*
+Q2: Count=36: AA10->32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->F342->*
+Q3: Count=2: 2CF->326->*
+Switching from: PID: 0x5C88, Priority: 0x1, State: 2, PC: 0xE7, MaxPC: 0x2ce, Terminate: 30, TermCount: 0
+Moved to IO A:  PID: 0x5C88, Priority: 0x1, State: 4, PC: 0xE7, MaxPC: 0x2ce, Terminate: 30, TermCount: 0
+Waiting Queue A:Size = 1. 0x5C88->
+Switching to:   PID: 0x4BF3, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Ready Queue: Size: 46
+Q0: Count=0: *
+Q1: Count=8: 122DA->122DB->CEC->F9F2->7757->F9F1->7758->4BF2->*
+Q2: Count=36: AA10->32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->F342->*
+Q3: Count=2: 2CF->326->*
+
+Switching from: PID: 0x4BF3, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Deadlock detected on Mutual pair 6828, PID: 0x4BF3 & 0x4BF2
+Returned:       PID: 0x4BF3, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Switching to:   PID: 0x122DA, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 2
+Ready Queue: Size: 46
+Q0: Count=0: *
+Q1: Count=8: 122DB->CEC->F9F2->7757->F9F1->7758->4BF2->4BF3->*
+Q2: Count=36: AA10->32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->F342->*
+Q3: Count=2: 2CF->326->*
+
+Switching from: PID: 0x122DA, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 2
+Deadlock detected on Mutual pair 4893, PID: 0x122DA & 0x122DB
+Created:        PID: 0x168, Priority: 0x0, State: 0, PC: 0x0, MaxPC: 0x1b4, Terminate: 15, TermCount: 0
+Returned:       PID: 0x122DA, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 2
+Switching to:   PID: 0x168, Priority: 0x0, State: 0, PC: 0x0, MaxPC: 0x1b4, Terminate: 15, TermCount: 0
+Ready Queue: Size: 47
+Q0: Count=0: *
+Q1: Count=9: 122DB->CEC->F9F2->7757->F9F1->7758->4BF2->4BF3->122DA->*
+Q2: Count=36: AA10->32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->F342->*
+Q3: Count=2: 2CF->326->*
+Moved from IO A:PID: 0x5C88, Priority: 0x1, State: 4, PC: 0xE7, MaxPC: 0x2ce, Terminate: 30, TermCount: 0
+Waiting Queue A:Size = 0.
+Switching from: PID: 0x168, Priority: 0x0, State: 2, PC: 0x0, MaxPC: 0x1b4, Terminate: 15, TermCount: 15
+Terminated:     PID: 0x168, Priority: 0x0, State: 5, PC: 0x0, MaxPC: 0x1b4, Terminate: 15, TermCount: 15
+Switching to:   PID: 0x122DB, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Ready Queue: Size: 47
+Q0: Count=0: *
+Q1: Count=9: CEC->F9F2->7757->F9F1->7758->4BF2->4BF3->122DA->5C88->*
+Q2: Count=36: AA10->32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->F342->*
+Q3: Count=2: 2CF->326->*
+
+Switching from: PID: 0x122DB, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Deadlock detected on Mutual pair 4893, PID: 0x122DB & 0x122DA
+Deallocated:    PID: 0x168, Priority: 0x0, State: 5, PC: 0x0, MaxPC: 0x1b4, Terminate: 15, TermCount: 15
+Returned:       PID: 0x122DB, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Switching to:   PID: 0xCEC, Priority: 0x1, State: 1, PC: 0xA1, MaxPC: 0xc8, Terminate: 30, TermCount: 0
+Ready Queue: Size: 47
+Q0: Count=0: *
+Q1: Count=9: F9F2->7757->F9F1->7758->4BF2->4BF3->122DA->5C88->122DB->*
+Q2: Count=36: AA10->32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->F342->*
+Q3: Count=2: 2CF->326->*
+Switching from: PID: 0xCEC, Priority: 0x1, State: 2, PC: 0xA1, MaxPC: 0xc8, Terminate: 30, TermCount: 0
+Moved to IO A:  PID: 0xCEC, Priority: 0x1, State: 4, PC: 0xA1, MaxPC: 0xc8, Terminate: 30, TermCount: 0
+Waiting Queue A:Size = 1. 0xCEC->
+Switching to:   PID: 0xF9F2, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Ready Queue: Size: 46
+Q0: Count=0: *
+Q1: Count=8: 7757->F9F1->7758->4BF2->4BF3->122DA->5C88->122DB->*
+Q2: Count=36: AA10->32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->F342->*
+Q3: Count=2: 2CF->326->*
+
+Switching from: PID: 0xF9F2, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Deadlock detected on Mutual pair 2257, PID: 0xF9F2 & 0xF9F1
+Returned:       PID: 0xF9F2, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Switching to:   PID: 0x7757, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Ready Queue: Size: 46
+Q0: Count=0: *
+Q1: Count=8: F9F1->7758->4BF2->4BF3->122DA->5C88->122DB->F9F2->*
+Q2: Count=36: AA10->32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->F342->*
+Q3: Count=2: 2CF->326->*
+
+Switching from: PID: 0x7757, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Deadlock detected on Mutual pair 2886, PID: 0x7757 & 0x7758
+Returned:       PID: 0x7757, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Switching to:   PID: 0xF9F1, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Ready Queue: Size: 46
+Q0: Count=0: *
+Q1: Count=8: 7758->4BF2->4BF3->122DA->5C88->122DB->F9F2->7757->*
+Q2: Count=36: AA10->32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->F342->*
+Q3: Count=2: 2CF->326->*
+Deadlock detected on Mutual pair 2257, PID: 0xF9F1 & 0xF9F2
+Moved from IO A:PID: 0xCEC, Priority: 0x1, State: 4, PC: 0xA1, MaxPC: 0xc8, Terminate: 30, TermCount: 0
+Waiting Queue A:Size = 0.
+
+Switching from: PID: 0xF9F1, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Deadlock detected on Mutual pair 2257, PID: 0xF9F1 & 0xF9F2
+Returned:       PID: 0xF9F1, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Switching to:   PID: 0x7758, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Ready Queue: Size: 47
+Q0: Count=0: *
+Q1: Count=9: 4BF2->4BF3->122DA->5C88->122DB->F9F2->7757->CEC->F9F1->*
+Q2: Count=36: AA10->32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->F342->*
+Q3: Count=2: 2CF->326->*
+
+Switching from: PID: 0x7758, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Deadlock detected on Mutual pair 2886, PID: 0x7758 & 0x7757
+Returned:       PID: 0x7758, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Switching to:   PID: 0x4BF2, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 4
+Ready Queue: Size: 47
+Q0: Count=0: *
+Q1: Count=9: 4BF3->122DA->5C88->122DB->F9F2->7757->CEC->F9F1->7758->*
+Q2: Count=36: AA10->32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->F342->*
+Q3: Count=2: 2CF->326->*
+
+Switching from: PID: 0x4BF2, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 4
+Deadlock detected on Mutual pair 6828, PID: 0x4BF2 & 0x4BF3
+Returned:       PID: 0x4BF2, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 4
+Switching to:   PID: 0x4BF3, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Ready Queue: Size: 47
+Q0: Count=0: *
+Q1: Count=9: 122DA->5C88->122DB->F9F2->7757->CEC->F9F1->7758->4BF2->*
+Q2: Count=36: AA10->32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->F342->*
+Q3: Count=2: 2CF->326->*
+
+Switching from: PID: 0x4BF3, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Deadlock detected on Mutual pair 6828, PID: 0x4BF3 & 0x4BF2
+Returned:       PID: 0x4BF3, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Switching to:   PID: 0x122DA, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 2
+Ready Queue: Size: 47
+Q0: Count=0: *
+Q1: Count=9: 5C88->122DB->F9F2->7757->CEC->F9F1->7758->4BF2->4BF3->*
+Q2: Count=36: AA10->32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->F342->*
+Q3: Count=2: 2CF->326->*
+
+Switching from: PID: 0x122DA, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 2
+Deadlock detected on Mutual pair 4893, PID: 0x122DA & 0x122DB
+Created:        PID: 0x14B, Priority: 0x0, State: 0, PC: 0x0, MaxPC: 0x154, Terminate: 15, TermCount: 0
+Returned:       PID: 0x122DA, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 2
+Switching to:   PID: 0x14B, Priority: 0x0, State: 0, PC: 0x0, MaxPC: 0x154, Terminate: 15, TermCount: 0
+Ready Queue: Size: 48
+Q0: Count=0: *
+Q1: Count=10: 5C88->122DB->F9F2->7757->CEC->F9F1->7758->4BF2->4BF3->122DA->*
+Q2: Count=36: AA10->32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->F342->*
+Q3: Count=2: 2CF->326->*
+Switching from: PID: 0x14B, Priority: 0x0, State: 2, PC: 0x0, MaxPC: 0x154, Terminate: 15, TermCount: 15
+Terminated:     PID: 0x14B, Priority: 0x0, State: 5, PC: 0x0, MaxPC: 0x154, Terminate: 15, TermCount: 15
+Switching to:   PID: 0x5C88, Priority: 0x1, State: 1, PC: 0xE7, MaxPC: 0x2ce, Terminate: 30, TermCount: 0
+Ready Queue: Size: 47
+Q0: Count=0: *
+Q1: Count=9: 122DB->F9F2->7757->CEC->F9F1->7758->4BF2->4BF3->122DA->*
+Q2: Count=36: AA10->32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->F342->*
+Q3: Count=2: 2CF->326->*
+Switching from: PID: 0x5C88, Priority: 0x1, State: 2, PC: 0xE7, MaxPC: 0x2ce, Terminate: 30, TermCount: 0
+Moved to IO A:  PID: 0x5C88, Priority: 0x1, State: 4, PC: 0xE7, MaxPC: 0x2ce, Terminate: 30, TermCount: 0
+Waiting Queue A:Size = 1. 0x5C88->
+Switching to:   PID: 0x122DB, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Ready Queue: Size: 46
+Q0: Count=0: *
+Q1: Count=8: F9F2->7757->CEC->F9F1->7758->4BF2->4BF3->122DA->*
+Q2: Count=36: AA10->32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->F342->*
+Q3: Count=2: 2CF->326->*
+
+Switching from: PID: 0x122DB, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Deadlock detected on Mutual pair 4893, PID: 0x122DB & 0x122DA
+Deallocated:    PID: 0x14B, Priority: 0x0, State: 5, PC: 0x0, MaxPC: 0x154, Terminate: 15, TermCount: 15
+Returned:       PID: 0x122DB, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Switching to:   PID: 0xF9F2, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Ready Queue: Size: 46
+Q0: Count=0: *
+Q1: Count=8: 7757->CEC->F9F1->7758->4BF2->4BF3->122DA->122DB->*
+Q2: Count=36: AA10->32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->F342->*
+Q3: Count=2: 2CF->326->*
+
+Switching from: PID: 0xF9F2, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Deadlock detected on Mutual pair 2257, PID: 0xF9F2 & 0xF9F1
+Returned:       PID: 0xF9F2, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Switching to:   PID: 0x7757, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Ready Queue: Size: 46
+Q0: Count=0: *
+Q1: Count=8: CEC->F9F1->7758->4BF2->4BF3->122DA->122DB->F9F2->*
+Q2: Count=36: AA10->32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->F342->*
+Q3: Count=2: 2CF->326->*
+Deadlock detected on Mutual pair 2886, PID: 0x7757 & 0x7758
+Moved from IO A:PID: 0x5C88, Priority: 0x1, State: 4, PC: 0xE7, MaxPC: 0x2ce, Terminate: 30, TermCount: 0
+Waiting Queue A:Size = 0.
+
+Switching from: PID: 0x7757, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Deadlock detected on Mutual pair 2886, PID: 0x7757 & 0x7758
+Returned:       PID: 0x7757, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Switching to:   PID: 0xCEC, Priority: 0x1, State: 1, PC: 0xA1, MaxPC: 0xc8, Terminate: 30, TermCount: 0
+Ready Queue: Size: 47
+Q0: Count=0: *
+Q1: Count=9: F9F1->7758->4BF2->4BF3->122DA->122DB->F9F2->5C88->7757->*
+Q2: Count=36: AA10->32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->F342->*
+Q3: Count=2: 2CF->326->*
+Switching from: PID: 0xCEC, Priority: 0x1, State: 2, PC: 0xA1, MaxPC: 0xc8, Terminate: 30, TermCount: 0
+Moved to IO A:  PID: 0xCEC, Priority: 0x1, State: 4, PC: 0xA1, MaxPC: 0xc8, Terminate: 30, TermCount: 0
+Waiting Queue A:Size = 1. 0xCEC->
+Switching to:   PID: 0xF9F1, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Ready Queue: Size: 46
+Q0: Count=0: *
+Q1: Count=8: 7758->4BF2->4BF3->122DA->122DB->F9F2->5C88->7757->*
+Q2: Count=36: AA10->32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->F342->*
+Q3: Count=2: 2CF->326->*
+
+Switching from: PID: 0xF9F1, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Deadlock detected on Mutual pair 2257, PID: 0xF9F1 & 0xF9F2
+Created:        PID: 0x29D, Priority: 0x0, State: 0, PC: 0x0, MaxPC: 0xd5, Terminate: 15, TermCount: 0
+Returned:       PID: 0xF9F1, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Switching to:   PID: 0x29D, Priority: 0x0, State: 0, PC: 0x0, MaxPC: 0xd5, Terminate: 15, TermCount: 0
+Ready Queue: Size: 47
+Q0: Count=0: *
+Q1: Count=9: 7758->4BF2->4BF3->122DA->122DB->F9F2->5C88->7757->F9F1->*
+Q2: Count=36: AA10->32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->F342->*
+Q3: Count=2: 2CF->326->*
+Switching from: PID: 0x29D, Priority: 0x0, State: 2, PC: 0x0, MaxPC: 0xd5, Terminate: 15, TermCount: 15
+Terminated:     PID: 0x29D, Priority: 0x0, State: 5, PC: 0x0, MaxPC: 0xd5, Terminate: 15, TermCount: 15
+Switching to:   PID: 0x7758, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Ready Queue: Size: 46
+Q0: Count=0: *
+Q1: Count=8: 4BF2->4BF3->122DA->122DB->F9F2->5C88->7757->F9F1->*
+Q2: Count=36: AA10->32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->F342->*
+Q3: Count=2: 2CF->326->*
+
+Switching from: PID: 0x7758, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Deadlock detected on Mutual pair 2886, PID: 0x7758 & 0x7757
+Deallocated:    PID: 0x29D, Priority: 0x0, State: 5, PC: 0x0, MaxPC: 0xd5, Terminate: 15, TermCount: 15
+Returned:       PID: 0x7758, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Switching to:   PID: 0x4BF2, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 4
+Ready Queue: Size: 46
+Q0: Count=0: *
+Q1: Count=8: 4BF3->122DA->122DB->F9F2->5C88->7757->F9F1->7758->*
+Q2: Count=36: AA10->32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->F342->*
+Q3: Count=2: 2CF->326->*
+Deadlock detected on Mutual pair 6828, PID: 0x4BF2 & 0x4BF3
+Moved from IO A:PID: 0xCEC, Priority: 0x1, State: 4, PC: 0xA1, MaxPC: 0xc8, Terminate: 30, TermCount: 0
+Waiting Queue A:Size = 0.
+
+Switching from: PID: 0x4BF2, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 4
+Deadlock detected on Mutual pair 6828, PID: 0x4BF2 & 0x4BF3
+Returned:       PID: 0x4BF2, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 4
+Switching to:   PID: 0x4BF3, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Ready Queue: Size: 47
+Q0: Count=0: *
+Q1: Count=9: 122DA->122DB->F9F2->5C88->7757->F9F1->7758->CEC->4BF2->*
+Q2: Count=36: AA10->32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->F342->*
+Q3: Count=2: 2CF->326->*
+
+Switching from: PID: 0x4BF3, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Deadlock detected on Mutual pair 6828, PID: 0x4BF3 & 0x4BF2
+Returned:       PID: 0x4BF3, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Switching to:   PID: 0x122DA, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 2
+Ready Queue: Size: 47
+Q0: Count=0: *
+Q1: Count=9: 122DB->F9F2->5C88->7757->F9F1->7758->CEC->4BF2->4BF3->*
+Q2: Count=36: AA10->32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->F342->*
+Q3: Count=2: 2CF->326->*
+
+Switching from: PID: 0x122DA, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 2
+Deadlock detected on Mutual pair 4893, PID: 0x122DA & 0x122DB
+Returned:       PID: 0x122DA, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 2
+Switching to:   PID: 0x122DB, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Ready Queue: Size: 47
+Q0: Count=0: *
+Q1: Count=9: F9F2->5C88->7757->F9F1->7758->CEC->4BF2->4BF3->122DA->*
+Q2: Count=36: AA10->32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->F342->*
+Q3: Count=2: 2CF->326->*
+
+Switching from: PID: 0x122DB, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Deadlock detected on Mutual pair 4893, PID: 0x122DB & 0x122DA
+Returned:       PID: 0x122DB, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Switching to:   PID: 0xF9F2, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Ready Queue: Size: 47
+Q0: Count=0: *
+Q1: Count=9: 5C88->7757->F9F1->7758->CEC->4BF2->4BF3->122DA->122DB->*
+Q2: Count=36: AA10->32FA->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->F342->*
+Q3: Count=2: 2CF->326->*
+
+Switching from: PID: 0xF9F2, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Deadlock detected on Mutual pair 2257, PID: 0xF9F2 & 0xF9F1
+Boost on:       PID: 0xCEC, Priority: 0x0, State: 1, PC: 0xA1, MaxPC: 0xc8, Terminate: 30, TermCount: 0
+Boost on:       PID: 0x32FA, Priority: 0x1, State: 1, PC: 0x160, MaxPC: 0x36f, Terminate: 30, TermCount: 0
+Returned:       PID: 0xF9F2, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Switching to:   PID: 0xCEC, Priority: 0x0, State: 1, PC: 0xA1, MaxPC: 0xc8, Terminate: 30, TermCount: 0
+Ready Queue: Size: 47
+Q0: Count=0: *
+Q1: Count=10: 122DB->5C88->7757->F9F1->7758->4BF2->4BF3->122DA->32FA->F9F2->*
+Q2: Count=35: F342->AA10->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->*
+Q3: Count=2: 2CF->326->*
+Switching from: PID: 0xCEC, Priority: 0x0, State: 2, PC: 0xA1, MaxPC: 0xc8, Terminate: 30, TermCount: 0
+Moved to IO A:  PID: 0xCEC, Priority: 0x0, State: 4, PC: 0xA1, MaxPC: 0xc8, Terminate: 30, TermCount: 0
+Waiting Queue A:Size = 1. 0xCEC->
+Switching to:   PID: 0x122DB, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Ready Queue: Size: 46
+Q0: Count=0: *
+Q1: Count=9: 5C88->7757->F9F1->7758->4BF2->4BF3->122DA->32FA->F9F2->*
+Q2: Count=35: F342->AA10->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->*
+Q3: Count=2: 2CF->326->*
+
+Switching from: PID: 0x122DB, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Deadlock detected on Mutual pair 4893, PID: 0x122DB & 0x122DA
+Returned:       PID: 0x122DB, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Switching to:   PID: 0x5C88, Priority: 0x1, State: 1, PC: 0xE7, MaxPC: 0x2ce, Terminate: 30, TermCount: 0
+Ready Queue: Size: 46
+Q0: Count=0: *
+Q1: Count=9: 7757->F9F1->7758->4BF2->4BF3->122DA->32FA->F9F2->122DB->*
+Q2: Count=35: F342->AA10->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->*
+Q3: Count=2: 2CF->326->*
+Switching from: PID: 0x5C88, Priority: 0x1, State: 2, PC: 0xE7, MaxPC: 0x2ce, Terminate: 30, TermCount: 0
+Moved to IO A:  PID: 0x5C88, Priority: 0x1, State: 4, PC: 0xE7, MaxPC: 0x2ce, Terminate: 30, TermCount: 0
+Waiting Queue A:Size = 2. 0xCEC->0x5C88->
+Switching to:   PID: 0x7757, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Ready Queue: Size: 45
+Q0: Count=0: *
+Q1: Count=8: F9F1->7758->4BF2->4BF3->122DA->32FA->F9F2->122DB->*
+Q2: Count=35: F342->AA10->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->*
+Q3: Count=2: 2CF->326->*
+
+Switching from: PID: 0x7757, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Deadlock detected on Mutual pair 2886, PID: 0x7757 & 0x7758
+Created:        PID: 0x43, Priority: 0x0, State: 0, PC: 0x0, MaxPC: 0x17f, Terminate: 15, TermCount: 0
+Returned:       PID: 0x7757, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Switching to:   PID: 0x43, Priority: 0x0, State: 0, PC: 0x0, MaxPC: 0x17f, Terminate: 15, TermCount: 0
+Ready Queue: Size: 46
+Q0: Count=0: *
+Q1: Count=9: F9F1->7758->4BF2->4BF3->122DA->32FA->F9F2->122DB->7757->*
+Q2: Count=35: F342->AA10->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->*
+Q3: Count=2: 2CF->326->*
+Moved from IO A:PID: 0xCEC, Priority: 0x0, State: 4, PC: 0xA1, MaxPC: 0xc8, Terminate: 30, TermCount: 0
+Waiting Queue A:Size = 1. 0x5C88->
+Switching from: PID: 0x43, Priority: 0x0, State: 2, PC: 0x0, MaxPC: 0x17f, Terminate: 15, TermCount: 15
+Terminated:     PID: 0x43, Priority: 0x0, State: 5, PC: 0x0, MaxPC: 0x17f, Terminate: 15, TermCount: 15
+Switching to:   PID: 0xCEC, Priority: 0x0, State: 1, PC: 0xA1, MaxPC: 0xc8, Terminate: 30, TermCount: 0
+Ready Queue: Size: 46
+Q0: Count=0: *
+Q1: Count=9: F9F1->7758->4BF2->4BF3->122DA->32FA->F9F2->122DB->7757->*
+Q2: Count=35: F342->AA10->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->*
+Q3: Count=2: 2CF->326->*
+
+Switching from: PID: 0xCEC, Priority: 0x0, State: 2, PC: 0xA1, MaxPC: 0xc8, Terminate: 30, TermCount: 0
+Boost off:      PID: 0xCEC, Priority: 0x1, State: 3, PC: 0xA1, MaxPC: 0xc8, Terminate: 30, TermCount: 0
+Deallocated:    PID: 0x43, Priority: 0x0, State: 5, PC: 0x0, MaxPC: 0x17f, Terminate: 15, TermCount: 15
+Returned:       PID: 0xCEC, Priority: 0x1, State: 1, PC: 0xA1, MaxPC: 0xc8, Terminate: 30, TermCount: 0
+Switching to:   PID: 0xF9F1, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Ready Queue: Size: 46
+Q0: Count=0: *
+Q1: Count=9: 7758->4BF2->4BF3->122DA->32FA->F9F2->122DB->7757->CEC->*
+Q2: Count=35: F342->AA10->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->*
+Q3: Count=2: 2CF->326->*
+
+Switching from: PID: 0xF9F1, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Deadlock detected on Mutual pair 2257, PID: 0xF9F1 & 0xF9F2
+Returned:       PID: 0xF9F1, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Switching to:   PID: 0x7758, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Ready Queue: Size: 46
+Q0: Count=0: *
+Q1: Count=9: 4BF2->4BF3->122DA->32FA->F9F2->122DB->7757->CEC->F9F1->*
+Q2: Count=35: F342->AA10->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->*
+Q3: Count=2: 2CF->326->*
+Deadlock detected on Mutual pair 2886, PID: 0x7758 & 0x7757
+Created:        PID: 0x163, Priority: 0x0, State: 0, PC: 0x0, MaxPC: 0x155, Terminate: 15, TermCount: 0
+Moved from IO A:PID: 0x5C88, Priority: 0x1, State: 4, PC: 0xE7, MaxPC: 0x2ce, Terminate: 30, TermCount: 0
+Waiting Queue A:Size = 0.
+
+Switching from: PID: 0x7758, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Deadlock detected on Mutual pair 2886, PID: 0x7758 & 0x7757
+Created:        PID: 0x2AE, Priority: 0x0, State: 0, PC: 0x0, MaxPC: 0x1e7, Terminate: 15, TermCount: 0
+Returned:       PID: 0x7758, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Switching to:   PID: 0x163, Priority: 0x0, State: 0, PC: 0x0, MaxPC: 0x155, Terminate: 15, TermCount: 0
+Ready Queue: Size: 49
+Q0: Count=1: 2AE->*
+Q1: Count=11: 4BF2->4BF3->122DA->32FA->F9F2->122DB->7757->CEC->F9F1->5C88->7758->*
+Q2: Count=35: F342->AA10->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->*
+Q3: Count=2: 2CF->326->*
+Switching from: PID: 0x163, Priority: 0x0, State: 2, PC: 0x0, MaxPC: 0x155, Terminate: 15, TermCount: 15
+Terminated:     PID: 0x163, Priority: 0x0, State: 5, PC: 0x0, MaxPC: 0x155, Terminate: 15, TermCount: 15
+Switching to:   PID: 0x2AE, Priority: 0x0, State: 0, PC: 0x0, MaxPC: 0x1e7, Terminate: 15, TermCount: 0
+Ready Queue: Size: 48
+Q0: Count=0: *
+Q1: Count=11: 4BF2->4BF3->122DA->32FA->F9F2->122DB->7757->CEC->F9F1->5C88->7758->*
+Q2: Count=35: F342->AA10->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->*
+Q3: Count=2: 2CF->326->*
+
+Switching from: PID: 0x2AE, Priority: 0x0, State: 2, PC: 0x0, MaxPC: 0x1e7, Terminate: 15, TermCount: 0
+Deallocated:    PID: 0x163, Priority: 0x0, State: 5, PC: 0x0, MaxPC: 0x155, Terminate: 15, TermCount: 15
+Returned:       PID: 0x2AE, Priority: 0x0, State: 1, PC: 0x0, MaxPC: 0x1e7, Terminate: 15, TermCount: 0
+Switching to:   PID: 0x2AE, Priority: 0x0, State: 1, PC: 0x0, MaxPC: 0x1e7, Terminate: 15, TermCount: 0
+Ready Queue: Size: 48
+Q0: Count=0: *
+Q1: Count=11: 4BF2->4BF3->122DA->32FA->F9F2->122DB->7757->CEC->F9F1->5C88->7758->*
+Q2: Count=35: F342->AA10->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->*
+Q3: Count=2: 2CF->326->*
+Switching from: PID: 0x2AE, Priority: 0x0, State: 2, PC: 0x0, MaxPC: 0x1e7, Terminate: 15, TermCount: 15
+Terminated:     PID: 0x2AE, Priority: 0x0, State: 5, PC: 0x0, MaxPC: 0x1e7, Terminate: 15, TermCount: 15
+Switching to:   PID: 0x4BF2, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 4
+Ready Queue: Size: 47
+Q0: Count=0: *
+Q1: Count=10: 4BF3->122DA->32FA->F9F2->122DB->7757->CEC->F9F1->5C88->7758->*
+Q2: Count=35: F342->AA10->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->*
+Q3: Count=2: 2CF->326->*
+
+Switching from: PID: 0x4BF2, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 4
+Deadlock detected on Mutual pair 6828, PID: 0x4BF2 & 0x4BF3
+Deallocated:    PID: 0x2AE, Priority: 0x0, State: 5, PC: 0x0, MaxPC: 0x1e7, Terminate: 15, TermCount: 15
+Returned:       PID: 0x4BF2, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 4
+Switching to:   PID: 0x4BF3, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Ready Queue: Size: 47
+Q0: Count=0: *
+Q1: Count=10: 122DA->32FA->F9F2->122DB->7757->CEC->F9F1->5C88->7758->4BF2->*
+Q2: Count=35: F342->AA10->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->*
+Q3: Count=2: 2CF->326->*
+
+Switching from: PID: 0x4BF3, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Deadlock detected on Mutual pair 6828, PID: 0x4BF3 & 0x4BF2
+Created:        PID: 0x83, Priority: 0x0, State: 0, PC: 0x0, MaxPC: 0x76, Terminate: 15, TermCount: 0
+Returned:       PID: 0x4BF3, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Switching to:   PID: 0x83, Priority: 0x0, State: 0, PC: 0x0, MaxPC: 0x76, Terminate: 15, TermCount: 0
+Ready Queue: Size: 48
+Q0: Count=0: *
+Q1: Count=11: 122DA->32FA->F9F2->122DB->7757->CEC->F9F1->5C88->7758->4BF2->4BF3->*
+Q2: Count=35: F342->AA10->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->*
+Q3: Count=2: 2CF->326->*
+Switching from: PID: 0x83, Priority: 0x0, State: 2, PC: 0x0, MaxPC: 0x76, Terminate: 15, TermCount: 15
+Terminated:     PID: 0x83, Priority: 0x0, State: 5, PC: 0x0, MaxPC: 0x76, Terminate: 15, TermCount: 15
+Switching to:   PID: 0x122DA, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 2
+Ready Queue: Size: 47
+Q0: Count=0: *
+Q1: Count=10: 32FA->F9F2->122DB->7757->CEC->F9F1->5C88->7758->4BF2->4BF3->*
+Q2: Count=35: F342->AA10->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->*
+Q3: Count=2: 2CF->326->*
+
+Switching from: PID: 0x122DA, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 2
+Deadlock detected on Mutual pair 4893, PID: 0x122DA & 0x122DB
+Deallocated:    PID: 0x83, Priority: 0x0, State: 5, PC: 0x0, MaxPC: 0x76, Terminate: 15, TermCount: 15
+Returned:       PID: 0x122DA, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 2
+Switching to:   PID: 0x32FA, Priority: 0x1, State: 1, PC: 0x160, MaxPC: 0x36f, Terminate: 30, TermCount: 0
+Ready Queue: Size: 47
+Q0: Count=0: *
+Q1: Count=10: F9F2->122DB->7757->CEC->F9F1->5C88->7758->4BF2->4BF3->122DA->*
+Q2: Count=35: F342->AA10->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->*
+Q3: Count=2: 2CF->326->*
+Switching from: PID: 0x32FA, Priority: 0x1, State: 2, PC: 0x160, MaxPC: 0x36f, Terminate: 30, TermCount: 0
+Moved to IO A:  PID: 0x32FA, Priority: 0x1, State: 4, PC: 0x160, MaxPC: 0x36f, Terminate: 30, TermCount: 0
+Waiting Queue A:Size = 1. 0x32FA->
+Switching to:   PID: 0xF9F2, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Ready Queue: Size: 46
+Q0: Count=0: *
+Q1: Count=9: 122DB->7757->CEC->F9F1->5C88->7758->4BF2->4BF3->122DA->*
+Q2: Count=35: F342->AA10->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->*
+Q3: Count=2: 2CF->326->*
+
+Switching from: PID: 0xF9F2, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Deadlock detected on Mutual pair 2257, PID: 0xF9F2 & 0xF9F1
+Returned:       PID: 0xF9F2, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Switching to:   PID: 0x122DB, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Ready Queue: Size: 46
+Q0: Count=0: *
+Q1: Count=9: 7757->CEC->F9F1->5C88->7758->4BF2->4BF3->122DA->F9F2->*
+Q2: Count=35: F342->AA10->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->*
+Q3: Count=2: 2CF->326->*
+
+Switching from: PID: 0x122DB, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Deadlock detected on Mutual pair 4893, PID: 0x122DB & 0x122DA
+Returned:       PID: 0x122DB, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Switching to:   PID: 0x7757, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Ready Queue: Size: 46
+Q0: Count=0: *
+Q1: Count=9: CEC->F9F1->5C88->7758->4BF2->4BF3->122DA->F9F2->122DB->*
+Q2: Count=35: F342->AA10->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->*
+Q3: Count=2: 2CF->326->*
+Deadlock detected on Mutual pair 2886, PID: 0x7757 & 0x7758
+Moved from IO A:PID: 0x32FA, Priority: 0x1, State: 4, PC: 0x160, MaxPC: 0x36f, Terminate: 30, TermCount: 0
+Waiting Queue A:Size = 0.
+
+Switching from: PID: 0x7757, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Deadlock detected on Mutual pair 2886, PID: 0x7757 & 0x7758
+Returned:       PID: 0x7757, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Switching to:   PID: 0xCEC, Priority: 0x1, State: 1, PC: 0xA1, MaxPC: 0xc8, Terminate: 30, TermCount: 0
+Ready Queue: Size: 47
+Q0: Count=0: *
+Q1: Count=10: F9F1->5C88->7758->4BF2->4BF3->122DA->F9F2->122DB->32FA->7757->*
+Q2: Count=35: F342->AA10->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->*
+Q3: Count=2: 2CF->326->*
+Switching from: PID: 0xCEC, Priority: 0x1, State: 2, PC: 0xA1, MaxPC: 0xc8, Terminate: 30, TermCount: 0
+Moved to IO A:  PID: 0xCEC, Priority: 0x1, State: 4, PC: 0xA1, MaxPC: 0xc8, Terminate: 30, TermCount: 0
+Waiting Queue A:Size = 1. 0xCEC->
+Switching to:   PID: 0xF9F1, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Ready Queue: Size: 46
+Q0: Count=0: *
+Q1: Count=9: 5C88->7758->4BF2->4BF3->122DA->F9F2->122DB->32FA->7757->*
+Q2: Count=35: F342->AA10->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->*
+Q3: Count=2: 2CF->326->*
+
+Switching from: PID: 0xF9F1, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Deadlock detected on Mutual pair 2257, PID: 0xF9F1 & 0xF9F2
+Returned:       PID: 0xF9F1, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Switching to:   PID: 0x5C88, Priority: 0x1, State: 1, PC: 0xE7, MaxPC: 0x2ce, Terminate: 30, TermCount: 0
+Ready Queue: Size: 46
+Q0: Count=0: *
+Q1: Count=9: 7758->4BF2->4BF3->122DA->F9F2->122DB->32FA->7757->F9F1->*
+Q2: Count=35: F342->AA10->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->*
+Q3: Count=2: 2CF->326->*
+Switching from: PID: 0x5C88, Priority: 0x1, State: 2, PC: 0xE7, MaxPC: 0x2ce, Terminate: 30, TermCount: 0
+Moved to IO A:  PID: 0x5C88, Priority: 0x1, State: 4, PC: 0xE7, MaxPC: 0x2ce, Terminate: 30, TermCount: 0
+Waiting Queue A:Size = 2. 0xCEC->0x5C88->
+Switching to:   PID: 0x7758, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Ready Queue: Size: 45
+Q0: Count=0: *
+Q1: Count=8: 4BF2->4BF3->122DA->F9F2->122DB->32FA->7757->F9F1->*
+Q2: Count=35: F342->AA10->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->*
+Q3: Count=2: 2CF->326->*
+
+Switching from: PID: 0x7758, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Deadlock detected on Mutual pair 2886, PID: 0x7758 & 0x7757
+Returned:       PID: 0x7758, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Switching to:   PID: 0x4BF2, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 4
+Ready Queue: Size: 45
+Q0: Count=0: *
+Q1: Count=8: 4BF3->122DA->F9F2->122DB->32FA->7757->F9F1->7758->*
+Q2: Count=35: F342->AA10->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->*
+Q3: Count=2: 2CF->326->*
+Deadlock detected on Mutual pair 6828, PID: 0x4BF2 & 0x4BF3
+Moved from IO A:PID: 0xCEC, Priority: 0x1, State: 4, PC: 0xA1, MaxPC: 0xc8, Terminate: 30, TermCount: 0
+Waiting Queue A:Size = 1. 0x5C88->
+
+Switching from: PID: 0x4BF2, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 4
+Deadlock detected on Mutual pair 6828, PID: 0x4BF2 & 0x4BF3
+Created:        PID: 0x333, Priority: 0x0, State: 0, PC: 0x0, MaxPC: 0x63, Terminate: 15, TermCount: 0
+Returned:       PID: 0x4BF2, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 4
+Switching to:   PID: 0x333, Priority: 0x0, State: 0, PC: 0x0, MaxPC: 0x63, Terminate: 15, TermCount: 0
+Ready Queue: Size: 47
+Q0: Count=0: *
+Q1: Count=10: 4BF3->122DA->F9F2->122DB->32FA->7757->F9F1->7758->CEC->4BF2->*
+Q2: Count=35: F342->AA10->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->*
+Q3: Count=2: 2CF->326->*
+Switching from: PID: 0x333, Priority: 0x0, State: 2, PC: 0x0, MaxPC: 0x63, Terminate: 15, TermCount: 15
+Terminated:     PID: 0x333, Priority: 0x0, State: 5, PC: 0x0, MaxPC: 0x63, Terminate: 15, TermCount: 15
+Switching to:   PID: 0x4BF3, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Ready Queue: Size: 46
+Q0: Count=0: *
+Q1: Count=9: 122DA->F9F2->122DB->32FA->7757->F9F1->7758->CEC->4BF2->*
+Q2: Count=35: F342->AA10->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->*
+Q3: Count=2: 2CF->326->*
+
+Switching from: PID: 0x4BF3, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Deadlock detected on Mutual pair 6828, PID: 0x4BF3 & 0x4BF2
+Deallocated:    PID: 0x333, Priority: 0x0, State: 5, PC: 0x0, MaxPC: 0x63, Terminate: 15, TermCount: 15
+Returned:       PID: 0x4BF3, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Switching to:   PID: 0x122DA, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 2
+Ready Queue: Size: 46
+Q0: Count=0: *
+Q1: Count=9: F9F2->122DB->32FA->7757->F9F1->7758->CEC->4BF2->4BF3->*
+Q2: Count=35: F342->AA10->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->*
+Q3: Count=2: 2CF->326->*
+Deadlock detected on Mutual pair 4893, PID: 0x122DA & 0x122DB
+Created:        PID: 0x1B8, Priority: 0x0, State: 0, PC: 0x0, MaxPC: 0x117, Terminate: 15, TermCount: 0
+Moved from IO A:PID: 0x5C88, Priority: 0x1, State: 4, PC: 0xE7, MaxPC: 0x2ce, Terminate: 30, TermCount: 0
+Waiting Queue A:Size = 0.
+
+Switching from: PID: 0x122DA, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 2
+Deadlock detected on Mutual pair 4893, PID: 0x122DA & 0x122DB
+Returned:       PID: 0x122DA, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 2
+Switching to:   PID: 0x1B8, Priority: 0x0, State: 0, PC: 0x0, MaxPC: 0x117, Terminate: 15, TermCount: 0
+Ready Queue: Size: 48
+Q0: Count=0: *
+Q1: Count=11: F9F2->122DB->32FA->7757->F9F1->7758->CEC->4BF2->4BF3->5C88->122DA->*
+Q2: Count=35: F342->AA10->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->*
+Q3: Count=2: 2CF->326->*
+Switching from: PID: 0x1B8, Priority: 0x0, State: 2, PC: 0x0, MaxPC: 0x117, Terminate: 15, TermCount: 15
+Terminated:     PID: 0x1B8, Priority: 0x0, State: 5, PC: 0x0, MaxPC: 0x117, Terminate: 15, TermCount: 15
+Switching to:   PID: 0xF9F2, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Ready Queue: Size: 47
+Q0: Count=0: *
+Q1: Count=10: 122DB->32FA->7757->F9F1->7758->CEC->4BF2->4BF3->5C88->122DA->*
+Q2: Count=35: F342->AA10->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->*
+Q3: Count=2: 2CF->326->*
+
+Switching from: PID: 0xF9F2, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Deadlock detected on Mutual pair 2257, PID: 0xF9F2 & 0xF9F1
+Deallocated:    PID: 0x1B8, Priority: 0x0, State: 5, PC: 0x0, MaxPC: 0x117, Terminate: 15, TermCount: 15
+Returned:       PID: 0xF9F2, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Switching to:   PID: 0x122DB, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Ready Queue: Size: 47
+Q0: Count=0: *
+Q1: Count=10: 32FA->7757->F9F1->7758->CEC->4BF2->4BF3->5C88->122DA->F9F2->*
+Q2: Count=35: F342->AA10->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->*
+Q3: Count=2: 2CF->326->*
+
+Switching from: PID: 0x122DB, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Deadlock detected on Mutual pair 4893, PID: 0x122DB & 0x122DA
+Returned:       PID: 0x122DB, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Switching to:   PID: 0x32FA, Priority: 0x1, State: 1, PC: 0x160, MaxPC: 0x36f, Terminate: 30, TermCount: 0
+Ready Queue: Size: 47
+Q0: Count=0: *
+Q1: Count=10: 7757->F9F1->7758->CEC->4BF2->4BF3->5C88->122DA->F9F2->122DB->*
+Q2: Count=35: F342->AA10->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->*
+Q3: Count=2: 2CF->326->*
+Switching from: PID: 0x32FA, Priority: 0x1, State: 2, PC: 0x160, MaxPC: 0x36f, Terminate: 30, TermCount: 0
+Moved to IO A:  PID: 0x32FA, Priority: 0x1, State: 4, PC: 0x160, MaxPC: 0x36f, Terminate: 30, TermCount: 0
+Waiting Queue A:Size = 1. 0x32FA->
+Switching to:   PID: 0x7757, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Ready Queue: Size: 46
+Q0: Count=0: *
+Q1: Count=9: F9F1->7758->CEC->4BF2->4BF3->5C88->122DA->F9F2->122DB->*
+Q2: Count=35: F342->AA10->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->*
+Q3: Count=2: 2CF->326->*
+
+Switching from: PID: 0x7757, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Deadlock detected on Mutual pair 2886, PID: 0x7757 & 0x7758
+Created:        PID: 0xF1, Priority: 0x0, State: 0, PC: 0x0, MaxPC: 0x22a, Terminate: 15, TermCount: 0
+Returned:       PID: 0x7757, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Switching to:   PID: 0xF1, Priority: 0x0, State: 0, PC: 0x0, MaxPC: 0x22a, Terminate: 15, TermCount: 0
+Ready Queue: Size: 47
+Q0: Count=0: *
+Q1: Count=10: F9F1->7758->CEC->4BF2->4BF3->5C88->122DA->F9F2->122DB->7757->*
+Q2: Count=35: F342->AA10->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->*
+Q3: Count=2: 2CF->326->*
+Switching from: PID: 0xF1, Priority: 0x0, State: 2, PC: 0x0, MaxPC: 0x22a, Terminate: 15, TermCount: 15
+Terminated:     PID: 0xF1, Priority: 0x0, State: 5, PC: 0x0, MaxPC: 0x22a, Terminate: 15, TermCount: 15
+Switching to:   PID: 0xF9F1, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Ready Queue: Size: 46
+Q0: Count=0: *
+Q1: Count=9: 7758->CEC->4BF2->4BF3->5C88->122DA->F9F2->122DB->7757->*
+Q2: Count=35: F342->AA10->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->*
+Q3: Count=2: 2CF->326->*
+
+Switching from: PID: 0xF9F1, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Deadlock detected on Mutual pair 2257, PID: 0xF9F1 & 0xF9F2
+Deallocated:    PID: 0xF1, Priority: 0x0, State: 5, PC: 0x0, MaxPC: 0x22a, Terminate: 15, TermCount: 15
+Returned:       PID: 0xF9F1, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Switching to:   PID: 0x7758, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Ready Queue: Size: 46
+Q0: Count=0: *
+Q1: Count=9: CEC->4BF2->4BF3->5C88->122DA->F9F2->122DB->7757->F9F1->*
+Q2: Count=35: F342->AA10->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->*
+Q3: Count=2: 2CF->326->*
+Deadlock detected on Mutual pair 2886, PID: 0x7758 & 0x7757
+Moved from IO A:PID: 0x32FA, Priority: 0x1, State: 4, PC: 0x160, MaxPC: 0x36f, Terminate: 30, TermCount: 0
+Waiting Queue A:Size = 0.
+
+Switching from: PID: 0x7758, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Deadlock detected on Mutual pair 2886, PID: 0x7758 & 0x7757
+Returned:       PID: 0x7758, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Switching to:   PID: 0xCEC, Priority: 0x1, State: 1, PC: 0xA1, MaxPC: 0xc8, Terminate: 30, TermCount: 0
+Ready Queue: Size: 47
+Q0: Count=0: *
+Q1: Count=10: 4BF2->4BF3->5C88->122DA->F9F2->122DB->7757->F9F1->32FA->7758->*
+Q2: Count=35: F342->AA10->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->*
+Q3: Count=2: 2CF->326->*
+Switching from: PID: 0xCEC, Priority: 0x1, State: 2, PC: 0xA1, MaxPC: 0xc8, Terminate: 30, TermCount: 0
+Moved to IO A:  PID: 0xCEC, Priority: 0x1, State: 4, PC: 0xA1, MaxPC: 0xc8, Terminate: 30, TermCount: 0
+Waiting Queue A:Size = 1. 0xCEC->
+Switching to:   PID: 0x4BF2, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 4
+Ready Queue: Size: 46
+Q0: Count=0: *
+Q1: Count=9: 4BF3->5C88->122DA->F9F2->122DB->7757->F9F1->32FA->7758->*
+Q2: Count=35: F342->AA10->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->*
+Q3: Count=2: 2CF->326->*
+
+Switching from: PID: 0x4BF2, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 4
+Deadlock detected on Mutual pair 6828, PID: 0x4BF2 & 0x4BF3
+Returned:       PID: 0x4BF2, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 4
+Switching to:   PID: 0x4BF3, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Ready Queue: Size: 46
+Q0: Count=0: *
+Q1: Count=9: 5C88->122DA->F9F2->122DB->7757->F9F1->32FA->7758->4BF2->*
+Q2: Count=35: F342->AA10->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->*
+Q3: Count=2: 2CF->326->*
+
+Switching from: PID: 0x4BF3, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Deadlock detected on Mutual pair 6828, PID: 0x4BF3 & 0x4BF2
+Returned:       PID: 0x4BF3, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Switching to:   PID: 0x5C88, Priority: 0x1, State: 1, PC: 0xE7, MaxPC: 0x2ce, Terminate: 30, TermCount: 0
+Ready Queue: Size: 46
+Q0: Count=0: *
+Q1: Count=9: 122DA->F9F2->122DB->7757->F9F1->32FA->7758->4BF2->4BF3->*
+Q2: Count=35: F342->AA10->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->*
+Q3: Count=2: 2CF->326->*
+Switching from: PID: 0x5C88, Priority: 0x1, State: 2, PC: 0xE7, MaxPC: 0x2ce, Terminate: 30, TermCount: 0
+Moved to IO A:  PID: 0x5C88, Priority: 0x1, State: 4, PC: 0xE7, MaxPC: 0x2ce, Terminate: 30, TermCount: 0
+Waiting Queue A:Size = 2. 0xCEC->0x5C88->
+Switching to:   PID: 0x122DA, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 2
+Ready Queue: Size: 45
+Q0: Count=0: *
+Q1: Count=8: F9F2->122DB->7757->F9F1->32FA->7758->4BF2->4BF3->*
+Q2: Count=35: F342->AA10->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->*
+Q3: Count=2: 2CF->326->*
+
+Switching from: PID: 0x122DA, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 2
+Deadlock detected on Mutual pair 4893, PID: 0x122DA & 0x122DB
+Returned:       PID: 0x122DA, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 2
+Switching to:   PID: 0xF9F2, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Ready Queue: Size: 45
+Q0: Count=0: *
+Q1: Count=8: 122DB->7757->F9F1->32FA->7758->4BF2->4BF3->122DA->*
+Q2: Count=35: F342->AA10->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->*
+Q3: Count=2: 2CF->326->*
+Deadlock detected on Mutual pair 2257, PID: 0xF9F2 & 0xF9F1
+Moved from IO A:PID: 0xCEC, Priority: 0x1, State: 4, PC: 0xA1, MaxPC: 0xc8, Terminate: 30, TermCount: 0
+Waiting Queue A:Size = 1. 0x5C88->
+
+Switching from: PID: 0xF9F2, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Deadlock detected on Mutual pair 2257, PID: 0xF9F2 & 0xF9F1
+Returned:       PID: 0xF9F2, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Switching to:   PID: 0x122DB, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Ready Queue: Size: 46
+Q0: Count=0: *
+Q1: Count=9: 7757->F9F1->32FA->7758->4BF2->4BF3->122DA->CEC->F9F2->*
+Q2: Count=35: F342->AA10->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->*
+Q3: Count=2: 2CF->326->*
+
+Switching from: PID: 0x122DB, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Deadlock detected on Mutual pair 4893, PID: 0x122DB & 0x122DA
+Returned:       PID: 0x122DB, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Switching to:   PID: 0x7757, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Ready Queue: Size: 46
+Q0: Count=0: *
+Q1: Count=9: F9F1->32FA->7758->4BF2->4BF3->122DA->CEC->F9F2->122DB->*
+Q2: Count=35: F342->AA10->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->*
+Q3: Count=2: 2CF->326->*
+Deadlock detected on Mutual pair 2886, PID: 0x7757 & 0x7758
+Moved from IO A:PID: 0x5C88, Priority: 0x1, State: 4, PC: 0xE7, MaxPC: 0x2ce, Terminate: 30, TermCount: 0
+Waiting Queue A:Size = 0.
+
+Switching from: PID: 0x7757, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Deadlock detected on Mutual pair 2886, PID: 0x7757 & 0x7758
+Returned:       PID: 0x7757, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Switching to:   PID: 0xF9F1, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Ready Queue: Size: 47
+Q0: Count=0: *
+Q1: Count=10: 32FA->7758->4BF2->4BF3->122DA->CEC->F9F2->122DB->5C88->7757->*
+Q2: Count=35: F342->AA10->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->*
+Q3: Count=2: 2CF->326->*
+
+Switching from: PID: 0xF9F1, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Deadlock detected on Mutual pair 2257, PID: 0xF9F1 & 0xF9F2
+Returned:       PID: 0xF9F1, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Switching to:   PID: 0x32FA, Priority: 0x1, State: 1, PC: 0x160, MaxPC: 0x36f, Terminate: 30, TermCount: 0
+Ready Queue: Size: 47
+Q0: Count=0: *
+Q1: Count=10: 7758->4BF2->4BF3->122DA->CEC->F9F2->122DB->5C88->7757->F9F1->*
+Q2: Count=35: F342->AA10->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->*
+Q3: Count=2: 2CF->326->*
+Switching from: PID: 0x32FA, Priority: 0x1, State: 2, PC: 0x160, MaxPC: 0x36f, Terminate: 30, TermCount: 0
+Moved to IO A:  PID: 0x32FA, Priority: 0x1, State: 4, PC: 0x160, MaxPC: 0x36f, Terminate: 30, TermCount: 0
+Waiting Queue A:Size = 1. 0x32FA->
+Switching to:   PID: 0x7758, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Ready Queue: Size: 46
+Q0: Count=0: *
+Q1: Count=9: 4BF2->4BF3->122DA->CEC->F9F2->122DB->5C88->7757->F9F1->*
+Q2: Count=35: F342->AA10->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->*
+Q3: Count=2: 2CF->326->*
+
+Switching from: PID: 0x7758, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Deadlock detected on Mutual pair 2886, PID: 0x7758 & 0x7757
+Returned:       PID: 0x7758, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Switching to:   PID: 0x4BF2, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 4
+Ready Queue: Size: 46
+Q0: Count=0: *
+Q1: Count=9: 4BF3->122DA->CEC->F9F2->122DB->5C88->7757->F9F1->7758->*
+Q2: Count=35: F342->AA10->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->*
+Q3: Count=2: 2CF->326->*
+
+Switching from: PID: 0x4BF2, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 4
+Deadlock detected on Mutual pair 6828, PID: 0x4BF2 & 0x4BF3
+Returned:       PID: 0x4BF2, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 4
+Switching to:   PID: 0x4BF3, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Ready Queue: Size: 46
+Q0: Count=0: *
+Q1: Count=9: 122DA->CEC->F9F2->122DB->5C88->7757->F9F1->7758->4BF2->*
+Q2: Count=35: F342->AA10->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->*
+Q3: Count=2: 2CF->326->*
+Deadlock detected on Mutual pair 6828, PID: 0x4BF3 & 0x4BF2
+Moved from IO A:PID: 0x32FA, Priority: 0x1, State: 4, PC: 0x160, MaxPC: 0x36f, Terminate: 30, TermCount: 0
+Waiting Queue A:Size = 0.
+
+Switching from: PID: 0x4BF3, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Deadlock detected on Mutual pair 6828, PID: 0x4BF3 & 0x4BF2
+Returned:       PID: 0x4BF3, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Switching to:   PID: 0x122DA, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 2
+Ready Queue: Size: 47
+Q0: Count=0: *
+Q1: Count=10: CEC->F9F2->122DB->5C88->7757->F9F1->7758->4BF2->32FA->4BF3->*
+Q2: Count=35: F342->AA10->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->*
+Q3: Count=2: 2CF->326->*
+
+Switching from: PID: 0x122DA, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 2
+Deadlock detected on Mutual pair 4893, PID: 0x122DA & 0x122DB
+Created:        PID: 0x3C9, Priority: 0x0, State: 0, PC: 0x0, MaxPC: 0x3a0, Terminate: 15, TermCount: 0
+Returned:       PID: 0x122DA, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 2
+Switching to:   PID: 0x3C9, Priority: 0x0, State: 0, PC: 0x0, MaxPC: 0x3a0, Terminate: 15, TermCount: 0
+Ready Queue: Size: 48
+Q0: Count=0: *
+Q1: Count=11: CEC->F9F2->122DB->5C88->7757->F9F1->7758->4BF2->32FA->4BF3->122DA->*
+Q2: Count=35: F342->AA10->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->*
+Q3: Count=2: 2CF->326->*
+Switching from: PID: 0x3C9, Priority: 0x0, State: 2, PC: 0x0, MaxPC: 0x3a0, Terminate: 15, TermCount: 15
+Terminated:     PID: 0x3C9, Priority: 0x0, State: 5, PC: 0x0, MaxPC: 0x3a0, Terminate: 15, TermCount: 15
+Switching to:   PID: 0xCEC, Priority: 0x1, State: 1, PC: 0xA1, MaxPC: 0xc8, Terminate: 30, TermCount: 0
+Ready Queue: Size: 47
+Q0: Count=0: *
+Q1: Count=10: F9F2->122DB->5C88->7757->F9F1->7758->4BF2->32FA->4BF3->122DA->*
+Q2: Count=35: F342->AA10->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->*
+Q3: Count=2: 2CF->326->*
+
+Switching from: PID: 0xCEC, Priority: 0x1, State: 2, PC: 0xA1, MaxPC: 0xc8, Terminate: 30, TermCount: 0
+Created:        PID: 0x3B1, Priority: 0x0, State: 0, PC: 0x0, MaxPC: 0xfe, Terminate: 15, TermCount: 0
+Deallocated:    PID: 0x3C9, Priority: 0x0, State: 5, PC: 0x0, MaxPC: 0x3a0, Terminate: 15, TermCount: 15
+Returned:       PID: 0xCEC, Priority: 0x1, State: 1, PC: 0xA1, MaxPC: 0xc8, Terminate: 30, TermCount: 0
+Switching to:   PID: 0x3B1, Priority: 0x0, State: 0, PC: 0x0, MaxPC: 0xfe, Terminate: 15, TermCount: 0
+Ready Queue: Size: 48
+Q0: Count=0: *
+Q1: Count=11: F9F2->122DB->5C88->7757->F9F1->7758->4BF2->32FA->4BF3->122DA->CEC->*
+Q2: Count=35: F342->AA10->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->*
+Q3: Count=2: 2CF->326->*
+Switching from: PID: 0x3B1, Priority: 0x0, State: 2, PC: 0x0, MaxPC: 0xfe, Terminate: 15, TermCount: 15
+Terminated:     PID: 0x3B1, Priority: 0x0, State: 5, PC: 0x0, MaxPC: 0xfe, Terminate: 15, TermCount: 15
+Switching to:   PID: 0xF9F2, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Ready Queue: Size: 47
+Q0: Count=0: *
+Q1: Count=10: 122DB->5C88->7757->F9F1->7758->4BF2->32FA->4BF3->122DA->CEC->*
+Q2: Count=35: F342->AA10->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->*
+Q3: Count=2: 2CF->326->*
+
+Switching from: PID: 0xF9F2, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Deadlock detected on Mutual pair 2257, PID: 0xF9F2 & 0xF9F1
+Deallocated:    PID: 0x3B1, Priority: 0x0, State: 5, PC: 0x0, MaxPC: 0xfe, Terminate: 15, TermCount: 15
+Returned:       PID: 0xF9F2, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Switching to:   PID: 0x122DB, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Ready Queue: Size: 47
+Q0: Count=0: *
+Q1: Count=10: 5C88->7757->F9F1->7758->4BF2->32FA->4BF3->122DA->CEC->F9F2->*
+Q2: Count=35: F342->AA10->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->*
+Q3: Count=2: 2CF->326->*
+
+Switching from: PID: 0x122DB, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Deadlock detected on Mutual pair 4893, PID: 0x122DB & 0x122DA
+Returned:       PID: 0x122DB, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Switching to:   PID: 0x5C88, Priority: 0x1, State: 1, PC: 0xE7, MaxPC: 0x2ce, Terminate: 30, TermCount: 0
+Ready Queue: Size: 47
+Q0: Count=0: *
+Q1: Count=10: 7757->F9F1->7758->4BF2->32FA->4BF3->122DA->CEC->F9F2->122DB->*
+Q2: Count=35: F342->AA10->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->*
+Q3: Count=2: 2CF->326->*
+Switching from: PID: 0x5C88, Priority: 0x1, State: 2, PC: 0xE7, MaxPC: 0x2ce, Terminate: 30, TermCount: 0
+Moved to IO A:  PID: 0x5C88, Priority: 0x1, State: 4, PC: 0xE7, MaxPC: 0x2ce, Terminate: 30, TermCount: 0
+Waiting Queue A:Size = 1. 0x5C88->
+Switching to:   PID: 0x7757, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Ready Queue: Size: 46
+Q0: Count=0: *
+Q1: Count=9: F9F1->7758->4BF2->32FA->4BF3->122DA->CEC->F9F2->122DB->*
+Q2: Count=35: F342->AA10->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->*
+Q3: Count=2: 2CF->326->*
+
+Switching from: PID: 0x7757, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Deadlock detected on Mutual pair 2886, PID: 0x7757 & 0x7758
+Returned:       PID: 0x7757, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Switching to:   PID: 0xF9F1, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Ready Queue: Size: 46
+Q0: Count=0: *
+Q1: Count=9: 7758->4BF2->32FA->4BF3->122DA->CEC->F9F2->122DB->7757->*
+Q2: Count=35: F342->AA10->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->*
+Q3: Count=2: 2CF->326->*
+
+Switching from: PID: 0xF9F1, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Deadlock detected on Mutual pair 2257, PID: 0xF9F1 & 0xF9F2
+Returned:       PID: 0xF9F1, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Switching to:   PID: 0x7758, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Ready Queue: Size: 46
+Q0: Count=0: *
+Q1: Count=9: 4BF2->32FA->4BF3->122DA->CEC->F9F2->122DB->7757->F9F1->*
+Q2: Count=35: F342->AA10->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->*
+Q3: Count=2: 2CF->326->*
+Deadlock detected on Mutual pair 2886, PID: 0x7758 & 0x7757
+Moved from IO A:PID: 0x5C88, Priority: 0x1, State: 4, PC: 0xE7, MaxPC: 0x2ce, Terminate: 30, TermCount: 0
+Waiting Queue A:Size = 0.
+
+Switching from: PID: 0x7758, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Deadlock detected on Mutual pair 2886, PID: 0x7758 & 0x7757
+Returned:       PID: 0x7758, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Switching to:   PID: 0x4BF2, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 4
+Ready Queue: Size: 47
+Q0: Count=0: *
+Q1: Count=10: 32FA->4BF3->122DA->CEC->F9F2->122DB->7757->F9F1->5C88->7758->*
+Q2: Count=35: F342->AA10->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->*
+Q3: Count=2: 2CF->326->*
+
+Switching from: PID: 0x4BF2, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 4
+Deadlock detected on Mutual pair 6828, PID: 0x4BF2 & 0x4BF3
+Returned:       PID: 0x4BF2, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 4
+Switching to:   PID: 0x32FA, Priority: 0x1, State: 1, PC: 0x160, MaxPC: 0x36f, Terminate: 30, TermCount: 0
+Ready Queue: Size: 47
+Q0: Count=0: *
+Q1: Count=10: 4BF3->122DA->CEC->F9F2->122DB->7757->F9F1->5C88->7758->4BF2->*
+Q2: Count=35: F342->AA10->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->*
+Q3: Count=2: 2CF->326->*
+Switching from: PID: 0x32FA, Priority: 0x1, State: 2, PC: 0x160, MaxPC: 0x36f, Terminate: 30, TermCount: 0
+Moved to IO A:  PID: 0x32FA, Priority: 0x1, State: 4, PC: 0x160, MaxPC: 0x36f, Terminate: 30, TermCount: 0
+Waiting Queue A:Size = 1. 0x32FA->
+Switching to:   PID: 0x4BF3, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Ready Queue: Size: 46
+Q0: Count=0: *
+Q1: Count=9: 122DA->CEC->F9F2->122DB->7757->F9F1->5C88->7758->4BF2->*
+Q2: Count=35: F342->AA10->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->*
+Q3: Count=2: 2CF->326->*
+
+Switching from: PID: 0x4BF3, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Deadlock detected on Mutual pair 6828, PID: 0x4BF3 & 0x4BF2
+Returned:       PID: 0x4BF3, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Switching to:   PID: 0x122DA, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 2
+Ready Queue: Size: 46
+Q0: Count=0: *
+Q1: Count=9: CEC->F9F2->122DB->7757->F9F1->5C88->7758->4BF2->4BF3->*
+Q2: Count=35: F342->AA10->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->B2E8->18674->*
+Q3: Count=2: 2CF->326->*
+
+Switching from: PID: 0x122DA, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 2
+Deadlock detected on Mutual pair 4893, PID: 0x122DA & 0x122DB
+Boost on:       PID: 0xAA10, Priority: 0x1, State: 1, PC: 0xAF, MaxPC: 0x36e, Terminate: 30, TermCount: 0
+Boost on:       PID: 0xB2E8, Priority: 0x1, State: 1, PC: 0xAD, MaxPC: 0x137, Terminate: 30, TermCount: 0
+Boost on:       PID: 0x2CF, Priority: 0x2, State: 0, PC: 0x0, MaxPC: 0x10e, Terminate: 15, TermCount: 0
+Returned:       PID: 0x122DA, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 2
+Switching to:   PID: 0xCEC, Priority: 0x1, State: 1, PC: 0xA1, MaxPC: 0xc8, Terminate: 30, TermCount: 0
+Ready Queue: Size: 46
+Q0: Count=0: *
+Q1: Count=11: F9F2->122DB->7757->F9F1->5C88->7758->4BF2->4BF3->AA10->B2E8->122DA->*
+Q2: Count=34: 18674->F342->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->2CF->*
+Q3: Count=1: 326->*
+Created:        PID: 0x12503, Priority: 0x3, State: 0, PC: 0x0, MaxPC: 0x57, Terminate: 30, TermCount: 0
+Moved from IO A:PID: 0x32FA, Priority: 0x1, State: 4, PC: 0x160, MaxPC: 0x36f, Terminate: 30, TermCount: 0
+Waiting Queue A:Size = 0.
+Switching from: PID: 0xCEC, Priority: 0x1, State: 2, PC: 0xA1, MaxPC: 0xc8, Terminate: 30, TermCount: 0
+Moved to IO A:  PID: 0xCEC, Priority: 0x1, State: 4, PC: 0xA1, MaxPC: 0xc8, Terminate: 30, TermCount: 0
+Waiting Queue A:Size = 1. 0xCEC->
+Switching to:   PID: 0xF9F2, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Ready Queue: Size: 47
+Q0: Count=0: *
+Q1: Count=11: 122DB->7757->F9F1->5C88->7758->4BF2->4BF3->AA10->B2E8->122DA->32FA->*
+Q2: Count=34: 18674->F342->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->2CF->*
+Q3: Count=2: 326->12503->*
+
+Switching from: PID: 0xF9F2, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Deadlock detected on Mutual pair 2257, PID: 0xF9F2 & 0xF9F1
+Returned:       PID: 0xF9F2, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Switching to:   PID: 0x122DB, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Ready Queue: Size: 47
+Q0: Count=0: *
+Q1: Count=11: 7757->F9F1->5C88->7758->4BF2->4BF3->AA10->B2E8->122DA->32FA->F9F2->*
+Q2: Count=34: 18674->F342->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->2CF->*
+Q3: Count=2: 326->12503->*
+
+Switching from: PID: 0x122DB, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Deadlock detected on Mutual pair 4893, PID: 0x122DB & 0x122DA
+Returned:       PID: 0x122DB, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Switching to:   PID: 0x7757, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Ready Queue: Size: 47
+Q0: Count=0: *
+Q1: Count=11: F9F1->5C88->7758->4BF2->4BF3->AA10->B2E8->122DA->32FA->F9F2->122DB->*
+Q2: Count=34: 18674->F342->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->2CF->*
+Q3: Count=2: 326->12503->*
+Deadlock detected on Mutual pair 2886, PID: 0x7757 & 0x7758
+Created:        PID: 0x27F, Priority: 0x0, State: 0, PC: 0x0, MaxPC: 0x1ef, Terminate: 15, TermCount: 0
+Moved from IO A:PID: 0xCEC, Priority: 0x1, State: 4, PC: 0xA1, MaxPC: 0xc8, Terminate: 30, TermCount: 0
+Waiting Queue A:Size = 0.
+
+Switching from: PID: 0x7757, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Deadlock detected on Mutual pair 2886, PID: 0x7757 & 0x7758
+Returned:       PID: 0x7757, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Switching to:   PID: 0x27F, Priority: 0x0, State: 0, PC: 0x0, MaxPC: 0x1ef, Terminate: 15, TermCount: 0
+Ready Queue: Size: 49
+Q0: Count=0: *
+Q1: Count=13: F9F1->5C88->7758->4BF2->4BF3->AA10->B2E8->122DA->32FA->F9F2->122DB->CEC->7757->*
+Q2: Count=34: 18674->F342->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->2CF->*
+Q3: Count=2: 326->12503->*
+Switching from: PID: 0x27F, Priority: 0x0, State: 2, PC: 0x0, MaxPC: 0x1ef, Terminate: 15, TermCount: 15
+Terminated:     PID: 0x27F, Priority: 0x0, State: 5, PC: 0x0, MaxPC: 0x1ef, Terminate: 15, TermCount: 15
+Switching to:   PID: 0xF9F1, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Ready Queue: Size: 48
+Q0: Count=0: *
+Q1: Count=12: 5C88->7758->4BF2->4BF3->AA10->B2E8->122DA->32FA->F9F2->122DB->CEC->7757->*
+Q2: Count=34: 18674->F342->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->2CF->*
+Q3: Count=2: 326->12503->*
+
+Switching from: PID: 0xF9F1, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Deadlock detected on Mutual pair 2257, PID: 0xF9F1 & 0xF9F2
+Created:        PID: 0x2C1, Priority: 0x0, State: 0, PC: 0x0, MaxPC: 0x211, Terminate: 15, TermCount: 0
+Deallocated:    PID: 0x27F, Priority: 0x0, State: 5, PC: 0x0, MaxPC: 0x1ef, Terminate: 15, TermCount: 15
+Returned:       PID: 0xF9F1, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Switching to:   PID: 0x2C1, Priority: 0x0, State: 0, PC: 0x0, MaxPC: 0x211, Terminate: 15, TermCount: 0
+Ready Queue: Size: 49
+Q0: Count=0: *
+Q1: Count=13: 5C88->7758->4BF2->4BF3->AA10->B2E8->122DA->32FA->F9F2->122DB->CEC->7757->F9F1->*
+Q2: Count=34: 18674->F342->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->2CF->*
+Q3: Count=2: 326->12503->*
+Switching from: PID: 0x2C1, Priority: 0x0, State: 2, PC: 0x0, MaxPC: 0x211, Terminate: 15, TermCount: 15
+Terminated:     PID: 0x2C1, Priority: 0x0, State: 5, PC: 0x0, MaxPC: 0x211, Terminate: 15, TermCount: 15
+Switching to:   PID: 0x5C88, Priority: 0x1, State: 1, PC: 0xE7, MaxPC: 0x2ce, Terminate: 30, TermCount: 0
+Ready Queue: Size: 48
+Q0: Count=0: *
+Q1: Count=12: 7758->4BF2->4BF3->AA10->B2E8->122DA->32FA->F9F2->122DB->CEC->7757->F9F1->*
+Q2: Count=34: 18674->F342->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->2CF->*
+Q3: Count=2: 326->12503->*
+
+Switching from: PID: 0x5C88, Priority: 0x1, State: 2, PC: 0xE7, MaxPC: 0x2ce, Terminate: 30, TermCount: 0
+Boost off:      PID: 0x5C88, Priority: 0x2, State: 3, PC: 0xE7, MaxPC: 0x2ce, Terminate: 30, TermCount: 0
+Deallocated:    PID: 0x2C1, Priority: 0x0, State: 5, PC: 0x0, MaxPC: 0x211, Terminate: 15, TermCount: 15
+Returned:       PID: 0x5C88, Priority: 0x2, State: 1, PC: 0xE7, MaxPC: 0x2ce, Terminate: 30, TermCount: 0
+Switching to:   PID: 0x7758, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Ready Queue: Size: 48
+Q0: Count=0: *
+Q1: Count=11: 4BF2->4BF3->AA10->B2E8->122DA->32FA->F9F2->122DB->CEC->7757->F9F1->*
+Q2: Count=35: 18674->F342->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->2CF->5C88->*
+Q3: Count=2: 326->12503->*
+
+Switching from: PID: 0x7758, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Deadlock detected on Mutual pair 2886, PID: 0x7758 & 0x7757
+Returned:       PID: 0x7758, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Switching to:   PID: 0x4BF2, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 4
+Ready Queue: Size: 48
+Q0: Count=0: *
+Q1: Count=11: 4BF3->AA10->B2E8->122DA->32FA->F9F2->122DB->CEC->7757->F9F1->7758->*
+Q2: Count=35: 18674->F342->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->2CF->5C88->*
+Q3: Count=2: 326->12503->*
+
+Switching from: PID: 0x4BF2, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 4
+Deadlock detected on Mutual pair 6828, PID: 0x4BF2 & 0x4BF3
+Returned:       PID: 0x4BF2, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 4
+Switching to:   PID: 0x4BF3, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Ready Queue: Size: 48
+Q0: Count=0: *
+Q1: Count=11: AA10->B2E8->122DA->32FA->F9F2->122DB->CEC->7757->F9F1->7758->4BF2->*
+Q2: Count=35: 18674->F342->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->2CF->5C88->*
+Q3: Count=2: 326->12503->*
+
+Switching from: PID: 0x4BF3, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Deadlock detected on Mutual pair 6828, PID: 0x4BF3 & 0x4BF2
+Created:        PID: 0x352, Priority: 0x0, State: 0, PC: 0x0, MaxPC: 0x375, Terminate: 15, TermCount: 0
+Returned:       PID: 0x4BF3, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Switching to:   PID: 0x352, Priority: 0x0, State: 0, PC: 0x0, MaxPC: 0x375, Terminate: 15, TermCount: 0
+Ready Queue: Size: 49
+Q0: Count=0: *
+Q1: Count=12: AA10->B2E8->122DA->32FA->F9F2->122DB->CEC->7757->F9F1->7758->4BF2->4BF3->*
+Q2: Count=35: 18674->F342->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->2CF->5C88->*
+Q3: Count=2: 326->12503->*
+Switching from: PID: 0x352, Priority: 0x0, State: 2, PC: 0x0, MaxPC: 0x375, Terminate: 15, TermCount: 15
+Terminated:     PID: 0x352, Priority: 0x0, State: 5, PC: 0x0, MaxPC: 0x375, Terminate: 15, TermCount: 15
+Switching to:   PID: 0xAA10, Priority: 0x1, State: 1, PC: 0xAF, MaxPC: 0x36e, Terminate: 30, TermCount: 0
+Ready Queue: Size: 48
+Q0: Count=0: *
+Q1: Count=11: B2E8->122DA->32FA->F9F2->122DB->CEC->7757->F9F1->7758->4BF2->4BF3->*
+Q2: Count=35: 18674->F342->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->2CF->5C88->*
+Q3: Count=2: 326->12503->*
+
+Switching from: PID: 0xAA10, Priority: 0x1, State: 2, PC: 0xAF, MaxPC: 0x36e, Terminate: 30, TermCount: 0
+Created:        PID: 0x1F1, Priority: 0x0, State: 0, PC: 0x0, MaxPC: 0x2c9, Terminate: 15, TermCount: 0
+Boost off:      PID: 0xAA10, Priority: 0x2, State: 3, PC: 0xAF, MaxPC: 0x36e, Terminate: 30, TermCount: 0
+Deallocated:    PID: 0x352, Priority: 0x0, State: 5, PC: 0x0, MaxPC: 0x375, Terminate: 15, TermCount: 15
+Returned:       PID: 0xAA10, Priority: 0x2, State: 1, PC: 0xAF, MaxPC: 0x36e, Terminate: 30, TermCount: 0
+Switching to:   PID: 0x1F1, Priority: 0x0, State: 0, PC: 0x0, MaxPC: 0x2c9, Terminate: 15, TermCount: 0
+Ready Queue: Size: 49
+Q0: Count=0: *
+Q1: Count=11: B2E8->122DA->32FA->F9F2->122DB->CEC->7757->F9F1->7758->4BF2->4BF3->*
+Q2: Count=36: 18674->F342->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->2CF->5C88->AA10->*
+Q3: Count=2: 326->12503->*
+Switching from: PID: 0x1F1, Priority: 0x0, State: 2, PC: 0x0, MaxPC: 0x2c9, Terminate: 15, TermCount: 15
+Terminated:     PID: 0x1F1, Priority: 0x0, State: 5, PC: 0x0, MaxPC: 0x2c9, Terminate: 15, TermCount: 15
+Switching to:   PID: 0xB2E8, Priority: 0x1, State: 1, PC: 0xAD, MaxPC: 0x137, Terminate: 30, TermCount: 0
+Ready Queue: Size: 48
+Q0: Count=0: *
+Q1: Count=10: 122DA->32FA->F9F2->122DB->CEC->7757->F9F1->7758->4BF2->4BF3->*
+Q2: Count=36: 18674->F342->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->2CF->5C88->AA10->*
+Q3: Count=2: 326->12503->*
+
+Switching from: PID: 0xB2E8, Priority: 0x1, State: 2, PC: 0xAD, MaxPC: 0x137, Terminate: 30, TermCount: 0
+Boost off:      PID: 0xB2E8, Priority: 0x2, State: 3, PC: 0xAD, MaxPC: 0x137, Terminate: 30, TermCount: 0
+Deallocated:    PID: 0x1F1, Priority: 0x0, State: 5, PC: 0x0, MaxPC: 0x2c9, Terminate: 15, TermCount: 15
+Returned:       PID: 0xB2E8, Priority: 0x2, State: 1, PC: 0xAD, MaxPC: 0x137, Terminate: 30, TermCount: 0
+Switching to:   PID: 0x122DA, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 2
+Ready Queue: Size: 48
+Q0: Count=0: *
+Q1: Count=9: 32FA->F9F2->122DB->CEC->7757->F9F1->7758->4BF2->4BF3->*
+Q2: Count=37: 18674->F342->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->2CF->5C88->AA10->B2E8->*
+Q3: Count=2: 326->12503->*
+
+Switching from: PID: 0x122DA, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 2
+Deadlock detected on Mutual pair 4893, PID: 0x122DA & 0x122DB
+Returned:       PID: 0x122DA, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 2
+Switching to:   PID: 0x32FA, Priority: 0x1, State: 1, PC: 0x160, MaxPC: 0x36f, Terminate: 30, TermCount: 0
+Ready Queue: Size: 48
+Q0: Count=0: *
+Q1: Count=9: F9F2->122DB->CEC->7757->F9F1->7758->4BF2->4BF3->122DA->*
+Q2: Count=37: 18674->F342->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->2CF->5C88->AA10->B2E8->*
+Q3: Count=2: 326->12503->*
+Switching from: PID: 0x32FA, Priority: 0x1, State: 2, PC: 0x160, MaxPC: 0x36f, Terminate: 30, TermCount: 0
+Moved to IO A:  PID: 0x32FA, Priority: 0x1, State: 4, PC: 0x160, MaxPC: 0x36f, Terminate: 30, TermCount: 0
+Waiting Queue A:Size = 1. 0x32FA->
+Switching to:   PID: 0xF9F2, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Ready Queue: Size: 47
+Q0: Count=0: *
+Q1: Count=8: 122DB->CEC->7757->F9F1->7758->4BF2->4BF3->122DA->*
+Q2: Count=37: 18674->F342->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->2CF->5C88->AA10->B2E8->*
+Q3: Count=2: 326->12503->*
+
+Switching from: PID: 0xF9F2, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Deadlock detected on Mutual pair 2257, PID: 0xF9F2 & 0xF9F1
+Returned:       PID: 0xF9F2, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Switching to:   PID: 0x122DB, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Ready Queue: Size: 47
+Q0: Count=0: *
+Q1: Count=8: CEC->7757->F9F1->7758->4BF2->4BF3->122DA->F9F2->*
+Q2: Count=37: 18674->F342->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->2CF->5C88->AA10->B2E8->*
+Q3: Count=2: 326->12503->*
+
+Switching from: PID: 0x122DB, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Deadlock detected on Mutual pair 4893, PID: 0x122DB & 0x122DA
+Returned:       PID: 0x122DB, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Switching to:   PID: 0xCEC, Priority: 0x1, State: 1, PC: 0xA1, MaxPC: 0xc8, Terminate: 30, TermCount: 0
+Ready Queue: Size: 47
+Q0: Count=0: *
+Q1: Count=8: 7757->F9F1->7758->4BF2->4BF3->122DA->F9F2->122DB->*
+Q2: Count=37: 18674->F342->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->2CF->5C88->AA10->B2E8->*
+Q3: Count=2: 326->12503->*
+Switching from: PID: 0xCEC, Priority: 0x1, State: 2, PC: 0xA1, MaxPC: 0xc8, Terminate: 30, TermCount: 0
+Moved to IO A:  PID: 0xCEC, Priority: 0x1, State: 4, PC: 0xA1, MaxPC: 0xc8, Terminate: 30, TermCount: 0
+Waiting Queue A:Size = 2. 0x32FA->0xCEC->
+Switching to:   PID: 0x7757, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Ready Queue: Size: 46
+Q0: Count=0: *
+Q1: Count=7: F9F1->7758->4BF2->4BF3->122DA->F9F2->122DB->*
+Q2: Count=37: 18674->F342->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->2CF->5C88->AA10->B2E8->*
+Q3: Count=2: 326->12503->*
+
+Switching from: PID: 0x7757, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Deadlock detected on Mutual pair 2886, PID: 0x7757 & 0x7758
+Returned:       PID: 0x7757, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Switching to:   PID: 0xF9F1, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Ready Queue: Size: 46
+Q0: Count=0: *
+Q1: Count=7: 7758->4BF2->4BF3->122DA->F9F2->122DB->7757->*
+Q2: Count=37: 18674->F342->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->2CF->5C88->AA10->B2E8->*
+Q3: Count=2: 326->12503->*
+Deadlock detected on Mutual pair 2257, PID: 0xF9F1 & 0xF9F2
+Moved from IO A:PID: 0x32FA, Priority: 0x1, State: 4, PC: 0x160, MaxPC: 0x36f, Terminate: 30, TermCount: 0
+Waiting Queue A:Size = 1. 0xCEC->
+
+Switching from: PID: 0xF9F1, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Deadlock detected on Mutual pair 2257, PID: 0xF9F1 & 0xF9F2
+Created:        PID: 0x181, Priority: 0x0, State: 0, PC: 0x0, MaxPC: 0x2de, Terminate: 15, TermCount: 0
+Returned:       PID: 0xF9F1, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Switching to:   PID: 0x181, Priority: 0x0, State: 0, PC: 0x0, MaxPC: 0x2de, Terminate: 15, TermCount: 0
+Ready Queue: Size: 48
+Q0: Count=0: *
+Q1: Count=9: 7758->4BF2->4BF3->122DA->F9F2->122DB->7757->32FA->F9F1->*
+Q2: Count=37: 18674->F342->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->2CF->5C88->AA10->B2E8->*
+Q3: Count=2: 326->12503->*
+Switching from: PID: 0x181, Priority: 0x0, State: 2, PC: 0x0, MaxPC: 0x2de, Terminate: 15, TermCount: 15
+Terminated:     PID: 0x181, Priority: 0x0, State: 5, PC: 0x0, MaxPC: 0x2de, Terminate: 15, TermCount: 15
+Switching to:   PID: 0x7758, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Ready Queue: Size: 47
+Q0: Count=0: *
+Q1: Count=8: 4BF2->4BF3->122DA->F9F2->122DB->7757->32FA->F9F1->*
+Q2: Count=37: 18674->F342->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->2CF->5C88->AA10->B2E8->*
+Q3: Count=2: 326->12503->*
+
+Switching from: PID: 0x7758, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Deadlock detected on Mutual pair 2886, PID: 0x7758 & 0x7757
+Deallocated:    PID: 0x181, Priority: 0x0, State: 5, PC: 0x0, MaxPC: 0x2de, Terminate: 15, TermCount: 15
+Returned:       PID: 0x7758, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Switching to:   PID: 0x4BF2, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 4
+Ready Queue: Size: 47
+Q0: Count=0: *
+Q1: Count=8: 4BF3->122DA->F9F2->122DB->7757->32FA->F9F1->7758->*
+Q2: Count=37: 18674->F342->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->2CF->5C88->AA10->B2E8->*
+Q3: Count=2: 326->12503->*
+Deadlock detected on Mutual pair 6828, PID: 0x4BF2 & 0x4BF3
+Moved from IO A:PID: 0xCEC, Priority: 0x1, State: 4, PC: 0xA1, MaxPC: 0xc8, Terminate: 30, TermCount: 0
+Waiting Queue A:Size = 0.
+
+Switching from: PID: 0x4BF2, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 4
+Deadlock detected on Mutual pair 6828, PID: 0x4BF2 & 0x4BF3
+Returned:       PID: 0x4BF2, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 4
+Switching to:   PID: 0x4BF3, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Ready Queue: Size: 48
+Q0: Count=0: *
+Q1: Count=9: 122DA->F9F2->122DB->7757->32FA->F9F1->7758->CEC->4BF2->*
+Q2: Count=37: 18674->F342->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->2CF->5C88->AA10->B2E8->*
+Q3: Count=2: 326->12503->*
+
+Switching from: PID: 0x4BF3, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Deadlock detected on Mutual pair 6828, PID: 0x4BF3 & 0x4BF2
+Returned:       PID: 0x4BF3, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Switching to:   PID: 0x122DA, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 2
+Ready Queue: Size: 48
+Q0: Count=0: *
+Q1: Count=9: F9F2->122DB->7757->32FA->F9F1->7758->CEC->4BF2->4BF3->*
+Q2: Count=37: 18674->F342->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->2CF->5C88->AA10->B2E8->*
+Q3: Count=2: 326->12503->*
+
+Switching from: PID: 0x122DA, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 2
+Deadlock detected on Mutual pair 4893, PID: 0x122DA & 0x122DB
+Returned:       PID: 0x122DA, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 2
+Switching to:   PID: 0xF9F2, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Ready Queue: Size: 48
+Q0: Count=0: *
+Q1: Count=9: 122DB->7757->32FA->F9F1->7758->CEC->4BF2->4BF3->122DA->*
+Q2: Count=37: 18674->F342->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->2CF->5C88->AA10->B2E8->*
+Q3: Count=2: 326->12503->*
+
+Switching from: PID: 0xF9F2, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Deadlock detected on Mutual pair 2257, PID: 0xF9F2 & 0xF9F1
+Returned:       PID: 0xF9F2, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Switching to:   PID: 0x122DB, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Ready Queue: Size: 48
+Q0: Count=0: *
+Q1: Count=9: 7757->32FA->F9F1->7758->CEC->4BF2->4BF3->122DA->F9F2->*
+Q2: Count=37: 18674->F342->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->2CF->5C88->AA10->B2E8->*
+Q3: Count=2: 326->12503->*
+
+Switching from: PID: 0x122DB, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Deadlock detected on Mutual pair 4893, PID: 0x122DB & 0x122DA
+Returned:       PID: 0x122DB, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Switching to:   PID: 0x7757, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Ready Queue: Size: 48
+Q0: Count=0: *
+Q1: Count=9: 32FA->F9F1->7758->CEC->4BF2->4BF3->122DA->F9F2->122DB->*
+Q2: Count=37: 18674->F342->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->2CF->5C88->AA10->B2E8->*
+Q3: Count=2: 326->12503->*
+
+Switching from: PID: 0x7757, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Deadlock detected on Mutual pair 2886, PID: 0x7757 & 0x7758
+Returned:       PID: 0x7757, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Switching to:   PID: 0x32FA, Priority: 0x1, State: 1, PC: 0x160, MaxPC: 0x36f, Terminate: 30, TermCount: 0
+Ready Queue: Size: 48
+Q0: Count=0: *
+Q1: Count=9: F9F1->7758->CEC->4BF2->4BF3->122DA->F9F2->122DB->7757->*
+Q2: Count=37: 18674->F342->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->2CF->5C88->AA10->B2E8->*
+Q3: Count=2: 326->12503->*
+Switching from: PID: 0x32FA, Priority: 0x1, State: 2, PC: 0x160, MaxPC: 0x36f, Terminate: 30, TermCount: 0
+Moved to IO A:  PID: 0x32FA, Priority: 0x1, State: 4, PC: 0x160, MaxPC: 0x36f, Terminate: 30, TermCount: 0
+Waiting Queue A:Size = 1. 0x32FA->
+Switching to:   PID: 0xF9F1, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Ready Queue: Size: 47
+Q0: Count=0: *
+Q1: Count=8: 7758->CEC->4BF2->4BF3->122DA->F9F2->122DB->7757->*
+Q2: Count=37: 18674->F342->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->2CF->5C88->AA10->B2E8->*
+Q3: Count=2: 326->12503->*
+
+Switching from: PID: 0xF9F1, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Deadlock detected on Mutual pair 2257, PID: 0xF9F1 & 0xF9F2
+Returned:       PID: 0xF9F1, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Switching to:   PID: 0x7758, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Ready Queue: Size: 47
+Q0: Count=0: *
+Q1: Count=8: CEC->4BF2->4BF3->122DA->F9F2->122DB->7757->F9F1->*
+Q2: Count=37: 18674->F342->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->2CF->5C88->AA10->B2E8->*
+Q3: Count=2: 326->12503->*
+
+Switching from: PID: 0x7758, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Deadlock detected on Mutual pair 2886, PID: 0x7758 & 0x7757
+Returned:       PID: 0x7758, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Switching to:   PID: 0xCEC, Priority: 0x1, State: 1, PC: 0xA1, MaxPC: 0xc8, Terminate: 30, TermCount: 0
+Ready Queue: Size: 47
+Q0: Count=0: *
+Q1: Count=8: 4BF2->4BF3->122DA->F9F2->122DB->7757->F9F1->7758->*
+Q2: Count=37: 18674->F342->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->2CF->5C88->AA10->B2E8->*
+Q3: Count=2: 326->12503->*
+Moved from IO A:PID: 0x32FA, Priority: 0x1, State: 4, PC: 0x160, MaxPC: 0x36f, Terminate: 30, TermCount: 0
+Waiting Queue A:Size = 0.
+Switching from: PID: 0xCEC, Priority: 0x1, State: 2, PC: 0xA1, MaxPC: 0xc8, Terminate: 30, TermCount: 0
+Moved to IO A:  PID: 0xCEC, Priority: 0x1, State: 4, PC: 0xA1, MaxPC: 0xc8, Terminate: 30, TermCount: 0
+Waiting Queue A:Size = 1. 0xCEC->
+Switching to:   PID: 0x4BF2, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 4
+Ready Queue: Size: 47
+Q0: Count=0: *
+Q1: Count=8: 4BF3->122DA->F9F2->122DB->7757->F9F1->7758->32FA->*
+Q2: Count=37: 18674->F342->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->2CF->5C88->AA10->B2E8->*
+Q3: Count=2: 326->12503->*
+
+Switching from: PID: 0x4BF2, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 4
+Deadlock detected on Mutual pair 6828, PID: 0x4BF2 & 0x4BF3
+Returned:       PID: 0x4BF2, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 4
+Switching to:   PID: 0x4BF3, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Ready Queue: Size: 47
+Q0: Count=0: *
+Q1: Count=8: 122DA->F9F2->122DB->7757->F9F1->7758->32FA->4BF2->*
+Q2: Count=37: 18674->F342->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->2CF->5C88->AA10->B2E8->*
+Q3: Count=2: 326->12503->*
+
+Switching from: PID: 0x4BF3, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Deadlock detected on Mutual pair 6828, PID: 0x4BF3 & 0x4BF2
+Returned:       PID: 0x4BF3, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Switching to:   PID: 0x122DA, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 2
+Ready Queue: Size: 47
+Q0: Count=0: *
+Q1: Count=8: F9F2->122DB->7757->F9F1->7758->32FA->4BF2->4BF3->*
+Q2: Count=37: 18674->F342->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->2CF->5C88->AA10->B2E8->*
+Q3: Count=2: 326->12503->*
+
+Switching from: PID: 0x122DA, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 2
+Deadlock detected on Mutual pair 4893, PID: 0x122DA & 0x122DB
+Returned:       PID: 0x122DA, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 2
+Switching to:   PID: 0xF9F2, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Ready Queue: Size: 47
+Q0: Count=0: *
+Q1: Count=8: 122DB->7757->F9F1->7758->32FA->4BF2->4BF3->122DA->*
+Q2: Count=37: 18674->F342->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->2CF->5C88->AA10->B2E8->*
+Q3: Count=2: 326->12503->*
+Deadlock detected on Mutual pair 2257, PID: 0xF9F2 & 0xF9F1
+Moved from IO A:PID: 0xCEC, Priority: 0x1, State: 4, PC: 0xA1, MaxPC: 0xc8, Terminate: 30, TermCount: 0
+Waiting Queue A:Size = 0.
+
+Switching from: PID: 0xF9F2, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Deadlock detected on Mutual pair 2257, PID: 0xF9F2 & 0xF9F1
+Returned:       PID: 0xF9F2, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Switching to:   PID: 0x122DB, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Ready Queue: Size: 48
+Q0: Count=0: *
+Q1: Count=9: 7757->F9F1->7758->32FA->4BF2->4BF3->122DA->CEC->F9F2->*
+Q2: Count=37: 18674->F342->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->2CF->5C88->AA10->B2E8->*
+Q3: Count=2: 326->12503->*
+
+Switching from: PID: 0x122DB, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Deadlock detected on Mutual pair 4893, PID: 0x122DB & 0x122DA
+Returned:       PID: 0x122DB, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 0
+Switching to:   PID: 0x7757, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Ready Queue: Size: 48
+Q0: Count=0: *
+Q1: Count=9: F9F1->7758->32FA->4BF2->4BF3->122DA->CEC->F9F2->122DB->*
+Q2: Count=37: 18674->F342->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->2CF->5C88->AA10->B2E8->*
+Q3: Count=2: 326->12503->*
+
+Switching from: PID: 0x7757, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Deadlock detected on Mutual pair 2886, PID: 0x7757 & 0x7758
+Returned:       PID: 0x7757, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Switching to:   PID: 0xF9F1, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Ready Queue: Size: 48
+Q0: Count=0: *
+Q1: Count=9: 7758->32FA->4BF2->4BF3->122DA->CEC->F9F2->122DB->7757->*
+Q2: Count=37: 18674->F342->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->2CF->5C88->AA10->B2E8->*
+Q3: Count=2: 326->12503->*
+
+Switching from: PID: 0xF9F1, Priority: 0x1, State: 2, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Deadlock detected on Mutual pair 2257, PID: 0xF9F1 & 0xF9F2
+Returned:       PID: 0xF9F1, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Switching to:   PID: 0x7758, Priority: 0x1, State: 1, PC: 0x0, MaxPC: 0xa, Terminate: 40, TermCount: 1
+Ready Queue: Size: 48
+Q0: Count=0: *
+Q1: Count=9: 32FA->4BF2->4BF3->122DA->CEC->F9F2->122DB->7757->F9F1->*
+Q2: Count=37: 18674->F342->D764->1A7->9B->7553->ECB0->36B->1550A->BE08->D76->A9->135->1D7->282->9046->FD1F->26->10187->5B0C->CB11->3166->22->4FB0->32A->296->4585->17B38->161F->9058->1362C->17A98->BEA7->2CF->5C88->AA10->B2E8->*
+Q3: Count=2: 326->12503->*
+
+Done!
+Number of processes in ready queue: 48
+Number of processes terminated: 194
+Deadlock occured
