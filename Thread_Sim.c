@@ -19,11 +19,11 @@
 #define SLEEP_TIME 9000000
 #define IO_TIME_MIN SLEEP_TIME * 3
 #define IO_TIME_MAX SLEEP_TIME * 5
-#define MAX_LOOPS 10000000
+#define MAX_LOOPS 2000000
 
 #define IDL_PID 0xFFFFFFFF
 
-#define DEADLOCK_POSSIBLE 1
+#define DEADLOCK_POSSIBLE 0
 
 void create_mutual_pcbs(int priority);
 void create_sync_pcbs(int priority);
